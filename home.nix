@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./neovim.nix
     ./env.nix
     ./programs.nix
     ./files.nix
