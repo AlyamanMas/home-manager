@@ -5,6 +5,7 @@
     ./env.nix
     ./programs.nix
     ./files.nix
+    ./gnome.nix
   ];
 
   home.username = "alyaman";
