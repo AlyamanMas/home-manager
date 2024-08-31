@@ -19,6 +19,6 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-    QT_QPA_PLATFORM="wayland";
+    QT_QPA_PLATFORM = "wayland";
   };
 }

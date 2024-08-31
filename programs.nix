@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./neovim.nix
-  ];
+  imports = [ ./neovim.nix ];
 
   home.packages = with pkgs; [
     wget
@@ -11,25 +9,18 @@
     nix-prefetch-scripts
     dconf-editor
     gnome-tweaks
+    nixfmt
   ];
 
   programs.git = {
     enable = true;
     userEmail = "alyaman.maasarani@gmail.com";
     userName = "Alyaman Massarani";
-    extraConfig = {
-      safe = {
-        directory = "/etc/nixos";
-      };
-    };
-    diff-so-fancy = {
-      enable = true;
-    };
+    extraConfig = { safe = { directory = "/etc/nixos"; }; };
+    diff-so-fancy = { enable = true; };
   };
 
-  programs.gh = {
-    enable = true;
-  };
+  programs.gh = { enable = true; };
 
   programs.foot = {
     enable = true;
@@ -37,16 +28,14 @@
     settings = {
       main = {
         font = "JetBrainsMono Nerd Font:size=12";
-	dpi-aware = "yes";
-	initial-window-size-pixels = "770x500";
+        dpi-aware = "yes";
+        initial-window-size-pixels = "770x500";
       };
 
-      cursor = {
-        blink = "yes";
-      };
+      cursor = { blink = "yes"; };
 
       colors = {
-	# Catppuccin mocha theme
+        # Catppuccin mocha theme
         foreground = "cdd6f4";
         background = "1e1e2e";
 
@@ -78,35 +67,25 @@
         urls = "89b4fa";
       };
 
-      csd = {
-        preferred = "none";
-      };
+      csd = { preferred = "none"; };
 
       # TODO: add keybindings
     };
   };
 
-  services.syncthing = {
-    enable = true;
-  };
+  services.syncthing = { enable = true; };
 
-  programs.firefox = {
-    enable = true;
-  };
+  programs.firefox = { enable = true; };
 
-  programs.chromium = {
-    enable = true;
-  };
+  programs.chromium = { enable = true; };
 
-  programs.mpv = {
-    enable = true;
-  };
+  programs.mpv = { enable = true; };
 
   programs.fish = {
     enable = true;
     plugins = [
       {
-	# Allows to source bash/shell scripts
+        # Allows to source bash/shell scripts
         name = "bass";
         src = pkgs.fetchFromGitHub {
           owner = "edc";
