@@ -10,6 +10,7 @@
     keepassxc
     nix-prefetch-scripts
     dconf-editor
+    gnome.gnome-tweaks
   ];
 
   programs.git = {
