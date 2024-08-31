@@ -10,13 +10,21 @@
     keepassxc
     nix-prefetch-scripts
     dconf-editor
-    gnome.gnome-tweaks
+    gnome-tweaks
   ];
 
   programs.git = {
     enable = true;
     userEmail = "alyaman.maasarani@gmail.com";
     userName = "Alyaman Massarani";
+    extraConfig = {
+      safe = {
+        directory = "/etc/nixos";
+      };
+    };
+    diff-so-fancy = {
+      enable = true;
+    };
   };
 
   programs.gh = {
