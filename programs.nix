@@ -10,6 +10,7 @@
     dconf-editor
     gnome-tweaks
     nixfmt
+    discord
   ];
 
   programs.git = {
