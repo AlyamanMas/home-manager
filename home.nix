@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./env.nix ./programs.nix ./files.nix ./gnome.nix ];
+  imports = [
+    ./env.nix
+    ./programs.nix
+    ./files.nix
+    ./gnome.nix
+  ];
 
   home.username = "alyaman";
   home.homeDirectory = "/home/alyaman";

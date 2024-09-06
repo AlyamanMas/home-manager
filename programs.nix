@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./neovim.nix ];
+  imports = [ ./nixvim/default.nix ];
 
   home.packages = with pkgs; [
     wget
@@ -9,19 +9,30 @@
     nix-prefetch-scripts
     dconf-editor
     gnome-tweaks
-    nixfmt
-    discord
+    nixfmt-rfc-style
+    ripgrep
+    libreoffice-qt
+    wl-clipboard
+    papers
   ];
 
   programs.git = {
     enable = true;
     userEmail = "alyaman.maasarani@gmail.com";
     userName = "Alyaman Massarani";
-    extraConfig = { safe = { directory = "/etc/nixos"; }; };
-    diff-so-fancy = { enable = true; };
+    extraConfig = {
+      safe = {
+        directory = "/etc/nixos";
+      };
+    };
+    diff-so-fancy = {
+      enable = true;
+    };
   };
 
-  programs.gh = { enable = true; };
+  programs.gh = {
+    enable = true;
+  };
 
   programs.foot = {
     enable = true;
@@ -33,7 +44,9 @@
         initial-window-size-pixels = "770x500";
       };
 
-      cursor = { blink = "yes"; };
+      cursor = {
+        blink = "yes";
+      };
 
       colors = {
         # Catppuccin mocha theme
@@ -68,19 +81,34 @@
         urls = "89b4fa";
       };
 
-      csd = { preferred = "none"; };
+      csd = {
+        preferred = "none";
+      };
 
       # TODO: add keybindings
     };
   };
 
-  services.syncthing = { enable = true; };
+  services.syncthing = {
+    enable = true;
+  };
 
-  programs.firefox = { enable = true; };
+  programs.tealdeer = {
+    enable = true;
+    settings.auto_update = true;
+  };
 
-  programs.chromium = { enable = true; };
+  programs.firefox = {
+    enable = true;
+  };
 
-  programs.mpv = { enable = true; };
+  programs.chromium = {
+    enable = true;
+  };
+
+  programs.mpv = {
+    enable = true;
+  };
 
   programs.fish = {
     enable = true;
@@ -100,5 +128,8 @@
         src = pkgs.fishPlugins.plugin-git.src;
       }
     ];
+    shellInit = ''
+      set -gx EDITOR nvim
+    '';
   };
 }
