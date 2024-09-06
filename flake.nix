@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "path:./nixvim";
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -18,9 +18,8 @@
     {
       nixpkgs,
       home-manager,
-      nixvim,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -33,9 +32,9 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          nixvim.homeManagerModules.nixvim
         ];
 
+        extraSpecialArgs.inputs = inputs;
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };

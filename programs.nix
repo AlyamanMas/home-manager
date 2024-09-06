@@ -1,8 +1,11 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports = [ ./nixvim/default.nix ];
-
   home.packages = with pkgs; [
     wget
     keepassxc
@@ -14,6 +17,7 @@
     libreoffice-qt
     wl-clipboard
     papers
+    inputs.nixvim.packages.x86_64-linux.default
   ];
 
   programs.git = {
