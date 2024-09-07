@@ -62,4 +62,9 @@
   };
 
   programs.fish = import ./programs/fish.nix attrs;
+
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
