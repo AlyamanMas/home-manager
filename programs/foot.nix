@@ -18,6 +18,18 @@
       preferred = "none";
     };
 
-    # TODO: add keybindings
+    scrollback = {
+      lines = 2000;
+    };
+
+    key-bindings = {
+      scrollback-up-page = "Control+Mod1+Meta+u";
+      scrollback-up-line = "Control+Mod1+Meta+k";
+      scrollback-down-page = "Control+Mod1+Meta+d";
+      scrollback-down-line = "Control+Mod1+Meta+j";
+      search-start = "Control+Mod1+Meta+slash";
+      spawn-terminal = "Control+Mod1+Meta+n";
+      show-urls-launch = "Control+Mod1+Meta+f";
+    };
   };
 }
