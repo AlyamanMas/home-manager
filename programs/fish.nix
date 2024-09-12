@@ -26,4 +26,13 @@
   shellInit = ''
     set -gx EDITOR nvim
   '';
+  shellAliases = {
+    U = "systemctl --user";
+    S = "sudo systemctl";
+    ndv = "nix develop --command fish";
+    nrf = ''
+      nix repl --expr "builtins.getFlake \"$PWD\""
+    '';
+    res = "sudo nixos-rebuild switch";
+  };
 }
