@@ -20,51 +20,55 @@
     inputs.nixvim.packages.x86_64-linux.default
   ];
 
-  programs.git = {
-    enable = true;
-    userEmail = "alyaman.maasarani@gmail.com";
-    userName = "Alyaman Massarani";
-    extraConfig = {
-      safe = {
-        directory = "/etc/nixos";
+  programs = {
+    home-manager.enable = true;
+
+    git = {
+      enable = true;
+      userEmail = "alyaman.maasarani@gmail.com";
+      userName = "Alyaman Massarani";
+      extraConfig = {
+        safe = {
+          directory = "/etc/nixos";
+        };
+      };
+      diff-so-fancy = {
+        enable = true;
       };
     };
-    diff-so-fancy = {
+
+    gh = {
       enable = true;
     };
-  };
 
-  programs.gh = {
-    enable = true;
-  };
+    foot = import ./programs/foot.nix;
 
-  programs.foot = import ./programs/foot.nix;
+    tealdeer = {
+      enable = true;
+      settings.auto_update = true;
+    };
+
+    firefox = {
+      enable = true;
+    };
+
+    chromium = {
+      enable = true;
+    };
+
+    mpv = {
+      enable = true;
+    };
+
+    fish = import ./programs/fish.nix attrs;
+
+    starship = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+  };
 
   services.syncthing = {
     enable = true;
-  };
-
-  programs.tealdeer = {
-    enable = true;
-    settings.auto_update = true;
-  };
-
-  programs.firefox = {
-    enable = true;
-  };
-
-  programs.chromium = {
-    enable = true;
-  };
-
-  programs.mpv = {
-    enable = true;
-  };
-
-  programs.fish = import ./programs/fish.nix attrs;
-
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
   };
 }

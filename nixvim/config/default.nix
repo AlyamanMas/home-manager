@@ -5,6 +5,7 @@
     ./keys.nix
     ./sets.nix
     ./highlight.nix
+    ./clipboard.nix
 
     ./plug/colorscheme/colorscheme.nix
 
