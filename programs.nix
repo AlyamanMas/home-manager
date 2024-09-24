@@ -18,6 +18,9 @@
     wl-clipboard
     papers
     inputs.nixvim.packages.x86_64-linux.default
+    gnome-music
+    zotero_7
+    jetbrains.pycharm-professional
   ];
 
   programs = {
