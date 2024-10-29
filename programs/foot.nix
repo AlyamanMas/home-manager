@@ -12,7 +12,7 @@
       blink = "yes";
     };
 
-    colors = import ./foot/paradise.nix;
+    colors = import ./foot/catppuccin-mocha.nix;
 
     csd = {
       preferred = "none";

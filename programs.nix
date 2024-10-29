@@ -21,6 +21,20 @@
     gnome-music
     zotero_7
     jetbrains.pycharm-professional
+    openai-whisper
+    yt-dlp
+    ffmpeg
+    gnome-solanum
+    pomodoro-gtk
+    kitty
+    wofi
+    fd
+    btop
+    pavucontrol
+    inputs.hyprpanel.outputs.packages.x86_64-linux.default
+    grimblast
+    gimp-with-plugins
+    qalculate-gtk
   ];
 
   programs = {

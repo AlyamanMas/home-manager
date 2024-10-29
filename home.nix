@@ -11,6 +11,7 @@
     ./programs.nix
     ./files.nix
     ./gnome.nix
+    ./modules/hyprland.nix
   ];
 
   home = {

@@ -12,6 +12,10 @@
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs =
