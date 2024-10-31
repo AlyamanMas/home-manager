@@ -35,6 +35,7 @@
     grimblast
     gimp-with-plugins
     qalculate-gtk
+    eza
   ];
 
   programs = {
