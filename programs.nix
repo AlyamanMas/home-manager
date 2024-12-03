@@ -32,10 +32,12 @@
     btop
     pavucontrol
     inputs.hyprpanel.outputs.packages.x86_64-linux.default
+    inputs.zen-browser.outputs.packages.x86_64-linux.default
     grimblast
     gimp-with-plugins
     qalculate-gtk
     eza
+    inkscape
   ];
 
   programs = {
