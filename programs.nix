@@ -4,41 +4,51 @@
   inputs,
   ...
 }@attrs:
-
-{
-  home.packages = with pkgs; [
-    wget
-    keepassxc
-    nix-prefetch-scripts
-    dconf-editor
-    gnome-tweaks
-    nixfmt-rfc-style
-    ripgrep
-    libreoffice-qt
-    wl-clipboard
-    papers
-    inputs.nixvim.packages.x86_64-linux.default
-    gnome-music
-    zotero_7
-    jetbrains.pycharm-professional
-    openai-whisper
-    yt-dlp
-    ffmpeg
-    gnome-solanum
-    pomodoro-gtk
-    kitty
-    wofi
-    fd
-    btop
-    pavucontrol
-    inputs.hyprpanel.outputs.packages.x86_64-linux.default
-    inputs.zen-browser.outputs.packages.x86_64-linux.default
-    grimblast
-    gimp-with-plugins
-    qalculate-gtk
-    eza
-    inkscape
+let
+  nwgShellPrograms = with pkgs; [
+    nwg-look
+    nwg-panel
+    nwg-displays
+    nwg-launchers
   ];
+in
+{
+  home.packages =
+    with pkgs;
+    [
+      wget
+      keepassxc
+      nix-prefetch-scripts
+      dconf-editor
+      gnome-tweaks
+      nixfmt-rfc-style
+      ripgrep
+      libreoffice-qt
+      wl-clipboard
+      papers
+      inputs.nixvim.packages.x86_64-linux.default
+      gnome-music
+      zotero_7
+      jetbrains.pycharm-professional
+      openai-whisper
+      yt-dlp
+      ffmpeg
+      gnome-solanum
+      pomodoro-gtk
+      kitty
+      wofi
+      fd
+      btop
+      pavucontrol
+      inputs.hyprpanel.outputs.packages.x86_64-linux.default
+      inputs.zen-browser.outputs.packages.x86_64-linux.default
+      grimblast
+      gimp-with-plugins
+      qalculate-gtk
+      eza
+      inkscape
+    ]
+    ++ nwgShellPrograms;
 
   programs = {
     home-manager.enable = true;
