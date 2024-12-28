@@ -47,6 +47,9 @@ in
       qalculate-gtk
       eza
       inkscape
+      calibre
+      qbittorrent
+      autossh
     ]
     ++ nwgShellPrograms;
 
