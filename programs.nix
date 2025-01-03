@@ -30,7 +30,6 @@ in
       gnome-music
       zotero_7
       jetbrains.pycharm-professional
-      openai-whisper
       yt-dlp
       ffmpeg
       gnome-solanum
@@ -43,13 +42,14 @@ in
       inputs.hyprpanel.outputs.packages.x86_64-linux.default
       inputs.zen-browser.outputs.packages.x86_64-linux.default
       grimblast
-      gimp-with-plugins
+      gimp
       qalculate-gtk
       eza
       inkscape
       calibre
       qbittorrent
       autossh
+      ghostty
     ]
     ++ nwgShellPrograms;
 
