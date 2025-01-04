@@ -7,11 +7,11 @@
 
 {
   imports = [
-    ./env.nix
-    ./programs.nix
-    ./files.nix
-    ./gnome.nix
-    ./modules/hyprland.nix
+    ../modules/env.nix
+    ../modules/programs
+    ../modules/gnome.nix
+    # TODO: fix this
+    # ../modules/hyprland.nix
   ];
 
   home = {

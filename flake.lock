@@ -680,11 +680,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-Bj8WO55VzZrIVuH+WtLnNTL413F46UZq5IFJ+0gY9Ko=",
-        "path": "./nixvim",
+        "path": "./homes/modules/nixvim",
         "type": "path"
       },
       "original": {
-        "path": "./nixvim",
+        "path": "./homes/modules/nixvim",
         "type": "path"
       }
     },

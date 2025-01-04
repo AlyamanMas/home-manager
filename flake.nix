@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "path:./nixvim";
+      url = "path:./homes/modules/nixvim";
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       # inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -39,7 +39,7 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home.nix
+          ./homes/YPC/home.nix
         ];
 
         extraSpecialArgs.inputs = inputs;
