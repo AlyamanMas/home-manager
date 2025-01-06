@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +24,7 @@
     {
       nixpkgs,
       home-manager,
+      nixpkgs-stable,
       ...
     }@inputs:
     let
@@ -31,20 +33,26 @@
         inherit system;
         config.allowUnfree = true;
       };
+      username = "alyaman";
     in
     {
+      nixosConfigurations."YPC2-NIXOS2" = nixpkgs-stable.lib.nixosSystem {
+        modules = [ ./hosts/YPC/configuration.nix ];
+        specialArgs = {
+          nixpkgs-unstable = pkgs;
+          inherit inputs username;
+          webuiPort = 11111;
+        };
+      };
+
       homeConfigurations."alyaman" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
         modules = [
           ./homes/YPC/home.nix
         ];
 
         extraSpecialArgs.inputs = inputs;
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
       };
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
