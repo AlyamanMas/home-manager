@@ -11,7 +11,7 @@
   services = {
     ollama = {
       enable = true;
-      acceleration = "cuda";
+      # acceleration = "cuda";
       package = nixpkgs-unstable.ollama;
     };
 

@@ -9,7 +9,6 @@
   imports = [
     ../modules/env.nix
     ../modules/programs
-    ../modules/gnome.nix
     # TODO: fix this
     # ../modules/hyprland.nix
   ];

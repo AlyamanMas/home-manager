@@ -26,6 +26,7 @@
     ../modules/fish.nix
     ../modules/network-manager.nix
     ../modules/main-user.nix
+    ./autossh-tunneling.nix
   ];
 
   networking = {

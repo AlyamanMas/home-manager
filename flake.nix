@@ -54,6 +54,30 @@
 
         extraSpecialArgs.inputs = inputs;
       };
+
+      colmena = {
+        meta = {
+          nixpkgs = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+
+          specialArgs = {
+            inherit username;
+            nixpkgs-unstable = pkgs;
+            webuiPort = 11111;
+          };
+        };
+
+        yvpsh =
+          { name, nodes, ... }:
+          {
+            imports = [
+              ./hosts/YVPSH/configuration.nix
+            ];
+          };
+      };
+
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
 }

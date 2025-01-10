@@ -50,6 +50,7 @@ in
       qbittorrent
       autossh
       ghostty
+      colmena
     ]
     ++ nwgShellPrograms;
 
