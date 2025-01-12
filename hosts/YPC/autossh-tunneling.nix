@@ -25,7 +25,7 @@
         "TZDIR=${pkgs.tzdata}/share/zoneinfo"
         "SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh"
       ];
-      ExecStart = "${pkgs.autossh}/bin/autossh -M 20000 -ND 1333 -L 9050:127.0.0.1:9050 alyaman@yvpsh.duckdns.org";
+      ExecStart = "${pkgs.autossh}/bin/autossh -M 20000 -ND 1333 -L 9050:127.0.0.1:9050 -L 9063:127.0.0.1:9063 alyaman@yvpsh.duckdns.org";
       User = "alyaman";
       Restart = "on-success";
     };
