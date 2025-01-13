@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     ./hardware-accelerated-decoding.nix
     ./local-domains.nix
+    ./autossh-tunneling.nix
 
     ../modules/efi-systemd-boot.nix
     ../modules/kde.nix
@@ -26,7 +27,7 @@
     ../modules/fish.nix
     ../modules/network-manager.nix
     ../modules/main-user.nix
-    ./autossh-tunneling.nix
+    ../modules/ydotool.nix
   ];
 
   networking = {
