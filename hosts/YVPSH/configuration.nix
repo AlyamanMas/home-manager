@@ -9,11 +9,15 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./reverse-proxy.nix
+
     ../modules/main-user.nix
     ../modules/fish.nix
     ../modules/webui.nix
     ../modules/torsocks.nix
-    ./reverse-proxy.nix
+    ../modules/nix.nix
+    ../modules/wp-docker.nix
+    ../modules/vaultwarden.nix
   ];
 
   boot.loader.grub.enable = true;

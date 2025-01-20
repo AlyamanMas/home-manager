@@ -8,10 +8,6 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -19,7 +15,6 @@
       nixpkgs,
       nixvim,
       flake-parts,
-      pre-commit-hooks,
       ...
     }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -46,25 +41,12 @@
           };
         in
         {
-          checks = {
-            pre-commit-check = pre-commit-hooks.lib.${system}.run {
-              src = ./.;
-              hooks = {
-                statix.enable = true;
-                nixfmt = {
-                  enable = true;
-                  package = pkgs.nixfmt-rfc-style;
-                };
-              };
-            };
-          };
-
           formatter = pkgs.nixfmt-rfc-style;
 
           packages.default = nvim;
 
           devShells = {
-            default = with pkgs; mkShell { inherit (self'.checks.pre-commit-check) shellHook; };
+            default = with pkgs; mkShell { };
           };
         };
     };

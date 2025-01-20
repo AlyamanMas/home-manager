@@ -1,6 +1,4 @@
 {
-  description = "Home Manager configuration of alyaman";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -12,9 +10,6 @@
       url = "path:./homes/modules/nixvim";
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       # inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
     };
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";

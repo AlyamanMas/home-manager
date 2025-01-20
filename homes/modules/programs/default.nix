@@ -51,6 +51,7 @@ in
       autossh
       ghostty
       colmena
+      git-crypt
     ]
     ++ nwgShellPrograms;
 
