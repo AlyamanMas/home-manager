@@ -23,18 +23,23 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "YVPSH";
-
   time.timeZone = "Europe/Berlin";
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  networking = {
+    hostName = "YVPSH";
+
+    # Open ports in the firewall.
+    # networking.firewall.allowedTCPPorts = [ ... ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    firewall.enable = false;
+    hosts = {
+      "127.0.0.1" = [ "tlsymposium.com" ];
+    };
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
