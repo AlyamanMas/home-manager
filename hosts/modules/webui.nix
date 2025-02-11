@@ -17,7 +17,7 @@
 
     open-webui = {
       enable = true;
-      # package = nixpkgs-unstable.open-webui;
+      package = nixpkgs-unstable.open-webui;
       port = webuiPort;
     };
   };
