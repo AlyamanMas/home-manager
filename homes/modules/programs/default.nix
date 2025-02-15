@@ -52,6 +52,7 @@ in
       ghostty
       colmena
       git-crypt
+      devenv
     ]
     ++ nwgShellPrograms;
 
@@ -104,6 +105,10 @@ in
   };
 
   services.syncthing = {
+    enable = true;
+  };
+
+  programs.direnv = {
     enable = true;
   };
 }
