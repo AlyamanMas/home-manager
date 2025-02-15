@@ -1,0 +1,2 @@
+secrets/** filter=git-crypt diff=git-crypt
+hosts/modules/wp-docker.nix filter=git-crypt diff=git-crypt

@@ -20,7 +20,5 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     QT_QPA_PLATFORM = "wayland";
-    ipfs_staging = /home/alyaman/ipfs/export;
-    ipfs_data = /home/alyaman/ipfs/data;
   };
 }

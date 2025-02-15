@@ -50,6 +50,9 @@ in
       qbittorrent
       autossh
       ghostty
+      colmena
+      git-crypt
+      devenv
     ]
     ++ nwgShellPrograms;
 
@@ -74,7 +77,7 @@ in
       enable = true;
     };
 
-    foot = import ./programs/foot.nix;
+    foot = import ./foot.nix;
 
     tealdeer = {
       enable = true;
@@ -93,7 +96,7 @@ in
       enable = true;
     };
 
-    fish = import ./programs/fish.nix attrs;
+    fish = import ./fish.nix attrs;
 
     starship = {
       enable = true;
@@ -102,6 +105,10 @@ in
   };
 
   services.syncthing = {
+    enable = true;
+  };
+
+  programs.direnv = {
     enable = true;
   };
 }
