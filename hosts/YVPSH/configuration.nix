@@ -18,6 +18,7 @@
     ../modules/nix.nix
     ../modules/wp-docker.nix
     ../modules/vaultwarden.nix
+    ../modules/tika.nix
   ];
 
   boot.loader.grub.enable = true;
