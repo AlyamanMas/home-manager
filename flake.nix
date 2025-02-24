@@ -52,10 +52,7 @@
 
       colmena = {
         meta = {
-          nixpkgs = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          nixpkgs = pkgs;
 
           specialArgs = {
             inherit username;
