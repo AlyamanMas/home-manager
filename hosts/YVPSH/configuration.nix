@@ -13,14 +13,18 @@
 
     ../modules/main-user.nix
     ../modules/fish.nix
-    ../modules/webui.nix
-    ../modules/torsocks.nix
     ../modules/nix.nix
-    ../modules/wp-docker.nix
     ../modules/vaultwarden.nix
     ../modules/tika.nix
     ../modules/webui-docker.nix
+    ../modules/watchtower.nix
   ];
+
+  virtualisation.docker = {
+    enable = true;
+    autoPrune.enable = true;
+  };
+  virtualisation.oci-containers.backend = "docker";
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
