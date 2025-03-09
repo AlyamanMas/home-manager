@@ -23,11 +23,12 @@
     ../modules/nix.nix
     ../modules/sound.nix
     ../modules/local-locale.nix
-    ../modules/podman.nix
+    ../modules/docker.nix
     ../modules/fish.nix
     ../modules/network-manager.nix
     ../modules/main-user.nix
     ../modules/ydotool.nix
+    ../modules/jupyter-docker.nix
   ];
 
   networking = {

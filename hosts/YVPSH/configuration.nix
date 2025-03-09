@@ -16,15 +16,11 @@
     ../modules/nix.nix
     ../modules/vaultwarden.nix
     ../modules/tika.nix
+    ../modules/docker.nix
     ../modules/webui-docker.nix
     ../modules/watchtower.nix
+    ../modules/jupyter-docker.nix
   ];
-
-  virtualisation.docker = {
-    enable = true;
-    autoPrune.enable = true;
-  };
-  virtualisation.oci-containers.backend = "docker";
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
