@@ -27,7 +27,6 @@
     ../modules/fish.nix
     ../modules/network-manager.nix
     ../modules/main-user.nix
-    ../modules/ydotool.nix
     ../modules/jupyter-docker.nix
   ];
 
