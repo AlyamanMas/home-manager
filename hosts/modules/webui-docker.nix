@@ -12,6 +12,7 @@
     extraOptions = [ "--net=host" ];
     environment = {
       PORT = "1115";
+      AIOHTTP_CLIENT_TIMEOUT = "";
     };
     volumes = [
       "open-webui:/app/backend/data"
