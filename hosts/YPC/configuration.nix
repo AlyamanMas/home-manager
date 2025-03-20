@@ -11,7 +11,7 @@
     ./hardware-configuration.nix
     ./hardware-accelerated-decoding.nix
     ./local-domains.nix
-    ./autossh-tunneling.nix
+    # ./autossh-tunneling.nix
 
     ../modules/efi-systemd-boot.nix
     ../modules/kde.nix
