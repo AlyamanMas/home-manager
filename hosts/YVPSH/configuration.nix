@@ -20,6 +20,7 @@
     ../modules/webui-docker.nix
     ../modules/watchtower.nix
     ../modules/jupyter-docker.nix
+    ../modules/searxng.nix
   ];
 
   boot.loader.grub.enable = true;
