@@ -2,13 +2,15 @@
   lib,
   config,
   pkgs,
+  nixpkgs-unstable,
   username,
   ...
 }:
 
 {
   services.searx = {
-    enable = false;
+    enable = true;
+    package = nixpkgs-unstable.searxng;
     redisCreateLocally = true;
     environmentFile = "/home/${username}/.searxng.env";
 
@@ -29,13 +31,13 @@
     #};
 
     # UWSGI configuration
-    runInUwsgi = true;
+    #runInUwsgi = true;
 
-    uwsgiConfig = {
-      socket = "/run/searx/searx.sock";
-      http = ":8787";
-      chmod-socket = "660";
-    };
+    #uwsgiConfig = {
+    #  socket = "/run/searx/searx.sock";
+    #  http = ":8787";
+    #  chmod-socket = "660";
+    #};
 
     # Searx configuration
     settings = {
@@ -56,14 +58,18 @@
         query_in_title = true;
         infinite_scroll = false;
         center_alignment = true;
-        default_theme = "simple";
-        theme_args.simple_style = "auto";
-        search_on_category_select = false;
+        search_on_category_select = true;
         hotkeys = "vim";
       };
 
       # Search engine settings
       search = {
+        formats = [
+          "html"
+          "json"
+          "csv"
+          "rss"
+        ];
         #safe_search = 2;
         #autocomplete_min = 2;
         #autocomplete = "duckduckgo";
@@ -73,12 +79,12 @@
 
       # Server configuration
       server = {
-        base_url = "https://sxng.tlsymposium.com";
+        #base_url = "https://sxng.tlsymposium.com";
         port = 8787;
-        bind_address = "127.0.0.1";
-        #limiter = true;
+        bind_address = "0.0.0.0";
+        limiter = false;
         #public_instance = true;
-        #image_proxy = true;
+        image_proxy = true;
         method = "GET";
       };
 
@@ -175,27 +181,4 @@
 
   # User management
   users.groups.searx.members = [ username ];
-
-  # Nginx configuration
-  services.nginx = {
-    enable = true;
-    recommendedGzipSettings = true;
-    recommendedOptimisation = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings = true;
-    virtualHosts = {
-      "sxng.tlsymposium.com" = {
-        forceSSL = true;
-        sslCertificate = "...";
-        sslCertificateKey = "...";
-        locations = {
-          "/" = {
-            extraConfig = ''
-              uwsgi_pass unix:${config.services.searx.uwsgiConfig.socket};
-            '';
-          };
-        };
-      };
-    };
-  };
 }
