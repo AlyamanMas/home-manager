@@ -4,7 +4,7 @@
   pkgs,
   nixpkgs-unstable,
   ...
-}:
+}@args:
 
 {
   imports = [
@@ -18,7 +18,8 @@
     ../modules/tika.nix
     # ../modules/docker.nix
     ../modules/podman.nix
-    ../modules/webui-docker.nix
+    # ../modules/webui-docker.nix
+    (import ../modules/webui.nix (args // { webuiPort = 1115; }))
     ../modules/searxng.nix
   ];
 
