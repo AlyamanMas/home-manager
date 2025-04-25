@@ -16,7 +16,8 @@
     ../modules/nix.nix
     ../modules/vaultwarden.nix
     ../modules/tika.nix
-    ../modules/docker.nix
+    # ../modules/docker.nix
+    ../modules/podman.nix
     ../modules/webui-docker.nix
     ../modules/searxng.nix
   ];
