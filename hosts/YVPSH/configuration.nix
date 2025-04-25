@@ -18,7 +18,6 @@
     ../modules/tika.nix
     ../modules/docker.nix
     ../modules/webui-docker.nix
-    ../modules/jupyter-docker.nix
     ../modules/searxng.nix
   ];
 
