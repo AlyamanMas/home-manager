@@ -3,7 +3,6 @@
   lib,
   pkgs,
   nixpkgs-unstable,
-  webuiPort ? 11111,
   ...
 }:
 
@@ -12,7 +11,7 @@
     open-webui = {
       enable = true;
       package = nixpkgs-unstable.open-webui;
-      port = webuiPort;
+      port = lib.mkDefault 1115;
     };
   };
 }

@@ -41,7 +41,6 @@
         specialArgs = {
           nixpkgs-unstable = pkgs;
           inherit inputs;
-          webuiPort = 11111;
         };
       };
 
@@ -61,7 +60,6 @@
 
           specialArgs = {
             nixpkgs-unstable = pkgs;
-            webuiPort = 11111;
           };
         };
 

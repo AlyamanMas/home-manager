@@ -19,7 +19,7 @@
     # ../modules/docker.nix
     ../modules/podman.nix
     # ../modules/webui-docker.nix
-    (import ../modules/webui.nix (args // { webuiPort = 1115; }))
+    ../modules/webui.nix
     ../modules/searxng.nix
   ];
 
