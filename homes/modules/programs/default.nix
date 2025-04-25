@@ -53,6 +53,7 @@ in
       colmena
       git-crypt
       devenv
+      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ]
     ++ nwgShellPrograms;
 
