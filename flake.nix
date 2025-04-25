@@ -34,14 +34,13 @@
         inherit system;
         config.allowUnfree = true;
       };
-      username = "alyaman";
     in
     {
       nixosConfigurations."YPC2-NIXOS2" = nixpkgs-stable.lib.nixosSystem {
         modules = [ ./hosts/YPC/configuration.nix ];
         specialArgs = {
           nixpkgs-unstable = pkgs;
-          inherit inputs username;
+          inherit inputs;
           webuiPort = 11111;
         };
       };
@@ -61,7 +60,6 @@
           nixpkgs = pkgs;
 
           specialArgs = {
-            inherit username;
             nixpkgs-unstable = pkgs;
             webuiPort = 11111;
           };

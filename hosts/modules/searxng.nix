@@ -3,10 +3,12 @@
   config,
   pkgs,
   nixpkgs-unstable,
-  username,
   ...
 }:
 
+let
+  username = config.users.main-user;
+in
 {
   services.searx = {
     enable = true;
