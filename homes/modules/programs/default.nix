@@ -55,6 +55,7 @@ in
       devenv
       typst
       inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+      nodejs_22
     ]
     ++ nwgShellPrograms;
 
