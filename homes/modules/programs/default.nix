@@ -56,6 +56,12 @@ in
       typst
       inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
       nodejs_22
+      (vscodium.fhsWithPackages (
+        ps: with ps; [
+          typstyle
+          tinymist
+        ]
+      ))
     ]
     ++ nwgShellPrograms;
 
