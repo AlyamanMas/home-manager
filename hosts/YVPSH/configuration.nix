@@ -21,6 +21,7 @@
     # ../modules/webui-docker.nix
     ../modules/webui.nix
     ../modules/searxng.nix
+    ../modules/gitea.nix
   ];
 
   boot.loader.grub.enable = true;

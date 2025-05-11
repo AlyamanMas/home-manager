@@ -11,6 +11,7 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
 
+    # TODO: change these definitions to only work when the service is enabled.
     virtualHosts = {
       #"tlsymposium.com" = {
       #  sslCertificate = "/etc/ssl/certs/cf.crt";
@@ -78,6 +79,21 @@
         forceSSL = true;
         locations."/" = {
           proxyPass = "http://127.0.0.1:8787";
+          proxyWebsockets = true; # needed if you need to use WebSocket
+          extraConfig =
+            # required when the target is also TLS server with multiple hosts
+            "proxy_ssl_server_name on;"
+            +
+              # required when the server wants to use HTTP Authentication
+              "proxy_pass_header Authorization;";
+        };
+      };
+      "gitea.tlsymposium.com" = {
+        sslCertificate = "/etc/ssl/certs/cf.crt";
+        sslCertificateKey = "/etc/ssl/private/cf.key";
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:${toString config.services.gitea.settings.server.HTTP_PORT}";
           proxyWebsockets = true; # needed if you need to use WebSocket
           extraConfig =
             # required when the target is also TLS server with multiple hosts
