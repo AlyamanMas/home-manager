@@ -43,6 +43,7 @@
     ./plug/ui/nvim-notify.nix
     #./plug/ui/precognition.nix
     ./plug/ui/telescope.nix
+    ./plug/ui/web-devicons.nix
 
     ./plug/utils/harpoon.nix
     ./plug/utils/comment.nix
