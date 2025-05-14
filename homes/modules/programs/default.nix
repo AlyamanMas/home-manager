@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }@attrs:
 let
@@ -26,7 +27,6 @@ in
       libreoffice-qt
       wl-clipboard
       papers
-      inputs.nixvim.packages.x86_64-linux.default
       gnome-music
       zotero_7
       jetbrains.pycharm-professional
@@ -41,6 +41,10 @@ in
       pavucontrol
       inputs.hyprpanel.outputs.packages.x86_64-linux.default
       inputs.zen-browser.outputs.packages.x86_64-linux.default
+      (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
+        inherit pkgs;
+        module = ../nixvim/config;
+      })
       grimblast
       gimp
       qalculate-gtk

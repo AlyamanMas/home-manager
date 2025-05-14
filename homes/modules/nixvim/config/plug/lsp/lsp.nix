@@ -44,7 +44,7 @@
         yamlls = {
           enable = true;
         };
-        typst-lsp = {
+        tinymist = {
           enable = true;
         };
       };

@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  # NOTE: disabled because was causing errors
+  # TODO: re-enable
   extraPlugins = with pkgs.vimUtils; [
     (buildVimPlugin rec {
       pname = "markview.nvim";
