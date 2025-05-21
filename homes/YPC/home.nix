@@ -9,8 +9,7 @@
   imports = [
     ../modules/env.nix
     ../modules/programs
-    # TODO: fix this
-    # ../modules/hyprland.nix
+    ../modules/hypr
   ];
 
   home = {
