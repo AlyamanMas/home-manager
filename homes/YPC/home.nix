@@ -10,6 +10,7 @@
     ../modules/env.nix
     ../modules/programs
     ../modules/hypr
+    ../modules/waybar.nix
   ];
 
   home = {
