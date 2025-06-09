@@ -22,6 +22,7 @@
     ../modules/webui.nix
     ../modules/searxng.nix
     ../modules/gitea.nix
+    ../modules/wg-server.nix
   ];
 
   boot.loader.grub.enable = true;
