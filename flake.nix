@@ -43,6 +43,13 @@
         };
       };
 
+      nixosConfigurations."YVPSH" = nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/YVPSH/configuration.nix ];
+        specialArgs = {
+          nixpkgs-unstable = pkgs;
+        };
+      };
+
       homeConfigurations."alyaman" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
