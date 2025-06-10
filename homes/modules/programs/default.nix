@@ -39,7 +39,6 @@ in
       fd
       btop
       pavucontrol
-      inputs.hyprpanel.outputs.packages.x86_64-linux.default
       inputs.zen-browser.outputs.packages.x86_64-linux.default
       (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
         inherit pkgs;

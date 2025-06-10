@@ -10,7 +10,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     rose-pine-hyprcursor = {

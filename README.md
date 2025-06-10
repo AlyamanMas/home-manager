@@ -15,7 +15,8 @@ This repository contains the NixOS and Home Manager configurations for my system
 │   ├── modules/        # Reusable modules for system configurations
 │   ├── YPC/            # Configuration for YPC2-NIXOS2 machine
 │   └── YVPSH/          # Configuration for YVPSH machine
-└── secrets/            # Encrypted secrets (managed by git-crypt)
+├── secrets/            # Encrypted secrets (managed by git-crypt)
+└── common/             # Files that could be used by either homes or hosts
 ```
 
 ## Systems
@@ -77,7 +78,7 @@ Make sure that yvpsh is defined as a host in the ssh configuration file.
 - Home Manager
 - Various input flakes:
   - Nixvim
-  - HyprPanel
+  - Waybar
   - Zen-browser
   - Rose-pine-hyprcursor
 
