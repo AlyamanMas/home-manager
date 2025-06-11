@@ -11,6 +11,7 @@
     ../modules/programs
     ../modules/hypr
     ../modules/waybar.nix
+    ../modules/mako.nix
   ];
 
   home = {
