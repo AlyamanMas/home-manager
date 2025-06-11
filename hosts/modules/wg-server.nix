@@ -59,6 +59,14 @@
           # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
           allowedIPs = [ "10.100.0.3/32" ];
         }
+        {
+          name = "YPC2-WINDOWS";
+          # Feel free to give a meaningful name
+          # Public key of the peer (not a file path).
+          publicKey = "r/NKzl+mZqsKq2iuXF2dKGspIxHZn4KlcUCUaBw8cmY=";
+          # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
+          allowedIPs = [ "10.100.0.4/32" ];
+        }
       ];
     };
   };
