@@ -17,12 +17,7 @@ let
   yvpsh-wg-get-state = pkgs.writeScript "yvpsh-wg-get-state.sh" ''
     #!/usr/bin/env sh
 
-    not_connected=`nmcli connection show --active | grep yvpsh-wg | wc -l`
-    if [ "$not_connected" -gt 0 ]; then
-      echo vpn_key
-    else
-      echo vpn_key_off
-    fi
+    [ `nmcli connection show --active | grep yvpsh-wg | wc -l` -gt 0 ] && echo vpn_key || echo vpn_key_off
   '';
   iconNameToMaterialSymbolsSpan =
     icon: ''<span font-family="Material Symbols Outlined 28pt" font-size="16pt">'' + icon + "</span>";
