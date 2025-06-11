@@ -162,6 +162,7 @@ in
           "10" = "computer";
           "11" = "dictionary";
         };
+        all-outputs = true;
       };
     }; # end settings.mainBar
   };
