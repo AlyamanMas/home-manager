@@ -5,69 +5,58 @@
   lib,
   ...
 }@attrs:
-let
-  nwgShellPrograms = with pkgs; [
-    nwg-look
-    nwg-panel
-    nwg-displays
-    nwg-launchers
-  ];
-in
 {
-  home.packages =
-    with pkgs;
-    [
-      wget
-      keepassxc
-      nix-prefetch-scripts
-      dconf-editor
-      gnome-tweaks
-      nixfmt-rfc-style
-      ripgrep
-      libreoffice-qt
-      wl-clipboard
-      papers
-      gnome-music
-      zotero_7
-      jetbrains.pycharm-professional
-      yt-dlp
-      ffmpeg
-      gnome-solanum
-      pomodoro-gtk
-      kitty
-      wofi
-      fd
-      btop
-      pavucontrol
-      inputs.zen-browser.outputs.packages.x86_64-linux.default
-      (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
-        inherit pkgs;
-        module = ../nixvim/config;
-      })
-      grimblast
-      gimp
-      qalculate-gtk
-      eza
-      inkscape
-      calibre
-      qbittorrent
-      autossh
-      ghostty
-      colmena
-      git-crypt
-      devenv
-      typst
-      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-      nodejs_22
-      (vscodium.fhsWithPackages (
-        ps: with ps; [
-          typstyle
-          tinymist
-        ]
-      ))
-      zathura
-    ]
-    ++ nwgShellPrograms;
+  home.packages = with pkgs; [
+    wget
+    keepassxc
+    nix-prefetch-scripts
+    # dconf-editor
+    # gnome-tweaks
+    nixfmt-rfc-style
+    ripgrep
+    libreoffice-qt
+    wl-clipboard
+    papers
+    gnome-music
+    zotero_7
+    # jetbrains.pycharm-professional
+    yt-dlp
+    ffmpeg
+    gnome-solanum
+    # kitty
+    wofi
+    fd
+    btop
+    pavucontrol
+    inputs.zen-browser.outputs.packages.x86_64-linux.default
+    (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
+      inherit pkgs;
+      module = ../nixvim/config;
+    })
+    grimblast
+    gimp
+    qalculate-gtk
+    eza
+    inkscape
+    calibre
+    qbittorrent
+    autossh
+    # ghostty
+    colmena
+    git-crypt
+    devenv
+    typst
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    nodejs_22
+    (vscodium.fhsWithPackages (
+      ps: with ps; [
+        typstyle
+        tinymist
+      ]
+    ))
+    zathura
+    zellij
+  ];
 
   programs = {
     home-manager.enable = true;
