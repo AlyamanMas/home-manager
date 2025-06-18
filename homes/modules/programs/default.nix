@@ -115,9 +115,9 @@
     };
   };
 
-  services.syncthing = {
-    enable = true;
-  };
+  # services.syncthing = {
+  #   enable = true;
+  # };
 
   programs.direnv = {
     enable = true;
