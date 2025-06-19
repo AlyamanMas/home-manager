@@ -8,12 +8,14 @@ in
 {
   services.mako = {
     enable = true;
-    font = "Roboto 12";
-    backgroundColor = palette.mantle;
-    textColor = palette.text;
-    width = 600;
-    padding = "20";
-    borderRadius = 30;
-    borderColor = palette.crust;
+    settings = {
+      font = "Roboto 12";
+      background-color = palette.mantle;
+      text-color = palette.text;
+      width = 600;
+      padding = "20";
+      border-radius = 30;
+      border-color = palette.crust;
+    };
   };
 }
