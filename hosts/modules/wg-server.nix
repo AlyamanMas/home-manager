@@ -42,45 +42,29 @@
       privateKeyFile = "/root/.wg-keys/private";
 
       peers = [
-        # List of allowed peers.
         {
           name = "YPC2-NIXOS2";
-          # Feel free to give a meaningful name
-          # Public key of the peer (not a file path).
           publicKey = "fwzpIPRi/OMJaMI7JKHSnGGAozZTz72GnJbEXyA3VzY=";
-          # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
           allowedIPs = [ "10.100.0.2/32" ];
         }
         {
           name = "YPh4";
-          # Feel free to give a meaningful name
-          # Public key of the peer (not a file path).
           publicKey = "D9j0GeZLfbb3HyO+9pbyVrMepZrOsq/sjy583vqx0A4=";
-          # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
           allowedIPs = [ "10.100.0.3/32" ];
         }
         {
           name = "YPC2-WINDOWS";
-          # Feel free to give a meaningful name
-          # Public key of the peer (not a file path).
           publicKey = "r/NKzl+mZqsKq2iuXF2dKGspIxHZn4KlcUCUaBw8cmY=";
-          # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
           allowedIPs = [ "10.100.0.4/32" ];
         }
         {
           name = "YPh4-2";
-          # Feel free to give a meaningful name
-          # Public key of the peer (not a file path).
           publicKey = "+aLaUVfJnOHseh/syjyhMAqZt0XNHXVawRAdcHp4kUg=";
-          # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
           allowedIPs = [ "10.100.0.5/32" ];
         }
         {
           name = "YPh4-3";
-          # Feel free to give a meaningful name
-          # Public key of the peer (not a file path).
           publicKey = "BXNqsNUqJ4z/V2+Rk6Mc+UYDZ8ZShrC0UEkHhp+jPk8=";
-          # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
           allowedIPs = [ "10.100.0.6/32" ];
         }
       ];
