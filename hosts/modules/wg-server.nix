@@ -63,9 +63,14 @@
           allowedIPs = [ "10.100.0.5/32" ];
         }
         {
-          name = "YPh4-3";
+          name = "MPhone";
           publicKey = "BXNqsNUqJ4z/V2+Rk6Mc+UYDZ8ZShrC0UEkHhp+jPk8=";
           allowedIPs = [ "10.100.0.6/32" ];
+        }
+        {
+          name = "FPhone";
+          publicKey = "zgz4qvDwJf2zdc+i7LUYc/shrMzli3dD2yGjm0/zFxw=";
+          allowedIPs = [ "10.100.0.7/32" ];
         }
       ];
     };
