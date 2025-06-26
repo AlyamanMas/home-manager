@@ -1,9 +1,10 @@
-# TODO: add tray
 # TODO: add bluetooth
 # TODO (maybe?): add media
-# TODO (maybe?): add netowrk traffic module
 # TODO (maybe?): switch all right icons to automatically opening drawers
 # TODO: prayer time module
+# TODO: add notification do not disturb mode toggler/notification manager
+# TODO: add clipboard manager
+# TODO: fmt all numbers
 {
   config,
   pkgs,
@@ -22,6 +23,8 @@ let
   iconNameToMaterialSymbolsSpan =
     icon: ''<span font-family="Material Symbols Outlined 28pt" font-size="16pt">'' + icon + "</span>";
   iconNamesListToMaterialSymbolsSpans = list: builtins.map iconNameToMaterialSymbolsSpan list;
+  spanRaise = text: "<span rise=\"6pt\">" + text + "</span>";
+  spanRaiseBold = text: "<b>" + spanRaise text + "</b>";
 in
 {
   programs.waybar = {
@@ -76,16 +79,19 @@ in
         "hyprland/window"
       ];
       modules-right = [
+        "tray"
+        "network#bandwidth"
+        "disk"
         "cpu"
         "memory"
+        "wireplumber"
         "custom/wg"
         "network"
         "clock"
       ];
 
       network = {
-        format = "{icon}";
-        format-alt = "{icon}  <span rise=\"6pt\">{essid}</span>";
+        format = "{icon} " + spanRaiseBold "{essid}";
         format-disconnected = iconNameToMaterialSymbolsSpan "signal_wifi_off";
         format-icons = iconNamesListToMaterialSymbolsSpans [
           "network_wifi_1_bar"
@@ -101,11 +107,23 @@ in
         interval = 1;
       };
 
+      "network#bandwidth" = {
+        format = iconNameToMaterialSymbolsSpan "swap_vert" + spanRaiseBold " {bandwidthTotalBytes}";
+        format-disconnected = iconNameToMaterialSymbolsSpan "mobile_data_off" + " {bandwidthTotalBytes}";
+        tooltip = false;
+        interval = 1;
+      };
+
       "custom/wg" = {
         exec = yvpsh-wg-get-state;
         format = iconNameToMaterialSymbolsSpan "{}";
         tooltip = false;
         interval = 2;
+      };
+
+      disk = {
+        format = iconNameToMaterialSymbolsSpan "storage" + spanRaiseBold " {specific_free:0.1f}GiB";
+        unit = "GiB";
       };
 
       cpu = {
@@ -134,6 +152,15 @@ in
               palette.peach
               palette.red
             ];
+      };
+
+      wireplumber = {
+        format = "{icon} " + spanRaiseBold "{volume}%";
+        format-muted = iconNameToMaterialSymbolsSpan "volume_off";
+        format-icons = iconNamesListToMaterialSymbolsSpans [
+          "volume_down"
+          "volume_up"
+        ];
       };
 
       clock = {
