@@ -56,6 +56,8 @@
     ))
     zathura
     zellij
+    postman
+    obs-studio
     rofi-wayland-unwrapped
   ];
 
