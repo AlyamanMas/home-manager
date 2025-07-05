@@ -56,6 +56,7 @@
     ))
     zathura
     zellij
+    rofi-wayland-unwrapped
   ];
 
   programs = {
