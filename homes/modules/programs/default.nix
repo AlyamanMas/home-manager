@@ -71,6 +71,7 @@
         uv
       ]
     ))
+    brightnessctl
   ];
 
   programs = {
