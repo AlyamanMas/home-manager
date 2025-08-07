@@ -41,6 +41,7 @@
     neovim
     killall
     cachix
+    nethogs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
