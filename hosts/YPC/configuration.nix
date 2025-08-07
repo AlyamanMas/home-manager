@@ -51,6 +51,8 @@
     enableSSHSupport = true;
   };
 
+  programs.firejail.enable = true;
+
   services = {
     printing.enable = true;
     openssh.enable = true;
