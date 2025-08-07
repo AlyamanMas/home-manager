@@ -39,7 +39,6 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.unite
-    gnomeExtensions.xazantimes
     gnomeExtensions.impatience
     gnomeExtensions.paperwm
     gnomeExtensions.panel-corners

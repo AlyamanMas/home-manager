@@ -12,11 +12,7 @@
     roboto
     corefonts
     vistafonts
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-        "Iosevka"
-      ];
-    })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka
   ];
 }
