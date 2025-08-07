@@ -28,6 +28,7 @@
     ../modules/network-manager.nix
     ../modules/main-user.nix
     ../modules/jupyter-docker.nix
+    ../modules/xbox.nix
   ];
 
   networking = {
