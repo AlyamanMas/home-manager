@@ -17,7 +17,7 @@
     # ../modules/kde.nix
     ../modules/gnome.nix
     ../modules/cachix
-    ../modules/webui.nix
+    # ../modules/webui.nix
     ../modules/hyprland.nix
     ../modules/fonts.nix
     ../modules/nix.nix
