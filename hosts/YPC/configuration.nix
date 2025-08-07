@@ -23,7 +23,7 @@
     ../modules/nix.nix
     ../modules/sound.nix
     ../modules/local-locale.nix
-    ../modules/docker.nix
+    # ../modules/docker.nix
     ../modules/fish.nix
     ../modules/network-manager.nix
     ../modules/main-user.nix
