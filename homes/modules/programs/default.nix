@@ -59,6 +59,7 @@
     postman
     obs-studio
     rofi-wayland-unwrapped
+    openai-whisper
     (zed-editor.fhsWithPackages (
       ps: with ps; [
         typstyle
