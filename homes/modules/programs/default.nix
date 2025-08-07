@@ -59,6 +59,17 @@
     postman
     obs-studio
     rofi-wayland-unwrapped
+    (zed-editor.fhsWithPackages (
+      ps: with ps; [
+        typstyle
+        tinymist
+        nil
+        ruff
+        python3
+        pyright
+        uv
+      ]
+    ))
   ];
 
   programs = {
