@@ -29,6 +29,7 @@
     ../modules/main-user.nix
     ../modules/jupyter-docker.nix
     ../modules/xbox.nix
+    ../modules/ollama.nix
   ];
 
   networking = {
