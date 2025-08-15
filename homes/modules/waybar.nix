@@ -93,6 +93,7 @@ in
       network = {
         format = "{icon} " + spanRaiseBold "{essid}";
         format-disconnected = iconNameToMaterialSymbolsSpan "signal_wifi_off";
+        format-ethernet = iconNameToMaterialSymbolsSpan "lan";
         format-icons = iconNamesListToMaterialSymbolsSpans [
           "network_wifi_1_bar"
           "network_wifi_2_bar"
