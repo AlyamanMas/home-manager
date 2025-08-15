@@ -109,7 +109,7 @@ in
 
       "network#bandwidth" = {
         format = iconNameToMaterialSymbolsSpan "swap_vert" + spanRaiseBold " {bandwidthTotalBytes}";
-        format-disconnected = iconNameToMaterialSymbolsSpan "mobile_data_off" + " {bandwidthTotalBytes}";
+        format-disconnected = iconNameToMaterialSymbolsSpan "mobiledata_off";
         tooltip = false;
         interval = 1;
       };
