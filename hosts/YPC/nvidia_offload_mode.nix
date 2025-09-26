@@ -15,9 +15,18 @@ let
   '';
 in
 {
-  services.xserver.videoDrivers = [ "nvidia" ];
+  # For offloading, `modesetting` is needed additionally,
+  # otherwise the X-server will be running permanently on nvidia,
+  # thus keeping the GPU always on (see `nvidia-smi`).
+  services.xserver.videoDrivers = [
+    # "modesetting" # example for Intel iGPU; use "amdgpu" here instead if your iGPU is AMD
+    "nvidia"
+  ];
   hardware.nvidia.prime = {
-    offload.enable = true;
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
 
     # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
     intelBusId = "PCI:0:2:0";
