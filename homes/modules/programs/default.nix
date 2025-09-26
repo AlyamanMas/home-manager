@@ -72,6 +72,9 @@
       ]
     ))
     brightnessctl
+    iptables
+    kdePackages.okular
+    lazygit
   ];
 
   programs = {
