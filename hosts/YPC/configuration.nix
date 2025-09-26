@@ -30,6 +30,7 @@
     # ../modules/jupyter-docker.nix
     ../modules/xbox.nix
     ../modules/ollama.nix
+    # ../modules/waydroid.nix
   ];
 
   networking = {
