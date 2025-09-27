@@ -6,6 +6,11 @@
   ...
 }@attrs:
 {
+
+  imports = [
+    ./nushell.nix
+  ];
+
   home.packages = with pkgs; [
     wget
     keepassxc
@@ -122,6 +127,7 @@
     starship = {
       enable = true;
       enableFishIntegration = true;
+      enableNushellIntegration = false;
     };
 
     zoxide = {

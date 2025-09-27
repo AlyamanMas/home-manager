@@ -39,6 +39,22 @@
         "type": "github"
       }
     },
+    "git-aliases.nu": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745759023,
+        "narHash": "sha256-4BegizVWe6JxPMZrecIcr+2oQJbfNvm/CpEyuRM9W9w=",
+        "owner": "KamilKleina",
+        "repo": "git-aliases.nu",
+        "rev": "c488a5e928facf781d5c3c35dd10c7a92c8a5f8f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KamilKleina",
+        "repo": "git-aliases.nu",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -226,6 +242,7 @@
     },
     "root": {
       "inputs": {
+        "git-aliases.nu": "git-aliases.nu",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
