@@ -9,6 +9,7 @@
 
   imports = [
     ./nushell.nix
+    ./foot.nix
   ];
 
   home.packages = with pkgs; [
@@ -102,8 +103,6 @@
     gh = {
       enable = true;
     };
-
-    foot = import ./foot.nix;
 
     tealdeer = {
       enable = true;
