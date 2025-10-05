@@ -81,6 +81,7 @@
     iptables
     kdePackages.okular
     lazygit
+    obsidian
   ];
 
   programs = {
