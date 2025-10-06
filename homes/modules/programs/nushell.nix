@@ -29,6 +29,10 @@ in
       # $env.TRANSIENT_PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT
       # $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = $env.PROMPT_MULTILINE_INDICATOR
       overlay use ${inputs."git-aliases.nu"}/git-aliases.nu
+      $env.config.hooks.command_not_found = {
+        |command_name|
+        print (command-not-found $command_name | str trim)
+      }
     '';
     settings = {
       completions.algorithm = "fuzzy";
