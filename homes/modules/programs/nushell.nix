@@ -30,10 +30,20 @@ in
       # $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = $env.PROMPT_MULTILINE_INDICATOR
       overlay use ${inputs."git-aliases.nu"}/git-aliases.nu
     '';
+    settings = {
+      completions.algorithm = "fuzzy";
+      show_banner = false;
+    };
   };
+  programs.nix-your-shell = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+  home.shell.enableNushellIntegration = true;
   programs.oh-my-posh = {
     enable = true;
     enableNushellIntegration = true;
+    enableFishIntegration = false;
     settings = {
       "$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json";
       transient_prompt = {
