@@ -4,7 +4,7 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";

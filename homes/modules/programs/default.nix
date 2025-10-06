@@ -64,7 +64,7 @@
     zellij
     postman
     obs-studio
-    rofi-wayland-unwrapped
+    rofi-unwrapped
     openai-whisper
     (zed-editor.fhsWithPackages (
       ps: with ps; [
