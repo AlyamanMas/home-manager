@@ -39,6 +39,11 @@ in
     enable = true;
     enableNushellIntegration = true;
   };
+  programs.carapace = {
+    enable = true;
+    enableNushellIntegration = true;
+    enableFishIntegration = false;
+  };
   home.shell.enableNushellIntegration = true;
   programs.oh-my-posh = {
     enable = true;
