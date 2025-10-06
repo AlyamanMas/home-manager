@@ -82,7 +82,11 @@ in
               background = segmentBg;
               foreground = segmentFg;
               style = "plain";
-              template = "<${segmentSeparator}> </>{{ .HEAD }} ";
+              template = "<${segmentSeparator}> </>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}";
+              properties = {
+                fetch_status = true;
+                fetch_push_status = true;
+              };
               type = "git";
             }
             {
