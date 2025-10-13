@@ -75,6 +75,8 @@
         python3
         pyright
         uv
+        go
+        gopls
       ]
     ))
     brightnessctl
