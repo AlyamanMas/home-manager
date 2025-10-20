@@ -85,6 +85,9 @@
     kdePackages.okular
     lazygit
     obsidian
+    uv
+    ruff
+    python3
   ];
 
   programs = {
