@@ -77,6 +77,7 @@
         uv
         go
         gopls
+        package-version-server
       ]
     ))
     brightnessctl
