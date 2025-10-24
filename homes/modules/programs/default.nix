@@ -88,6 +88,7 @@
     uv
     ruff
     python3
+    playerctl
   ];
 
   programs = {
