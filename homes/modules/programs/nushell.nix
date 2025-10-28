@@ -1,5 +1,6 @@
 {
   inputs,
+  config,
   ...
 }:
 let
@@ -24,7 +25,7 @@ in
       nrf = ''
         nix repl --expr "builtins.getFlake \"$PWD\""
       '';
-      res = "sudo nixos-rebuild switch";
+      res = "sudo nixos-rebuild --flake /home/alyaman/.config/home-manager/ switch";
     };
     extraConfig = ''
       # Fix transient prompt removing oh-my-posh prompt after entering a command
