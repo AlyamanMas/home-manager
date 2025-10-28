@@ -23,9 +23,9 @@ in
       S = "sudo systemctl";
       ndv = "nix develop --command fish";
       nrf = ''
-        nix repl --expr "builtins.getFlake \"$PWD\""
+        nix repl --expr $'builtins.getFlake "($env.PWD)"'
       '';
-      res = "sudo nixos-rebuild --flake /home/alyaman/.config/home-manager/ switch";
+      res = "sudo nixos-rebuild --flake ${config.home.homeDirectory}/.config/home-manager/ switch";
     };
     extraConfig = ''
       # Fix transient prompt removing oh-my-posh prompt after entering a command
