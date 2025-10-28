@@ -12,6 +12,7 @@
     ../modules/hypr
     ../modules/waybar.nix
     ../modules/mako.nix
+    ../modules/niri
   ];
 
   home = {

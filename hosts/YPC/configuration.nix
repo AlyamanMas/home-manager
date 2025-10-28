@@ -31,6 +31,7 @@
     ../modules/xbox.nix
     ../modules/ollama.nix
     # ../modules/waydroid.nix
+    ../modules/niri.nix
   ];
 
   networking = {
