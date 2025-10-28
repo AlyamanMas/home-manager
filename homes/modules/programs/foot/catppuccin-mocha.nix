@@ -1,5 +1,5 @@
 {
-  alpha = 0.8;
+  alpha = 1.0;
   foreground = "cdd6f4";
   background = "1e1e2e";
 
