@@ -34,6 +34,8 @@
     ../modules/niri.nix
   ];
 
+  services.displayManager.defaultSession = "niri";
+
   networking = {
     hostName = "YPC2-NIXOS2";
     firewall.enable = false;
