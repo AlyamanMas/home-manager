@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   programs.niri = {
@@ -7,5 +10,6 @@
 
   environment.systemPackages = with pkgs; [
     fuzzel
+    xwayland-run
   ];
 }
