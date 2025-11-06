@@ -6,12 +6,9 @@
 # TODO: add clipboard manager
 # TODO: fmt all numbers
 {
-  config,
   pkgs,
-  inputs,
-  lib,
   ...
-}@attrs:
+}:
 
 let
   palette = (import ../../common/themes/catppuccin.nix).currentPalette;
@@ -80,6 +77,7 @@ in
       ];
       modules-right = [
         "tray"
+        "niri/language"
         "network#bandwidth"
         "disk"
         "cpu"
@@ -186,6 +184,12 @@ in
           "11" = "dictionary";
         };
         all-outputs = true;
+      };
+
+      "niri/language" = {
+        "format" = iconNameToMaterialSymbolsSpan "language_japanese_kana" + spanRaiseBold " {long}";
+        "format-us" = "English";
+        "format-ara" = "Arabic";
       };
     }; # end settings.mainBar
   };
