@@ -89,6 +89,8 @@
     ruff
     python3
     playerctl
+    android-studio
+    jdk17_headless
   ];
 
   programs = {
