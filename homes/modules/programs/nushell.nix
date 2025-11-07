@@ -32,6 +32,8 @@ in
       # $env.TRANSIENT_PROMPT_COMMAND = $env.PROMPT_COMMAND
       # $env.TRANSIENT_PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT
       # $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = $env.PROMPT_MULTILINE_INDICATOR
+      $env.config.history.file_format = "sqlite"
+      $env.config.history.isolation = true
       overlay use ${inputs."git-aliases.nu"}/git-aliases.nu
       $env.config.hooks.command_not_found = {
         |command_name|
