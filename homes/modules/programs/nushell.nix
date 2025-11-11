@@ -13,7 +13,7 @@ in
   programs.nushell = {
     enable = true;
     environmentVariables = {
-      EDITOR = "nvim";
+      EDITOR = "zeditor -wn";
     };
     envFile.text = ''
       $env.PATH ++= [ '~/.npm-global/bin' ]
@@ -26,6 +26,8 @@ in
         nix repl --expr $'builtins.getFlake "($env.PWD)"'
       '';
       res = "sudo nixos-rebuild --flake ${config.home.homeDirectory}/.config/home-manager/ switch";
+      zed = "zeditor";
+      zedn = "zeditor -wn";
     };
     extraConfig = ''
       # Fix transient prompt removing oh-my-posh prompt after entering a command
