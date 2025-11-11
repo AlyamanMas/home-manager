@@ -10,6 +10,7 @@
   imports = [
     ./nushell.nix
     ./foot.nix
+    ./git.nix
   ];
 
   home.packages = with pkgs; [
@@ -95,24 +96,6 @@
 
   programs = {
     home-manager.enable = true;
-
-    git = {
-      enable = true;
-      userEmail = "alyaman.maasarani@gmail.com";
-      userName = "Alyaman Massarani";
-      extraConfig = {
-        safe = {
-          directory = "/etc/nixos";
-        };
-      };
-      diff-so-fancy = {
-        enable = true;
-      };
-    };
-
-    gh = {
-      enable = true;
-    };
 
     tealdeer = {
       enable = true;
