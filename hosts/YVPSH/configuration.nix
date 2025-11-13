@@ -20,9 +20,10 @@
     # ../modules/podman.nix
     # ../modules/webui-docker.nix
     # ../modules/webui.nix
-    ../modules/searxng.nix
+    # ../modules/searxng.nix
     ../modules/gitea.nix
     ../modules/wg-server.nix
+    ../modules/matrix.nix
   ];
 
   boot.loader.grub.enable = true;
@@ -55,7 +56,9 @@
   ];
 
   programs.gnupg.agent.enable = true;
-  programs.gnupg.agent.settings = {"pinentry-program" = lib.mkForce "${pkgs.pinentry-curses}/bin/pinentry-curses";};
+  programs.gnupg.agent.settings = {
+    "pinentry-program" = lib.mkForce "${pkgs.pinentry-curses}/bin/pinentry-curses";
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

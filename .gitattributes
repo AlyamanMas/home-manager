@@ -2,3 +2,4 @@ secrets/** filter=git-crypt diff=git-crypt
 hosts/modules/wp-docker.nix filter=git-crypt diff=git-crypt
 hosts/modules/wg-server.nix filter=git-crypt diff=git-crypt
 hosts/YVPSH/reverse-proxy.nix filter=git-crypt diff=git-crypt
+hosts/modules/matrix.nix filter=git-crypt diff=git-crypt
