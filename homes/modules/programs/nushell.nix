@@ -13,7 +13,7 @@ in
   programs.nushell = {
     enable = true;
     environmentVariables = {
-      EDITOR = "zeditor -wn";
+      EDITOR = "nvim";
     };
     envFile.text = ''
       $env.PATH ++= [ '~/.npm-global/bin' ]
