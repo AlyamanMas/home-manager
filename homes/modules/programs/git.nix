@@ -18,6 +18,11 @@
       diff-so-fancy = {
         enable = true;
       };
+      signing = {
+        signByDefault = true;
+        key = "6B2AF6605598965E";
+        format = "openpgp";
+      };
     };
 
     git-credential-oauth = {
