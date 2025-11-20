@@ -17,6 +17,8 @@ let
     tailwindcss-language-server
     svelte-language-server
     typescript-language-server
+    emmet-language-server
+    tinymist
   ];
 in
 {
