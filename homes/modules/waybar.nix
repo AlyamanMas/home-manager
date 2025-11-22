@@ -12,7 +12,7 @@
 
 let
   palette = (import ../../common/themes/catppuccin.nix).currentPalette;
-  yvpsh-wg-get-state = pkgs.writeScript "yvpsh-wg-get-state.sh" ''
+  yvpsh-wg-get-state = pkgs.writeScript "yvpsh-wg-get-state.sh" /* sh */ ''
     #!/usr/bin/env sh
 
     [ `nmcli connection show --active | grep yvpsh-wg | wc -l` -gt 0 ] && echo vpn_key || echo vpn_key_off
@@ -26,7 +26,7 @@ in
 {
   programs.waybar = {
     enable = true;
-    style = ''
+    style = /* css */ ''
       * {
         color: ${palette.text}
       }
@@ -71,6 +71,7 @@ in
       height = 32;
       output = "eDP-1";
       layer = "top";
+      position = "bottom";
       modules-left = [
         "hyprland/workspaces"
         "hyprland/window"
