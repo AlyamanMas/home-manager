@@ -19,6 +19,7 @@ let
     typescript-language-server
     emmet-language-server
     tinymist
+    markdown-oxide
   ];
 in
 {
@@ -66,7 +67,7 @@ in
       calibre
       qbittorrent
       autossh
-      # ghostty
+      ghostty
       colmena
       git-crypt
       devenv
