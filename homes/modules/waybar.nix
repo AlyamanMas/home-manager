@@ -17,9 +17,11 @@ let
 
     [ `nmcli connection show --active | grep yvpsh-wg | wc -l` -gt 0 ] && echo vpn_key || echo vpn_key_off
   '';
+  colorSpan = color: text: ''<span color="${color}">${text}</span>'';
   iconNameToMaterialSymbolsSpan =
-    icon: ''<span font-family="Material Symbols Outlined 28pt" font-size="16pt">'' + icon + "</span>";
+    icon: ''<span font-family="Material Symbols Outlined" font-size="16pt">'' + icon + "</span>";
   iconNamesListToMaterialSymbolsSpans = list: builtins.map iconNameToMaterialSymbolsSpan list;
+  # TODO: this looks weird on YPC3
   spanRaise = text: "<span rise=\"6pt\">" + text + "</span>";
   spanRaiseBold = text: "<b>" + spanRaise text + "</b>";
 in
@@ -86,6 +88,7 @@ in
         "wireplumber"
         "custom/wg"
         "network"
+        "battery"
         "clock"
       ];
 
@@ -161,6 +164,25 @@ in
           "volume_down"
           "volume_up"
         ];
+      };
+
+      battery = {
+        # TODO: Make battery red when low
+        format = "{icon}" + spanRaiseBold "{capacity}%";
+        # TODO: have different charging icons using format-<status>-<state> with multiple states
+        format-charging = colorSpan palette.yellow ("{icon}" + spanRaiseBold "{capacity}%");
+        format-muted = iconNameToMaterialSymbolsSpan "volume_off";
+        format-icons = iconNamesListToMaterialSymbolsSpans [
+          "battery_0_bar"
+          "battery_1_bar"
+          "battery_2_bar"
+          "battery_3_bar"
+          "battery_4_bar"
+          "battery_5_bar"
+          "battery_6_bar"
+          "battery_full"
+        ];
+        interval = "10";
       };
 
       clock = {
