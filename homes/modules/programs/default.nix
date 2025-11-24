@@ -112,6 +112,7 @@ in
       playerctl
       android-studio
       jdk17_headless
+      networkmanagerapplet
     ]
     ++ vimDeps;
 
