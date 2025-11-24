@@ -1,8 +1,8 @@
 {
   pkgs,
+  config,
   ...
 }:
-
 {
   programs = {
     git = {
@@ -20,7 +20,15 @@
       };
       signing = {
         signByDefault = true;
-        key = "6B2AF6605598965E";
+        key =
+          let
+            deviceToGpgKey = {
+              "YPC2" = "6B2AF6605598965E";
+              "YPC3" = "515E428AC916D39C";
+            };
+          in
+          deviceToGpgKey.${config.device.host}
+            or (throw "config.device does not have a key for signing in git.");
         format = "openpgp";
       };
     };
