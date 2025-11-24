@@ -44,6 +44,13 @@
           inherit inputs;
         };
       };
+      nixosConfigurations."YPC3-NIXOS" = nixpkgs-stable.lib.nixosSystem {
+        modules = [ ./hosts/YPC3/configuration.nix ];
+        specialArgs = {
+          nixpkgs-unstable = pkgs;
+          inherit inputs;
+        };
+      };
 
       nixosConfigurations."YVPSH" = nixpkgs.lib.nixosSystem {
         modules = [ ./hosts/YVPSH/configuration.nix ];
@@ -56,6 +63,15 @@
         inherit pkgs;
         modules = [
           ./homes/YPC/home.nix
+        ];
+
+        extraSpecialArgs.inputs = inputs;
+      };
+
+      homeConfigurations."alyaman@YPC3-NIXOS" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./homes/YPC3/home.nix
         ];
 
         extraSpecialArgs.inputs = inputs;

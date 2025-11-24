@@ -13,6 +13,7 @@
     ../modules/waybar.nix
     ../modules/mako.nix
     ../modules/niri
+    ../modules/device.nix
   ];
 
   home = {
