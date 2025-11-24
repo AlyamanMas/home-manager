@@ -7,6 +7,7 @@
 }@attrs:
 let
   vimDeps = with pkgs; [
+    neovim-unwrapped
     stylua
     gcc
     lua-language-server
