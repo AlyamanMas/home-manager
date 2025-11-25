@@ -44,6 +44,7 @@
           inherit inputs;
         };
       };
+
       nixosConfigurations."YPC3-NIXOS" = nixpkgs-stable.lib.nixosSystem {
         modules = [ ./hosts/YPC3/configuration.nix ];
         specialArgs = {
@@ -75,24 +76,6 @@
         ];
 
         extraSpecialArgs.inputs = inputs;
-      };
-
-      colmena = {
-        meta = {
-          nixpkgs = pkgs;
-
-          specialArgs = {
-            nixpkgs-unstable = pkgs;
-          };
-        };
-
-        yvpsh =
-          { name, nodes, ... }:
-          {
-            imports = [
-              ./hosts/YVPSH/configuration.nix
-            ];
-          };
       };
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
