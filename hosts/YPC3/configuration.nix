@@ -9,7 +9,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ./hardware-accelerated-decoding.nix
+    ./hardware-accelerated-decoding.nix
     # ./local-domains.nix
     # ./autossh-tunneling.nix
 
