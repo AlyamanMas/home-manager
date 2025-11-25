@@ -9,6 +9,7 @@
 # TODO: fix icons for systray
 {
   pkgs,
+  config,
   ...
 }:
 
@@ -23,8 +24,7 @@ let
   bandwidth-monitor = pkgs.writeScript "waybar-bandwidth.nu" /* nu */ ''
     #!/usr/bin/env nu
 
-    # TODO: change for YPC2
-    let INTERFACE_NAME = "wlo1"
+    let INTERFACE_NAME = "${if config.device.host == "YPC3" then "wlo1" else "wlp0s20f3"}"
 
 
     def get_interface [] {
