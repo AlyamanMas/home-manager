@@ -1,7 +1,4 @@
 {
-  pkgs,
-  lib,
-  inputs,
   ...
 }:
 
@@ -18,8 +15,7 @@ in
     text = ''
       preload = ${wallpaperPath}
 
-      wallpaper = eDP-1, ${wallpaperPath}
-      wallpaper = DP-1, ${wallpaperPath}
+      wallpaper = , ${wallpaperPath}
 
       ipc = off
     '';
