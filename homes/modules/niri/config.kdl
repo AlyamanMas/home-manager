@@ -107,6 +107,11 @@ output "DP-1" {
     position x=0 y=0
 }
 
+cursor {
+    xcursor-theme "Breeze_Light"
+    xcursor-size 24
+}
+
 // Named workspaced
 workspace "Q" { open-on-output "DP-1"; }
 workspace "W" { open-on-output "DP-1"; }
