@@ -28,6 +28,7 @@ in
       res = "sudo nixos-rebuild --flake ${config.home.homeDirectory}/.config/home-manager/ switch";
       zed = "zeditor";
       zedn = "zeditor -wn";
+      lg = "lazygit";
     };
     extraConfig = ''
       # Fix transient prompt removing oh-my-posh prompt after entering a command
