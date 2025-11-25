@@ -66,13 +66,8 @@ input {
     focus-follows-mouse
 }
 
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
-output "eDP-1" {
+// YPC2 eDP-1
+output "AU Optronics 0xED8F Unknown" {
     // Uncomment this line to disable this output.
     // off
 
@@ -107,20 +102,32 @@ output "DP-1" {
     position x=0 y=0
 }
 
+
+// YPC3 eDP-1
+output "Samsung Display Corp. 0x419D Unknown" {
+    position x=0 y=850
+    scale 2.0
+    variable-refresh-rate
+}
+
+output "HDMI-A-1" {
+    position x=1440 y=0
+}
+
 cursor {
     xcursor-theme "Breeze_Light"
     xcursor-size 24
 }
 
 // Named workspaced
-workspace "Q" { open-on-output "DP-1"; }
-workspace "W" { open-on-output "DP-1"; }
-workspace "E" { open-on-output "DP-1"; }
-workspace "R" { open-on-output "DP-1"; }
-workspace "A" { open-on-output "DP-1"; }
-workspace "S" { open-on-output "DP-1"; }
-workspace "D" { open-on-output "DP-1"; }
-workspace "F" { open-on-output "DP-1"; }
+workspace "Q" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "W" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "E" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "R" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "A" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "S" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "D" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "F" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "T" { open-on-output "eDP-1"; }
 workspace "G" { open-on-output "eDP-1"; }
 workspace "1" { open-on-output "eDP-1"; }
