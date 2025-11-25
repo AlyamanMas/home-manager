@@ -30,11 +30,7 @@ in
       zedn = "zeditor -wn";
       lg = "lazygit";
     };
-    extraConfig = ''
-      # Fix transient prompt removing oh-my-posh prompt after entering a command
-      # $env.TRANSIENT_PROMPT_COMMAND = $env.PROMPT_COMMAND
-      # $env.TRANSIENT_PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT
-      # $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = $env.PROMPT_MULTILINE_INDICATOR
+    extraConfig = /* nu */ ''
       $env.config.history.file_format = "sqlite"
       $env.config.history.isolation = true
       overlay use ${inputs."git-aliases.nu"}/git-aliases.nu
