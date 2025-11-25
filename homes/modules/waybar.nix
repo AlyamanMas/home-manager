@@ -5,6 +5,8 @@
 # TODO: add notification do not disturb mode toggler/notification manager
 # TODO: add clipboard manager
 # TODO: fmt all numbers
+# TODO: add power profiles daemon module
+# TODO: fix icons for systray
 {
   pkgs,
   ...
@@ -17,6 +19,52 @@ let
 
     [ `nmcli connection show --active | grep yvpsh-wg | wc -l` -gt 0 ] && echo vpn_key || echo vpn_key_off
   '';
+  # custom bandwidth script; useful since builtin bandwidth monitoring does not pad so the bar keeps shifting
+  bandwidth-monitor = pkgs.writeScript "waybar-bandwidth.nu" /* nu */ ''
+    #!/usr/bin/env nu
+
+    # TODO: change for YPC2
+    let INTERFACE_NAME = "wlo1"
+
+
+    def get_interface [] {
+      sys net | where name == $INTERFACE_NAME | get 0
+    }
+
+    def get_sent [] {
+      get_interface | get sent
+    }
+
+    def get_recv [] {
+      get_interface | get recv
+    }
+
+    def format_data [data] {
+      $data | into int | $in / 1024 / 1024 | into string --decimals 1 | fill --width 4 --alignment right | $in + ' MiB'
+    }
+
+    mut sent_prev = 0B
+    mut recv_prev = 0B
+    mut sent = get_sent
+    mut recv = get_recv
+    mut sent_delta = 0B
+    mut recv_delta = 0B
+
+    loop {
+      sleep 1sec
+      $sent_prev = $sent
+      $recv_prev = $recv
+      $sent = get_sent
+      $recv = get_recv
+      $sent_delta = $sent - $sent_prev
+      $recv_delta = $recv - $recv_prev
+      {
+        text: (format_data ($sent_delta + $recv_delta)),
+        tooltip: $"Data Sent: ($sent_delta)\nData Received: ($recv_delta)"
+      } | to json --raw | print
+    }
+  '';
+
   colorSpan = color: text: ''<span color="${color}">${text}</span>'';
   iconNameToMaterialSymbolsSpan =
     icon: ''<span font-family="Material Symbols Outlined" font-size="16pt">'' + icon + "</span>";
@@ -47,7 +95,7 @@ in
       }
 
       window {
-        background-color: ${palette.mantle};
+        background-color: ${palette.crust};
       }
 
       #workspaces {
@@ -55,7 +103,7 @@ in
       }
 
       #workspaces button {
-        font-family: "Material Symbols Outlined 28pt";
+        font-family: "Material Symbols Outlined";
         font-size: 16pt;
         padding: 0 0.3rem;
       }
@@ -81,7 +129,8 @@ in
       modules-right = [
         "tray"
         "niri/language"
-        "network#bandwidth"
+        # "network#bandwidth"
+        "custom/bandwidth"
         "disk"
         "cpu"
         "memory"
@@ -115,6 +164,14 @@ in
         format-disconnected = iconNameToMaterialSymbolsSpan "mobiledata_off";
         tooltip = false;
         interval = 1;
+      };
+
+      "custom/bandwidth" = {
+        exec = "${bandwidth-monitor}";
+        return-type = "json";
+        format = iconNameToMaterialSymbolsSpan "swap_vert" + spanRaiseBold "{}";
+        format-disconnected = iconNameToMaterialSymbolsSpan "mobiledata_off";
+        tooltip = true;
       };
 
       "custom/wg" = {
