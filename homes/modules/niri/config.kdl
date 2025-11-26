@@ -400,6 +400,8 @@ binds {
 
     XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "+5%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "5%-"; }
+    XF86BrightnessMin     allow-when-locked=true { spawn "toggle-brightness.nu"; }
+    XF86Launch1           allow-when-locked=true { spawn "toggle-brightness.nu"; }
 
     XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
     XF86AudioPause allow-when-locked=true { spawn "playerctl" "play-pause"; }
