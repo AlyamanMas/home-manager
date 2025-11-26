@@ -32,6 +32,7 @@
     ../modules/ollama.nix
     # ../modules/waydroid.nix
     ../modules/niri.nix
+    ../modules/thunderbolt-static-ip.nix
   ];
 
   services.displayManager.defaultSession = "niri";
