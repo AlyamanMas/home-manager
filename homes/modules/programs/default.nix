@@ -21,6 +21,9 @@ let
     emmet-language-server
     tinymist
     markdown-oxide
+    bash-language-server
+    shellcheck
+    shfmt
   ];
 in
 {
