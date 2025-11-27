@@ -25,7 +25,8 @@ in
       nrf = ''
         nix repl --expr $'builtins.getFlake "($env.PWD)"'
       '';
-      res = "sudo nixos-rebuild --flake ${config.home.homeDirectory}/.config/home-manager/ switch";
+      nrs = "sudo nixos-rebuild --flake ~/projects/nix/config/ switch";
+      hms = "home-manager --flake ~/projects/nix/config/ switch";
       zed = "zeditor";
       zedn = "zeditor -wn";
       lg = "lazygit";
