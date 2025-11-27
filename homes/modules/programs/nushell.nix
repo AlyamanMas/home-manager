@@ -15,8 +15,8 @@ in
     environmentVariables = {
       EDITOR = "nvim";
     };
-    envFile.text = ''
-      $env.PATH ++= [ '~/.npm-global/bin' ]
+    envFile.text = /* nu */ ''
+      $env.PATH ++= [ '~/.npm-global/bin' '~/.local/share/npm-global/bin' ]
     '';
     shellAliases = {
       U = "systemctl --user";
