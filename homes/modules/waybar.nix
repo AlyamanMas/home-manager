@@ -128,6 +128,7 @@ let
       # "custom/wg"
       "custom/bandwidth"
       "network"
+      "power-profiles-daemon"
       "battery"
       "clock"
     ];
@@ -205,6 +206,18 @@ let
         "volume_down"
         "volume_up"
       ];
+    };
+
+    power-profiles-daemon = {
+      format = iconNameToMaterialSymbolsSpan "{icon}";
+      tooltip-format = "Power profile= {profile}\nDriver= {driver}";
+      tooltip = true;
+      format-icons = {
+        default = "bolt";
+        performance = "bolt";
+        balanced = "balance";
+        power-saver = "energy_savings_leaf";
+      };
     };
 
     battery = {
