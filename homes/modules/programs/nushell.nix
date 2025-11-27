@@ -19,8 +19,8 @@ in
       $env.PATH ++= [ '~/.npm-global/bin' '~/.local/share/npm-global/bin' ]
     '';
     shellAliases = {
-      U = "systemctl --user";
-      S = "sudo systemctl";
+      u = "systemctl --user";
+      s = "sudo systemctl";
       ndv = "nix develop --command fish";
       nrf = ''
         nix repl --expr $'builtins.getFlake "($env.PWD)"'
