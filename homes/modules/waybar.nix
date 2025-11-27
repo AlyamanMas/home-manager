@@ -121,13 +121,12 @@ let
     modules-right = [
       "tray"
       "niri/language"
-      # "network#bandwidth"
-      "custom/bandwidth"
       "disk"
       "cpu"
       "memory"
       "wireplumber"
       "custom/wg"
+      "custom/bandwidth"
       "network"
       "battery"
       "clock"
@@ -148,13 +147,6 @@ let
         Down:    {bandwidthDownBytes}
         Up:      {bandwidthUpBytes}</tt> '';
       on-click-right = "xdg-terminal nmtui";
-      interval = 1;
-    };
-
-    "network#bandwidth" = {
-      format = iconNameToMaterialSymbolsSpan "swap_vert" + spanRaiseBold " {bandwidthTotalBytes}";
-      format-disconnected = iconNameToMaterialSymbolsSpan "mobiledata_off";
-      tooltip = false;
       interval = 1;
     };
 
@@ -305,6 +297,14 @@ in
 
     #workspaces button.active label {
       color: ${palette.blue};
+    }
+
+    #power-profiles-daemon {
+      padding-right: 0rem;
+    }
+
+    #battery {
+      padding-left: 0rem;
     }
   '';
   xdg.configFile."waybar/config.jsonc".text = builtins.toJSON baseConfiguration;
