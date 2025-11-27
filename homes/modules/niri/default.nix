@@ -1,5 +1,7 @@
 {
   pkgs,
+  config,
+  lib,
   ...
 }:
 let
@@ -15,11 +17,18 @@ let
   '';
 in
 {
-  home.packages = with pkgs; [
-    kdePackages.breeze
-    brightnessctl
-    toggle-brightness
-  ];
+  home.packages =
+    with pkgs;
+    [
+      kdePackages.breeze
+      brightnessctl
+      toggle-brightness
+    ]
+    ++ lib.optionals (config.device.host == "YPC3") [
+      (writeShellScriptBin "switch-refresh-rate-with-power-profiles.sh" (
+        builtins.readFile ./switch-refresh-rate-with-power-profiles.sh
+      ))
+    ];
   xdg.configFile."niri/config.kdl" = {
     source = ./config.kdl;
     force = true;

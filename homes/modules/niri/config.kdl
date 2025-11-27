@@ -291,6 +291,7 @@ layout {
 
 // Command defined in waybar module
 spawn-at-startup "waybar-daemon.nu"
+spawn-at-startup "switch-refresh-rate-with-power-profiles.sh"
 
 spawn-at-startup "hyprpaper" "--config" "/home/alyaman/.config/hypr/hyprpaper.conf"
 
