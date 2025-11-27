@@ -39,7 +39,7 @@ let
     }
 
     def format_data [data] {
-      $data | into int | $in / 1024 / 1024 | into string --decimals 1 | fill --width 4 --alignment right | $in + ' MiB'
+      $data | into int | $in / 1024 / 1024 | into string --decimals 1 | fill --width 4 --alignment right | $in + 'MiB'
     }
 
     mut sent_prev = 0B
