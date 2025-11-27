@@ -125,7 +125,7 @@ let
       "cpu"
       "memory"
       "wireplumber"
-      "custom/wg"
+      # "custom/wg"
       "custom/bandwidth"
       "network"
       "battery"
