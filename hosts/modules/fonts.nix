@@ -11,7 +11,7 @@
     fantasque-sans-mono
     roboto
     corefonts
-    vistafonts
+    vista-fonts
     nerd-fonts.jetbrains-mono
     nerd-fonts.iosevka
     material-symbols

@@ -5,10 +5,7 @@
 }:
 
 {
-  services.xserver = {
-    # Enable the X11 windowing system.
-    enable = true;
-
+  services = {
     # Enable the GNOME Desktop Environment.
     displayManager.gdm.enable = lib.mkDefault true;
     desktopManager.gnome = {
