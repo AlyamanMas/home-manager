@@ -7,16 +7,13 @@
   programs = {
     git = {
       enable = true;
-      userEmail = "alyaman.maasarani@gmail.com";
-      userName = "Alyaman Massarani";
       package = pkgs.gitFull;
-      extraConfig = {
+      settings = {
+        user.email = "alyaman.maasarani@gmail.com";
+        user.name = "Alyaman Massarani";
         credential = {
           helper = [ "${pkgs.gitFull}/bin/git-credential-libsecret" ];
         };
-      };
-      diff-so-fancy = {
-        enable = true;
       };
       signing = {
         signByDefault = true;
@@ -37,6 +34,10 @@
       enable = true;
     };
 
+    diff-so-fancy = {
+      enableGitIntegration = true;
+      enable = true;
+    };
     # gh = {
     #   enable = true;
     # };
