@@ -10,6 +10,6 @@
 
   environment.systemPackages = with pkgs; [
     fuzzel
-    xwayland-run
+    xwayland-satellite
   ];
 }
