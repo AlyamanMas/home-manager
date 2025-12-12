@@ -45,6 +45,7 @@ in
       show_banner = false;
     };
   };
+  programs.command-not-found.enable = true;
   programs.nix-your-shell = {
     enable = true;
     enableNushellIntegration = true;
