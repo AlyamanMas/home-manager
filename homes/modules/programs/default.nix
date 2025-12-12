@@ -25,6 +25,10 @@ let
     shellcheck
     shfmt
   ];
+  open-last-screenshot = pkgs.writeScriptBin "open-last-screenshot.nu" /* nu */ ''
+    #!/usr/bin/env nu
+    ls $"($env.HOME)/Pictures/Screenshots/" | sort-by modified -r | get 0.name | xdg-open $in
+  '';
 in
 {
 
@@ -116,6 +120,7 @@ in
       android-studio
       jdk17_headless
       networkmanagerapplet
+      open-last-screenshot
     ]
     ++ vimDeps;
 

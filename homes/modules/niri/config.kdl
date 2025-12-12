@@ -629,6 +629,7 @@ binds {
     Mod+P { screenshot; }
     Mod+Ctrl+P { screenshot-screen; }
     Mod+Shift+P { screenshot-window; }
+    Mod+Shift+O { spawn "open-last-screenshot.nu"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
