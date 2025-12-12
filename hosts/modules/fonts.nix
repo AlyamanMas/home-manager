@@ -16,5 +16,6 @@
     nerd-fonts.iosevka
     material-symbols
     noto-fonts-cjk-sans
+    noto-fonts
   ];
 }
