@@ -28,7 +28,7 @@
     ../modules/network-manager.nix
     ../modules/main-user.nix
     # ../modules/jupyter-docker.nix
-    # ../modules/xbox.nix
+    ../modules/xbox.nix
     # ../modules/ollama.nix
     # ../modules/waydroid.nix
     ../modules/niri.nix
@@ -56,6 +56,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  programs.steam.enable = true;
 
   # programs.firejail.enable = true;
 
