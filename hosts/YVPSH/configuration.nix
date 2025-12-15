@@ -33,7 +33,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.openssh.settings.GatewayPorts = true;
+  services.openssh.settings.GatewayPorts = "yes";
 
   networking = {
     hostName = "YVPSH";
