@@ -14,7 +14,7 @@
     # ./autossh-tunneling.nix
 
     ../modules/efi-systemd-boot.nix
-    # ../modules/kde.nix
+    ../modules/kde.nix
     ../modules/gnome.nix
     # ../modules/cachix
     # ../modules/webui.nix
