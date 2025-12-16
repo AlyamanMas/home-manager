@@ -19,7 +19,7 @@
     ../modules/docker.nix
     # ../modules/podman.nix
     # ../modules/webui-docker.nix
-    # ../modules/webui.nix
+    ../modules/webui.nix
     # ../modules/searxng.nix
     ../modules/gitea.nix
     ../modules/wg-server.nix
