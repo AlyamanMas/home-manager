@@ -121,6 +121,7 @@ in
       jdk17_headless
       networkmanagerapplet
       open-last-screenshot
+      fzf
     ]
     ++ vimDeps;
 
@@ -156,6 +157,7 @@ in
       enable = true;
       enableFishIntegration = true;
       enableBashIntegration = true;
+      enableNushellIntegration = true;
       options = [
         "--cmd cd"
       ];
