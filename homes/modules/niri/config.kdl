@@ -114,6 +114,13 @@ output "HDMI-A-1" {
     position x=1440 y=0
 }
 
+// Initiated on YPC3 with `sudo modprobe vkms`
+output "Virtual-1" {
+    position x=3360 y=200
+    mode "1920x1080@60.000"
+    scale 1.5
+}
+
 cursor {
     xcursor-theme "Breeze_Light"
     xcursor-size 24
@@ -128,12 +135,13 @@ workspace "A" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "S" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "D" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "F" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
-workspace "T" { open-on-output "eDP-1"; }
-workspace "G" { open-on-output "eDP-1"; }
 workspace "1" { open-on-output "eDP-1"; }
 workspace "2" { open-on-output "eDP-1"; }
 workspace "3" { open-on-output "eDP-1"; }
 workspace "4" { open-on-output "eDP-1"; }
+workspace "5" { open-on-output "Virtual-1"; }
+workspace "T" { open-on-output "Virtual-1"; }
+workspace "G" { open-on-output "Virtual-1"; }
 
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
@@ -547,6 +555,7 @@ binds {
     Mod+2 { focus-workspace "2"; }
     Mod+3 { focus-workspace "3"; }
     Mod+4 { focus-workspace "4"; }
+    Mod+5 { focus-workspace "5"; }
     Mod+Shift+Q { move-column-to-workspace "Q";}
     Mod+Shift+W { move-column-to-workspace "W";}
     Mod+Shift+E { move-column-to-workspace "E";}
@@ -561,6 +570,7 @@ binds {
     Mod+Shift+2 { move-column-to-workspace "2"; }
     Mod+Shift+3 { move-column-to-workspace "3"; }
     Mod+Shift+4 { move-column-to-workspace "4"; }
+    Mod+Shift+5 { move-column-to-workspace "5"; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }

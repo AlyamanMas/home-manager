@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 
@@ -18,6 +19,10 @@
   home = {
     username = "alyaman";
     homeDirectory = "/home/alyaman";
+
+    packages = with pkgs; [
+      sunshine
+    ];
 
     # NOTE: do not change
     stateVersion = "24.05";
