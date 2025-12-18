@@ -33,6 +33,7 @@
     # ../modules/waydroid.nix
     ../modules/niri.nix
     ../modules/thunderbolt-static-ip.nix
+    ../modules/avahi.nix
   ];
 
   services.displayManager.defaultSession = "niri";
