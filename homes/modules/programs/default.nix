@@ -91,7 +91,6 @@ in
       zathura
       zellij
       postman
-      obs-studio
       rofi-unwrapped
       openai-whisper
       (zed-editor.fhsWithPackages (
@@ -167,6 +166,11 @@ in
   # services.syncthing = {
   #   enable = true;
   # };
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [ distroav ];
+  };
 
   programs.direnv = {
     enable = true;
