@@ -21,7 +21,7 @@
     homeDirectory = "/home/alyaman";
 
     packages = with pkgs; [
-      moonlight
+      moonlight-qt
     ];
 
     # This value determines the Home Manager release that your configuration is
