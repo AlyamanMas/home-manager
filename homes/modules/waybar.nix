@@ -1,3 +1,4 @@
+# TODO: make into user systemd service so nix restarts it when this file is modified
 # TODO: add bluetooth
 # TODO (maybe?): add media
 # TODO (maybe?): switch all right icons to automatically opening drawers
@@ -325,7 +326,14 @@ in
     baseConfiguration
     // {
       # NOTE: the USB hub's HDMI gets labelled as DP-2; perhaps somehow make this more generic in the future
-      output = if config.device.host == "YPC3" then "DP-2" else "DP-1";
+      output =
+        if config.device.host == "YPC3" then
+          [
+            "HDMI-A-1"
+            "DP-2"
+          ]
+        else
+          "DP-1";
       position = "top";
     }
   );
