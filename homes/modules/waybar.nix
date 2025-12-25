@@ -330,6 +330,7 @@ in
         if config.device.host == "YPC3" then
           [
             "HDMI-A-1"
+            "DP-1"
             "DP-2"
           ]
         else
