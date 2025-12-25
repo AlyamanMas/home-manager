@@ -131,7 +131,20 @@ cursor {
 }
 
 // Named workspaced
-workspace "Q" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "Q" {
+    open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836";
+    layout {
+        struts {
+            left -8
+            right -8
+            bottom -8
+            top -8
+        }
+        border {
+            off
+        }
+    }
+}
 workspace "W" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "E" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "R" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
@@ -139,7 +152,20 @@ workspace "A" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "S" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "D" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
 workspace "F" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
-workspace "1" { open-on-output "eDP-1"; }
+workspace "1" {
+    open-on-output "eDP-1";
+    layout {
+        struts {
+            left -8
+            right -8
+            bottom -8
+            top -8
+        }
+        border {
+            off
+        }
+    }
+}
 workspace "2" { open-on-output "eDP-1"; }
 workspace "3" { open-on-output "eDP-1"; }
 workspace "4" { open-on-output "eDP-1"; }
@@ -289,10 +315,10 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 4
+        left 4
+        right 4
+        top -8
+        bottom -8
     }
 }
 
