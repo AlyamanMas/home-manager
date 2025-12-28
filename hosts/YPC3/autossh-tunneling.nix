@@ -1,6 +1,5 @@
 # TODO: move into module as long as it is shared with YPC2
 {
-  config,
   pkgs,
   lib,
   ...

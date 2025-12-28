@@ -1,8 +1,6 @@
 {
-  config,
   pkgs,
   inputs,
-  lib,
   ...
 }@attrs:
 let
@@ -144,6 +142,7 @@ in
       enable = true;
     };
 
+    # TODO: fix this into normal nix module
     fish = import ./fish.nix attrs;
 
     starship = {

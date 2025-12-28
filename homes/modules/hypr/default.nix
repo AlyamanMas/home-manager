@@ -1,6 +1,4 @@
-{
-  ...
-}:
+_:
 
 let
   wallpaperPath = ../../res/wallpapers/cat_pacman.png;

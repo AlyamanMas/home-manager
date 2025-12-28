@@ -1,6 +1,4 @@
-{
-  ...
-}:
+_:
 
 let
   palette = (import ../../common/themes/catppuccin.nix).currentPalette;
