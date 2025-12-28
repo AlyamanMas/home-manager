@@ -75,7 +75,7 @@ let
 
 
     def monitor_connected [] {
-      niri msg outputs | find "LG" | length | ($in == 1)
+      niri msg outputs | find "LG" | length | ($in >= 1)
     }
 
     def spawn_waybar [monitor_connected] {
