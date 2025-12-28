@@ -1,8 +1,6 @@
 {
-  config,
   pkgs,
-  lib,
-  nixpkgs-unstable,
+  pkgsUnstable,
   ...
 }:
 
@@ -72,8 +70,9 @@
   powerManagement.enable = true;
 
   specialisation = {
-    # intel_only.configuration.imports = [ ./nvidia_offload_mode.nix ];
-    # zen_kernel.configuration = { imports = [ ./zen_kernel.nix ]; };
+    newerKernel.configuration = {
+      boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_17;
+    };
   };
 
   # This value determines the NixOS release from which the

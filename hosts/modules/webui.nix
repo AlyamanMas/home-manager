@@ -1,8 +1,6 @@
 {
-  config,
   lib,
-  pkgs,
-  nixpkgs-unstable,
+  pkgsUnstable,
   ...
 }:
 
@@ -10,7 +8,7 @@
   services = {
     open-webui = {
       enable = true;
-      package = nixpkgs-unstable.open-webui;
+      package = pkgsUnstable.open-webui;
       port = lib.mkDefault 1115;
     };
   };

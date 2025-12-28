@@ -1,10 +1,8 @@
 {
-  config,
   lib,
   pkgs,
-  nixpkgs-unstable,
   ...
-}@args:
+}:
 
 {
   imports = [

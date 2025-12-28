@@ -1,8 +1,6 @@
 {
-  lib,
   config,
-  pkgs,
-  nixpkgs-unstable,
+  pkgsUnstable,
   ...
 }:
 
@@ -12,7 +10,7 @@ in
 {
   services.searx = {
     enable = true;
-    package = nixpkgs-unstable.searxng;
+    package = pkgsUnstable.searxng;
     redisCreateLocally = true;
     environmentFile = "/home/${username}/.searxng.env";
 

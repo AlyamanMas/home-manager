@@ -40,7 +40,7 @@
       nixosConfigurations."YPC2-NIXOS2" = nixpkgs-stable.lib.nixosSystem {
         modules = [ ./hosts/YPC/configuration.nix ];
         specialArgs = {
-          nixpkgs-unstable = pkgs;
+          pkgsUnstable = pkgs;
           inherit inputs;
         };
       };
@@ -48,7 +48,7 @@
       nixosConfigurations."YPC3-NIXOS" = nixpkgs-stable.lib.nixosSystem {
         modules = [ ./hosts/YPC3/configuration.nix ];
         specialArgs = {
-          nixpkgs-unstable = pkgs;
+          pkgsUnstable = pkgs;
           inherit inputs;
         };
       };
@@ -56,7 +56,7 @@
       nixosConfigurations."YVPSH" = nixpkgs.lib.nixosSystem {
         modules = [ ./hosts/YVPSH/configuration.nix ];
         specialArgs = {
-          nixpkgs-unstable = pkgs;
+          pkgsUnstable = pkgs;
         };
       };
 
