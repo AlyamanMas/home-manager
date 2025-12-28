@@ -56,9 +56,12 @@
     enableSSHSupport = true;
   };
 
-  programs.steam.enable = true;
-
-  # programs.firejail.enable = true;
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = with pkgsUnstable; [
+      proton-ge-bin
+    ];
+  };
 
   services = {
     printing.enable = true;
