@@ -1,0 +1,15 @@
+output "LG Electronics LG ULTRAGEAR 0x00003BF0" {
+    position x=0 y=0
+}
+
+output "LG Electronics LG ULTRAGEAR 408NTJJ07836" {
+    position x=1920 y=0
+}
+
+// YPC3 eDP-1
+output "Samsung Display Corp. 0x419D Unknown" {
+    position x=3840 y=200
+    scale 2.0
+    variable-refresh-rate
+}
+

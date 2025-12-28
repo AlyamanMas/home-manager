@@ -29,8 +29,26 @@ in
         builtins.readFile ./switch-refresh-rate-with-power-profiles.sh
       ))
     ];
-  xdg.configFile."niri/config.kdl" = {
-    source = ./config.kdl;
-    force = true;
+  xdg.configFile = {
+    "niri/config.kdl" = {
+      source = ./config.kdl;
+      force = true;
+    };
+    "niri/outputs.kdl" =
+      if config.device.host == "YPC3" then
+        {
+          source = ./outputs-ypc3.kdl;
+          force = true;
+        }
+      else if config.host.device == "YPC2" then
+        {
+          source = ./outputs-ypc2.kdl;
+          force = true;
+        }
+      else
+        lib.warn "Device '${config.host.device}' is neither YPC2 nor YPC3. Using empty outputs.kdl" {
+          text = "";
+          force = true;
+        };
   };
 }
