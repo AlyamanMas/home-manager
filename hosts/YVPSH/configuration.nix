@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }:
 
@@ -8,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ./reverse-proxy.nix
+    ./secrets.nix
 
     ../modules/main-user.nix
     ../modules/fish.nix
@@ -44,7 +46,10 @@
     # TODO: enable
     firewall.enable = false;
     hosts = {
-      "127.0.0.1" = [ "tlsymposium.com" ];
+      "127.0.0.1" = [
+        "tlsymposium.com"
+        config.secrets.domain
+      ];
     };
   };
 
