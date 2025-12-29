@@ -4,4 +4,3 @@ hosts/modules/wg-server.nix filter=git-crypt diff=git-crypt
 hosts/YVPSH/reverse-proxy.nix filter=git-crypt diff=git-crypt
 hosts/YVPSH/secrets.nix filter=git-crypt diff=git-crypt
 hosts/modules/matrix.nix filter=git-crypt diff=git-crypt
-hosts/modules/forgejo.nix filter=git-crypt diff=git-crypt

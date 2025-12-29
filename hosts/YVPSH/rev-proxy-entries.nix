@@ -5,7 +5,6 @@
     webui = config.services.open-webui.port;
     vault = config.services.vaultwarden.config.ROCKET_PORT;
     vw = config.services.vaultwarden.config.ROCKET_PORT; # DEPRECATED. prefer `vault` above
-    forge = "unix:${toString config.services.forgejo.settings.server.HTTP_ADDR}";
     timer = "/www/aucsymposium/timer/";
   };
 
