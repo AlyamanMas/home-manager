@@ -28,4 +28,6 @@
       ROCKET_LOG = "critical";
     };
   };
+
+  custom.reverseProxy.mappings.vault = config.services.vaultwarden.config.ROCKET_PORT;
 }

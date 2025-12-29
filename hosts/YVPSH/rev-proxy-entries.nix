@@ -3,8 +3,6 @@
 {
   custom.reverseProxy.mappings = {
     webui = config.services.open-webui.port;
-    vault = config.services.vaultwarden.config.ROCKET_PORT;
-    vw = config.services.vaultwarden.config.ROCKET_PORT; # DEPRECATED. prefer `vault` above
     timer = "/www/aucsymposium/timer/";
   };
 
