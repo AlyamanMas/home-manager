@@ -48,10 +48,7 @@
     # TODO: enable
     firewall.enable = false;
     hosts = {
-      "127.0.0.1" = [
-        "tlsymposium.com"
-        config.secrets.domain
-      ];
+      "127.0.0.1" = config.secrets.domains;
     };
   };
 
