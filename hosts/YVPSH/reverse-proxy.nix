@@ -49,8 +49,8 @@ in
         let
           subdomainToFullDomain = domain: subdomain: subdomain + "." + domain;
           mappingAddrToNginxVirtHost = mappingAddr: {
-            sslCertificate = "/etc/ssl/certs/cf.crt";
-            sslCertificateKey = "/etc/ssl/private/cf.key";
+            # sslCertificate = "/etc/ssl/certs/cf.crt";
+            # sslCertificateKey = "/etc/ssl/private/cf.key";
             forceSSL = true;
             enableACME = true;
             locations."/" = {
