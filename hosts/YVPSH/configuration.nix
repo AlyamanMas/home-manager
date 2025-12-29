@@ -10,7 +10,6 @@
     ./hardware-configuration.nix
     ./reverse-proxy.nix
     ./rev-proxy-entries.nix
-    ./secrets.nix
 
     ../modules/main-user.nix
     ../modules/fish.nix
@@ -26,6 +25,8 @@
     ../modules/forgejo.nix
     ../modules/wg-server.nix
     ../modules/matrix.nix
+
+    ../../secrets
   ];
 
   boot.loader.grub.enable = true;
