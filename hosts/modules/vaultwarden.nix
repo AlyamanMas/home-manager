@@ -1,10 +1,10 @@
-_:
+{ config, ... }:
 
 {
   services.vaultwarden = {
     enable = true;
     config = {
-      DOMAIN = "https://vw.tlsymposium.com";
+      DOMAIN = "https://vault.${config.secrets.mainDomain}";
       SIGNUPS_ALLOWED = false;
 
       # Vaultwarden currently recommends running behind a reverse proxy
