@@ -30,6 +30,8 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
 
+  custom.reverseProxy.enable = true;
+
   time.timeZone = "Europe/Berlin";
 
   # Enable the OpenSSH daemon.
