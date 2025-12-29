@@ -15,6 +15,14 @@
           root = "/www/aucsymposium/timer/";
         };
       };
+      "${config.secrets.mainDomain}" = {
+        sslCertificate = "/etc/ssl/certs/cf.crt";
+        sslCertificateKey = "/etc/ssl/private/cf.key";
+        forceSSL = true;
+        locations."/" = {
+          root = "/www/aucsymposium/timer/";
+        };
+      };
       "matrix.tlsymposium.com" = {
         sslCertificate = "/etc/ssl/certs/cf.crt";
         sslCertificateKey = "/etc/ssl/private/cf.key";
