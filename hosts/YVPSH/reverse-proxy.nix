@@ -25,7 +25,8 @@ in
         attrsOf (either port (addCheck str (x: hasPrefix "/" x || hasPrefix "unix:/" x)));
       description = ''
         Map a subdomain into either a local port number, a path, or a unix socket.
-        Note that unix socket values must start with unix: (e.g. "unix:/run/forgejo/forgejo.sock"), and paths must start with a "/".'';
+        Note that unix socket values must start with unix: (e.g. "unix:/run/forgejo/forgejo.sock"), and paths must start with a "/".
+      '';
       example = ''
         {
           ow = 1115;
