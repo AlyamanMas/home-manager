@@ -111,9 +111,9 @@ workspace "1" {
 workspace "2" { open-on-output "eDP-1"; }
 workspace "3" { open-on-output "eDP-1"; }
 workspace "4" { open-on-output "eDP-1"; }
-workspace "5" { open-on-output "Virtual-1"; } // TODO: remove ig?
-workspace "T" { open-on-output "Virtual-1"; }
-workspace "G" { open-on-output "Virtual-1"; }
+workspace "5" { open-on-output "LG Electronics LG ULTRAGEAR 0x00003BF0"; }
+workspace "T" { open-on-output "LG Electronics LG ULTRAGEAR 0x00003BF0"; }
+workspace "G" { open-on-output "LG Electronics LG ULTRAGEAR 0x00003BF0"; }
 
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
@@ -634,4 +634,8 @@ binds {
 }
 
 include "outputs.kdl"
+
+// TODO: make this optional when my version of niri supports the upcoming `include optional=true "file.kdl"` command format.
+// currently, if this file is not present, the niri config will fail to load. So an empty file must at least be present.
+// NOTE: this file is for personal config not managed by nix.
 include "personal.kdl"
