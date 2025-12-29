@@ -9,6 +9,8 @@
   imports = [
     ./hardware-configuration.nix
     ./reverse-proxy.nix
+    # TODO: get rid of most of this?
+    ./rev-proxy-entries.nix
     ./secrets.nix
 
     ../modules/main-user.nix
@@ -29,8 +31,6 @@
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
-
-  custom.reverseProxy.enable = true;
 
   time.timeZone = "Europe/Berlin";
 

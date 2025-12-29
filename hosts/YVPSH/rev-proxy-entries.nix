@@ -1,102 +1,17 @@
 { config, ... }:
 
 {
+  custom.reverseProxy.mappings = {
+    webui = config.services.open-webui.port;
+    vault = config.services.vaultwarden.config.ROCKET_PORT;
+    vw = config.services.vaultwarden.config.ROCKET_PORT; # DEPRECATED. prefer `vault` above
+    forge = "unix:${toString config.services.forgejo.settings.server.HTTP_ADDR}";
+    timer = "/www/aucsymposium/timer/";
+  };
+
   services.nginx = {
-    # TODO: change these definitions to only work when the service is enabled.
     virtualHosts = {
       "tlsymposium.com" = {
-        sslCertificate = "/etc/ssl/certs/cf.crt";
-        sslCertificateKey = "/etc/ssl/private/cf.key";
-        forceSSL = true;
-        locations."/" = {
-          root = "/www/aucsymposium/timer/";
-        };
-      };
-      "vw.tlsymposium.com" = {
-        sslCertificate = "/etc/ssl/certs/cf.crt";
-        sslCertificateKey = "/etc/ssl/private/cf.key";
-        forceSSL = true;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}";
-          proxyWebsockets = true; # needed if you need to use WebSocket
-          extraConfig =
-            # required when the target is also TLS server with multiple hosts
-            "proxy_ssl_server_name on;"
-            +
-              # required when the server wants to use HTTP Authentication
-              "proxy_pass_header Authorization;";
-        };
-      };
-      "ow.tlsymposium.com" = {
-        sslCertificate = "/etc/ssl/certs/cf.crt";
-        sslCertificateKey = "/etc/ssl/private/cf.key";
-        forceSSL = true;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:1115";
-          proxyWebsockets = true; # needed if you need to use WebSocket
-          extraConfig =
-            # required when the target is also TLS server with multiple hosts
-            "proxy_ssl_server_name on;"
-            +
-              # required when the server wants to use HTTP Authentication
-              "proxy_pass_header Authorization;";
-        };
-      };
-      # "jp.tlsymposium.com" = {
-      #   sslCertificate = "/etc/ssl/certs/cf.crt";
-      #   sslCertificateKey = "/etc/ssl/private/cf.key";
-      #   forceSSL = true;
-      #   locations."/" = {
-      #     proxyPass = "http://127.0.0.1:10010";
-      #     proxyWebsockets = true; # needed if you need to use WebSocket
-      #     extraConfig =
-      #       # required when the target is also TLS server with multiple hosts
-      #       "proxy_ssl_server_name on;"
-      #       +
-      #         # required when the server wants to use HTTP Authentication
-      #         "proxy_pass_header Authorization;";
-      #   };
-      # };
-      "sxng.tlsymposium.com" = {
-        sslCertificate = "/etc/ssl/certs/cf.crt";
-        sslCertificateKey = "/etc/ssl/private/cf.key";
-        forceSSL = true;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8787";
-          proxyWebsockets = true; # needed if you need to use WebSocket
-          extraConfig =
-            # required when the target is also TLS server with multiple hosts
-            "proxy_ssl_server_name on;"
-            +
-              # required when the server wants to use HTTP Authentication
-              "proxy_pass_header Authorization;";
-        };
-      };
-      "gitea.tlsymposium.com" = {
-        sslCertificate = "/etc/ssl/certs/cf.crt";
-        sslCertificateKey = "/etc/ssl/private/cf.key";
-        forceSSL = true;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString config.services.gitea.settings.server.HTTP_PORT}";
-          proxyWebsockets = true; # needed if you need to use WebSocket
-          extraConfig =
-            # required when the target is also TLS server with multiple hosts
-            "proxy_ssl_server_name on;"
-            +
-              # required when the server wants to use HTTP Authentication
-              "proxy_pass_header Authorization;";
-        };
-      };
-      "fj.tlsymposium.com" = {
-        sslCertificate = "/etc/ssl/certs/cf.crt";
-        sslCertificateKey = "/etc/ssl/private/cf.key";
-        forceSSL = true;
-        locations."/" = {
-          proxyPass = "http://unix:${toString config.services.forgejo.settings.server.HTTP_ADDR}";
-          proxyWebsockets = true; # needed if you need to use WebSocket
-        };
-      };
-      "timer.aucsymposium.com" = {
         sslCertificate = "/etc/ssl/certs/cf.crt";
         sslCertificateKey = "/etc/ssl/private/cf.key";
         forceSSL = true;
