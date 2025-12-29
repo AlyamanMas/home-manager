@@ -1,6 +1,7 @@
 {
   lib,
   pkgsUnstable,
+  config,
   ...
 }:
 
@@ -12,4 +13,6 @@
       port = lib.mkDefault 1115;
     };
   };
+
+  custom.reverseProxy.mappings.webui = config.services.open-webui.port;
 }

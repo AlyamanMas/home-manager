@@ -2,7 +2,6 @@
 
 {
   custom.reverseProxy.mappings = {
-    webui = config.services.open-webui.port;
     timer = "/www/aucsymposium/timer/";
   };
 

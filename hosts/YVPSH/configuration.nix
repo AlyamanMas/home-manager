@@ -9,7 +9,6 @@
   imports = [
     ./hardware-configuration.nix
     ./reverse-proxy.nix
-    # TODO: get rid of most of this?
     ./rev-proxy-entries.nix
     ./secrets.nix
 
