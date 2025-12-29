@@ -52,6 +52,7 @@ in
             sslCertificate = "/etc/ssl/certs/cf.crt";
             sslCertificateKey = "/etc/ssl/private/cf.key";
             forceSSL = true;
+            enableACME = true;
             locations."/" = {
               root = optionalDrvAttr (typeOf mappingAddr == "string" && (hasPrefix "/" mappingAddr)) mappingAddr;
               proxyPass =
