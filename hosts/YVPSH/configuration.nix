@@ -23,7 +23,7 @@
     # ../modules/webui-docker.nix
     ../modules/webui.nix
     # ../modules/searxng.nix
-    ../modules/gitea.nix
+    # ../modules/gitea.nix
     ../modules/forgejo.nix
     ../modules/wg-server.nix
     ../modules/matrix.nix
