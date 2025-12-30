@@ -1,3 +1,5 @@
+// TODO: split this monolith into multiple files by topic; like a file for layout, a file for workspaces...
+
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
@@ -270,7 +272,8 @@ layout {
 // See the binds section below for more spawn examples.
 
 // Command defined in waybar module
-spawn-at-startup "waybar-daemon.nu"
+// spawn-at-startup "waybar-daemon.nu"
+spawn-at-startup "dms" "run" // dank material shell
 spawn-at-startup "switch-refresh-rate-with-power-profiles.sh"
 
 spawn-at-startup "hyprpaper" "--config" "/home/alyaman/.config/hypr/hyprpaper.conf"

@@ -20,6 +20,10 @@
       url = "github:KamilKleina/git-aliases.nu";
       flake = false;
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

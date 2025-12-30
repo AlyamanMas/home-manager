@@ -17,6 +17,10 @@ let
   '';
 in
 {
+  imports = [
+    ./dms.nix
+    # ../modules/waybar.nix
+  ];
   home.packages =
     with pkgs;
     [
