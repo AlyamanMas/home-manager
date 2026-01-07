@@ -38,6 +38,10 @@ in
       source = ./config.kdl;
       force = true;
     };
+    "niri/environment.kdl" = {
+      source = ./environment.kdl;
+      force = true;
+    };
     "niri/outputs.kdl" =
       if config.device.host == "YPC3" then
         {

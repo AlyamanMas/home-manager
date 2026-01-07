@@ -273,7 +273,7 @@ layout {
 
 // Command defined in waybar module
 // spawn-at-startup "waybar-daemon.nu"
-spawn-at-startup "dms" "run" // dank material shell
+spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=\"\"" "dms" "run" // dank material shell
 spawn-at-startup "switch-refresh-rate-with-power-profiles.sh"
 
 spawn-at-startup "hyprpaper" "--config" "/home/alyaman/.config/hypr/hyprpaper.conf"
@@ -637,6 +637,7 @@ binds {
 }
 
 include "outputs.kdl"
+include "environment.kdl"
 
 // TODO: make this optional when my version of niri supports the upcoming `include optional=true "file.kdl"` command format.
 // currently, if this file is not present, the niri config will fail to load. So an empty file must at least be present.
