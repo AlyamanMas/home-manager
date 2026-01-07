@@ -1,0 +1,49 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+
+// Command defined in waybar module
+// spawn-at-startup "waybar-daemon.nu"
+
+spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=\"\"" "dms" "run" // dank material shell
+
+spawn-at-startup "switch-refresh-rate-with-power-profiles.sh"
+
+// Uncomment this line to ask the clients to omit their client-side decorations if possible.
+// If the client will specifically ask for CSD, the request will be honored.
+// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
+// This option will also fix border/focus ring drawing behind some semitransparent windows.
+// After enabling or disabling this, you need to restart the apps for this to take effect.
+prefer-no-csd
+
+// You can change the path where screenshots are saved.
+// A ~ at the front will be expanded to the home directory.
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/Pictures/Screenshots/screenshot-%Y-%m-%dT%H-%M-%S.png"
+
+// You can also set this to null to disable saving screenshots to disk.
+// screenshot-path null
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+
+include "outputs.kdl"
+include "environment.kdl"
+include "workspaces.kdl"
+include "input.kdl"
+include "theme.kdl"
+include "keybinds.kdl"
+include "layout.kdl"
+
+// TODO: make this optional when my version of niri supports the upcoming `include optional=true "file.kdl"` command format.
+// currently, if this file is not present, the niri config will fail to load. So an empty file must at least be present.
+// NOTE: this file is for personal config not managed by nix.
+include "personal.kdl"

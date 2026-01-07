@@ -35,22 +35,42 @@ in
     ];
   xdg.configFile = {
     "niri/config.kdl" = {
-      source = ./config.kdl;
+      source = ./config/config.kdl;
       force = true;
     };
     "niri/environment.kdl" = {
-      source = ./environment.kdl;
+      source = ./config/environment.kdl;
+      force = true;
+    };
+    "niri/workspaces.kdl" = {
+      source = ./config/workspaces.kdl;
+      force = true;
+    };
+    "niri/input.kdl" = {
+      source = ./config/input.kdl;
+      force = true;
+    };
+    "niri/theme.kdl" = {
+      source = ./config/theme.kdl;
+      force = true;
+    };
+    "niri/keybinds.kdl" = {
+      source = ./config/keybinds.kdl;
+      force = true;
+    };
+    "niri/layout.kdl" = {
+      source = ./config/layout.kdl;
       force = true;
     };
     "niri/outputs.kdl" =
       if config.device.host == "YPC3" then
         {
-          source = ./outputs-ypc3.kdl;
+          source = ./config/outputs-ypc3.kdl;
           force = true;
         }
       else if config.host.device == "YPC2" then
         {
-          source = ./outputs-ypc2.kdl;
+          source = ./config/outputs-ypc2.kdl;
           force = true;
         }
       else

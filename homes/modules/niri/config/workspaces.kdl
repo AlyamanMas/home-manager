@@ -1,0 +1,74 @@
+workspace "Q" {
+    open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836";
+    layout {
+        struts {
+            left -8
+            right -8
+            bottom -8
+            top -8
+        }
+        border {
+            off
+        }
+    }
+}
+workspace "W" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "E" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "R" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "A" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "S" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "D" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "F" { open-on-output "LG Electronics LG ULTRAGEAR 408NTJJ07836"; }
+workspace "1" {
+    open-on-output "eDP-1";
+    layout {
+        struts {
+            left -8
+            right -8
+            bottom -8
+            top -8
+        }
+        border {
+            off
+        }
+    }
+}
+workspace "2" { open-on-output "eDP-1"; }
+workspace "3" { open-on-output "eDP-1"; }
+workspace "4" { open-on-output "eDP-1"; }
+workspace "5" { open-on-output "LG Electronics LG ULTRAGEAR 0x00003BF0"; }
+workspace "T" { open-on-output "LG Electronics LG ULTRAGEAR 0x00003BF0"; }
+workspace "G" { open-on-output "LG Electronics LG ULTRAGEAR 0x00003BF0"; }
+
+binds {
+    Mod+Q { focus-workspace "Q"; }
+    Mod+W { focus-workspace "W"; }
+    Mod+E { focus-workspace "E"; }
+    Mod+R { focus-workspace "R"; }
+    Mod+A { focus-workspace "A"; }
+    Mod+S { focus-workspace "S"; }
+    Mod+D { focus-workspace "D"; }
+    Mod+F { focus-workspace "F"; }
+    Mod+T { focus-workspace "T"; }
+    Mod+G { focus-workspace "G"; }
+    Mod+1 { focus-workspace "1"; }
+    Mod+2 { focus-workspace "2"; }
+    Mod+3 { focus-workspace "3"; }
+    Mod+4 { focus-workspace "4"; }
+    Mod+5 { focus-workspace "5"; }
+    Mod+Shift+Q { move-column-to-workspace "Q";}
+    Mod+Shift+W { move-column-to-workspace "W";}
+    Mod+Shift+E { move-column-to-workspace "E";}
+    Mod+Shift+R { move-column-to-workspace "R";}
+    Mod+Shift+A { move-column-to-workspace "A";}
+    Mod+Shift+S { move-column-to-workspace "S";}
+    Mod+Shift+D { move-column-to-workspace "D";}
+    Mod+Shift+F { move-column-to-workspace "F";}
+    Mod+Shift+T { move-column-to-workspace "T";}
+    Mod+Shift+G { move-column-to-workspace "G";}
+    Mod+Shift+1 { move-column-to-workspace "1";}
+    Mod+Shift+2 { move-column-to-workspace "2"; }
+    Mod+Shift+3 { move-column-to-workspace "3"; }
+    Mod+Shift+4 { move-column-to-workspace "4"; }
+    Mod+Shift+5 { move-column-to-workspace "5"; }
+}
