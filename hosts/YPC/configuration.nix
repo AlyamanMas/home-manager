@@ -32,7 +32,7 @@
     # ../modules/thunderbolt-static-ip.nix
     ../modules/avahi.nix
     ../modules/logind.nix
-    .../modules/man.nix
+    ../modules/man.nix
   ];
 
   services.displayManager.defaultSession = "niri";
