@@ -3,7 +3,7 @@
 {
   home = {
     username = "nix-on-droid";
-    homeDirectory = "/data/data/com.termux.nix/files/homs";
+    homeDirectory = "/data/data/com.termux.nix/files/home";
 
     packages = with pkgs; [
       neovim
