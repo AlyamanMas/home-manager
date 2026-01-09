@@ -41,43 +41,50 @@
       };
     in
     {
-      nixosConfigurations."YPC2-NIXOS2" = nixpkgs-stable.lib.nixosSystem {
-        modules = [ ./hosts/YPC/configuration.nix ];
-        specialArgs = {
-          pkgsUnstable = pkgs;
-          inherit inputs;
+      nixosConfigurations = {
+        "YPC2-NIXOS2" = nixpkgs-stable.lib.nixosSystem {
+          modules = [ ./hosts/YPC/configuration.nix ];
+          specialArgs = {
+            pkgsUnstable = pkgs;
+            inherit inputs;
+          };
+        };
+
+        "YPC3-NIXOS" = nixpkgs-stable.lib.nixosSystem {
+          modules = [ ./hosts/YPC3/configuration.nix ];
+          specialArgs = {
+            pkgsUnstable = pkgs;
+            inherit inputs;
+          };
+        };
+
+        "YVPSH" = nixpkgs.lib.nixosSystem {
+          modules = [ ./hosts/YVPSH/configuration.nix ];
+          specialArgs = {
+            pkgsUnstable = pkgs;
+          };
         };
       };
 
-      nixosConfigurations."YPC3-NIXOS" = nixpkgs-stable.lib.nixosSystem {
-        modules = [ ./hosts/YPC3/configuration.nix ];
-        specialArgs = {
-          pkgsUnstable = pkgs;
-          inherit inputs;
+      homeConfigurations = {
+        "alyaman@YPC2-NIXOS2" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./homes/YPC/home.nix
+          ];
+
+          extraSpecialArgs.inputs = inputs;
+        };
+
+        "alyaman@YPC3-NIXOS" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./homes/YPC3/home.nix
+          ];
+
+          extraSpecialArgs.inputs = inputs;
         };
       };
-
-      nixosConfigurations."YVPSH" = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts/YVPSH/configuration.nix ];
-        specialArgs = {
-          pkgsUnstable = pkgs;
-        };
-      };
-
-      homeConfigurations."alyaman" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./homes/YPC/home.nix
-        ];
-
-        extraSpecialArgs.inputs = inputs;
-      };
-
-      homeConfigurations."alyaman@YPC3-NIXOS" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./homes/YPC3/home.nix
-        ];
 
         extraSpecialArgs.inputs = inputs;
       };
