@@ -34,6 +34,7 @@
     ../modules/avahi.nix
     ../modules/logind.nix
     ../modules/man.nix
+    ../modules/tailscale.nix
   ];
 
   services.displayManager.defaultSession = "niri";
