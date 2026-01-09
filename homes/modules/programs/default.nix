@@ -119,6 +119,18 @@ in
       networkmanagerapplet
       open-last-screenshot
       fzf
+      dig
+      libnotify
+      poppler-utils
+      imagemagick
+      dconf-editor
+      usbutils
+      pciutils
+      wev
+      nettools
+      sshfs
+      socat
+      pandoc
     ]
     ++ vimDeps;
 
