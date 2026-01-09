@@ -104,7 +104,7 @@
         };
       };
 
-      nixOnDroidConfigurations.default = nix-on-droid.nixOnDroidConfiguration {
+      nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         pkgs = import nixpkgs-legacy { system = "aarch64-linux"; };
         modules = [ ./nix-on-droid/yph3/configuration.nix ];
       };
