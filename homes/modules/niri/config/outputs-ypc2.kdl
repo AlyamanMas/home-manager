@@ -6,7 +6,7 @@ output "LG Electronics LG ULTRAGEAR 408NTJJ07836" {
     position x=1920 y=0
 }
 
-// YPC2 eDP-1
+// ypc2 eDP-1
 output "AU Optronics 0xED8F Unknown" {
     // Uncomment this line to disable this output.
     // off

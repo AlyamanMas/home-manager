@@ -68,13 +68,13 @@ in
           source = ./config/outputs-ypc3.kdl;
           force = true;
         }
-      else if config.host.device == "YPC2" then
+      else if config.host.device == "ypc2" then
         {
           source = ./config/outputs-ypc2.kdl;
           force = true;
         }
       else
-        lib.warn "Device '${config.host.device}' is neither YPC2 nor ypc3. Using empty outputs.kdl" {
+        lib.warn "Device '${config.host.device}' is neither ypc2 nor ypc3. Using empty outputs.kdl" {
           text = "";
           force = true;
         };

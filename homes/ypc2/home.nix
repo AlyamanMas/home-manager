@@ -14,6 +14,8 @@
     ../modules/device.nix
   ];
 
+  device.host = "ypc2";
+
   home = {
     username = "alyaman";
     homeDirectory = "/home/alyaman";

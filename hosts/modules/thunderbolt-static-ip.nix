@@ -1,6 +1,6 @@
 /**
-  This exists for the sake of establishing a direct connection between YPC2
-  and YPC3 via thunderbolt with predictable IP addresses and host names.
+  This exists for the sake of establishing a direct connection between ypc2
+  and ypc3 via thunderbolt with predictable IP addresses and host names.
 */
 { config, ... }:
 

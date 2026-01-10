@@ -1,4 +1,4 @@
-# TODO: move into module as long as it is shared with YPC2
+# TODO: move into module as long as it is shared with ypc2
 {
   pkgs,
   lib,

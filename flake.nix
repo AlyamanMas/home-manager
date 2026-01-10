@@ -58,60 +58,72 @@
       };
     in
     {
-      nixosConfigurations = {
-        "YPC2-NIXOS2" = nixpkgs-stable.lib.nixosSystem {
-          modules = [ ./hosts/YPC/configuration.nix ];
-          specialArgs = {
-            pkgsUnstable = pkgs;
-            inherit inputs;
+      nixosConfigurations =
+        let
+          ypc2System = nixpkgs-stable.lib.nixosSystem {
+            modules = [ ./hosts/ypc2/configuration.nix ];
+            specialArgs = {
+              pkgsUnstable = pkgs;
+              inherit inputs;
+            };
+          };
+        in
+        {
+          # TODO: remove this when ypc2 switches its hostname to ypc2
+          "YPC2-NIXOS2" = ypc2System;
+          "ypc2" = ypc2System;
+
+          "ypc3" = nixpkgs-stable.lib.nixosSystem {
+            modules = [ ./hosts/ypc3/configuration.nix ];
+            specialArgs = {
+              pkgsUnstable = pkgs;
+              inherit inputs;
+            };
+          };
+
+          "YVPSH" = nixpkgs.lib.nixosSystem {
+            modules = [ ./hosts/YVPSH/configuration.nix ];
+            specialArgs = {
+              pkgsUnstable = pkgs;
+            };
           };
         };
 
-        "ypc3" = nixpkgs-stable.lib.nixosSystem {
-          modules = [ ./hosts/ypc3/configuration.nix ];
-          specialArgs = {
-            pkgsUnstable = pkgs;
-            inherit inputs;
+      homeConfigurations =
+        let
+          ypc2Home = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [
+              ./homes/ypc2/home.nix
+            ];
+
+            extraSpecialArgs.inputs = inputs;
+          };
+        in
+        {
+          # TODO: remove this when ypc2 switches its hostname to ypc2
+          "alyaman@YPC2-NIXOS2" = ypc2Home;
+          "alyaman@ypc2" = ypc2Home;
+
+          "alyaman@ypc3" = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [
+              ./homes/ypc3/home.nix
+            ];
+
+            extraSpecialArgs.inputs = inputs;
+          };
+
+          "nix-on-droid" = home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs {
+              system = "aarch64-linux";
+              config.allowUnfree = true;
+            };
+            modules = [
+              ./homes/yph3/home.nix
+            ];
           };
         };
-
-        "YVPSH" = nixpkgs.lib.nixosSystem {
-          modules = [ ./hosts/YVPSH/configuration.nix ];
-          specialArgs = {
-            pkgsUnstable = pkgs;
-          };
-        };
-      };
-
-      homeConfigurations = {
-        "alyaman@YPC2-NIXOS2" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./homes/YPC/home.nix
-          ];
-
-          extraSpecialArgs.inputs = inputs;
-        };
-
-        "alyaman@ypc3" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./homes/ypc3/home.nix
-          ];
-
-          extraSpecialArgs.inputs = inputs;
-        };
-
-        "nix-on-droid" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "aarch64-linux";
-            config.allowUnfree = true;
-          };
-          modules = [
-            ./homes/yph3/home.nix
-          ];
-        };
-      };
 
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         pkgs = import nixpkgs-legacy { system = "aarch64-linux"; };
