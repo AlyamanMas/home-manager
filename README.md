@@ -1,5 +1,7 @@
 # NixOS Configuration
 
+NOTE: this README file is slop and quite outdated.
+
 This repository contains the NixOS and Home Manager configurations for my systems. It's organized as a Nix Flake, allowing for reproducible and declarative system management.
 
 ## Project Structure
@@ -10,10 +12,12 @@ This repository contains the NixOS and Home Manager configurations for my system
 ├── flake.lock          # Dependency lock file
 ├── homes/              # Home Manager configurations
 │   ├── modules/        # Reusable modules for Home Manager
-│   └── YPC/            # User-specific home configuration
+│   └── ypc2/           # User-specific home configuration
+│   └── ypc3/           # User-specific home configuration
 ├── hosts/              # NixOS system configurations
 │   ├── modules/        # Reusable modules for system configurations
-│   ├── YPC/            # Configuration for YPC2-NIXOS2 machine
+│   ├── ypc2/           # Configuration for ypc2 machine
+│   ├── ypc3/           # Configuration for ypc3 machine
 │   └── YVPSH/          # Configuration for YVPSH machine
 ├── secrets/            # Encrypted secrets (managed by git-crypt)
 └── common/             # Files that could be used by either homes or hosts
@@ -21,7 +25,7 @@ This repository contains the NixOS and Home Manager configurations for my system
 
 ## Systems
 
-### YPC2-NIXOS2
+### ypc2/ypc3
 
 A desktop NixOS system with the following features:
 
@@ -55,7 +59,7 @@ The personal configuration for user `alyaman` includes:
 ### Applying System Configuration
 
 ```bash
-sudo nixos-rebuild switch --flake .#YPC2-NIXOS2
+sudo nixos-rebuild switch --flake .#ypc2
 ```
 
 ### Updating Home Configuration
@@ -64,24 +68,6 @@ sudo nixos-rebuild switch --flake .#YPC2-NIXOS2
 home-manager switch --flake .#alyaman
 ```
 
-### Deploying to YVPSH Using Colmena
-
-```bash
-colmena apply --impure
-```
-
-Make sure that yvpsh is defined as a host in the ssh configuration file.
-
-## Dependencies
-
-- NixOS (Unstable and 24.11 channels)
-- Home Manager
-- Various input flakes:
-  - Nixvim
-  - Waybar
-  - Zen-browser
-  - Rose-pine-hyprcursor
-
 ## Development
 
 The repository uses pre-commit hooks and includes a formatter configuration for consistent code style.
@@ -89,10 +75,6 @@ The repository uses pre-commit hooks and includes a formatter configuration for 
 ```bash
 nix fmt  # Format Nix code according to RFC style
 ```
-
-## State Version
-
-Both NixOS and Home Manager configurations use state version 24.05.
 
 ## License
 
