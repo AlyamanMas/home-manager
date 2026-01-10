@@ -11,6 +11,7 @@
     ../modules/mako.nix
     ../modules/niri
     ../modules/device.nix
+    ../modules/flatpak.nix
   ];
 
   device.host = "ypc3";
