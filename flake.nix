@@ -4,10 +4,6 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     # required for nix-on-droid until new versions are supported
     nixpkgs-legacy.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
