@@ -27,8 +27,6 @@
     # }}}
 
     # legacy {{{
-    # TODO: remove in favor of flatpak. perhaps do so too with other apps?
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     # TODO: remove; we are using breeze now
     rose-pine-hyprcursor = {
       url = "github:ndom91/rose-pine-hyprcursor";

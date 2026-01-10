@@ -60,7 +60,6 @@ in
       fd
       btop
       pavucontrol
-      inputs.zen-browser.outputs.packages.x86_64-linux.default
       grimblast
       gimp
       qalculate-gtk
