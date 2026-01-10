@@ -21,7 +21,7 @@
           let
             deviceToGpgKey = {
               "YPC2" = "6B2AF6605598965E";
-              "YPC3" = "515E428AC916D39C";
+              "ypc3" = "515E428AC916D39C";
             };
           in
           deviceToGpgKey.${config.device.host}

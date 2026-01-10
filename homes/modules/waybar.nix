@@ -24,7 +24,7 @@ let
   bandwidth-monitor = pkgs.writeScript "waybar-bandwidth.nu" /* nu */ ''
     #!/usr/bin/env nu
 
-    let INTERFACE_NAME = "${if config.device.host == "YPC3" then "wlo1" else "wlp0s20f3"}"
+    let INTERFACE_NAME = "${if config.device.host == "ypc3" then "wlo1" else "wlp0s20f3"}"
 
 
     def get_interface [] {
@@ -105,9 +105,9 @@ let
   iconNameToMaterialSymbolsSpan =
     icon: /* html */ ''<span font-family="Material Symbols Outlined" font-size="16pt">${icon}</span>'';
   iconNamesListToMaterialSymbolsSpans = list: builtins.map iconNameToMaterialSymbolsSpan list;
-  # NOTE: for some reason, in order to vertically center elements on the bar, we need 5pt on YPC3 and 6pt on YPC2
+  # NOTE: for some reason, in order to vertically center elements on the bar, we need 5pt on ypc3 and 6pt on YPC2
   spanRaise =
-    text: /* html */ ''<span rise="${if config.device.host == "YPC3" then "5pt" else "6pt"}">${text}</span>'';
+    text: /* html */ ''<span rise="${if config.device.host == "ypc3" then "5pt" else "6pt"}">${text}</span>'';
   spanRaiseBold = text: "<b>" + spanRaise text + "</b>";
 
   baseConfiguration = {
@@ -327,7 +327,7 @@ in
     // {
       # NOTE: the USB hub's HDMI gets labelled as DP-2; perhaps somehow make this more generic in the future
       output =
-        if config.device.host == "YPC3" then
+        if config.device.host == "ypc3" then
           [
             "HDMI-A-1"
             "DP-1"

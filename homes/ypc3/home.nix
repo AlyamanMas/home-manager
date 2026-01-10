@@ -13,7 +13,7 @@
     ../modules/device.nix
   ];
 
-  device.host = "YPC3";
+  device.host = "ypc3";
 
   home = {
     username = "alyaman";

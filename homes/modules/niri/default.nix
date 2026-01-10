@@ -28,7 +28,7 @@ in
       brightnessctl
       toggle-brightness
     ]
-    ++ lib.optionals (config.device.host == "YPC3") [
+    ++ lib.optionals (config.device.host == "ypc3") [
       (writeShellScriptBin "switch-refresh-rate-with-power-profiles.sh" (
         builtins.readFile ./switch-refresh-rate-with-power-profiles.sh
       ))
@@ -63,7 +63,7 @@ in
       force = true;
     };
     "niri/outputs.kdl" =
-      if config.device.host == "YPC3" then
+      if config.device.host == "ypc3" then
         {
           source = ./config/outputs-ypc3.kdl;
           force = true;
@@ -74,7 +74,7 @@ in
           force = true;
         }
       else
-        lib.warn "Device '${config.host.device}' is neither YPC2 nor YPC3. Using empty outputs.kdl" {
+        lib.warn "Device '${config.host.device}' is neither YPC2 nor ypc3. Using empty outputs.kdl" {
           text = "";
           force = true;
         };

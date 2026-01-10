@@ -36,8 +36,8 @@
           };
         };
 
-        "YPC3-NIXOS" = nixpkgs-stable.lib.nixosSystem {
-          modules = [ ./hosts/YPC3/configuration.nix ];
+        "ypc3" = nixpkgs-stable.lib.nixosSystem {
+          modules = [ ./hosts/ypc3/configuration.nix ];
           specialArgs = {
             pkgsUnstable = pkgs;
             inherit inputs;
@@ -63,10 +63,10 @@
           extraSpecialArgs.inputs = inputs;
         };
 
-        "alyaman@YPC3-NIXOS" = home-manager.lib.homeManagerConfiguration {
+        "alyaman@ypc3" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            ./homes/YPC3/home.nix
+            ./homes/ypc3/home.nix
           ];
 
           extraSpecialArgs.inputs = inputs;

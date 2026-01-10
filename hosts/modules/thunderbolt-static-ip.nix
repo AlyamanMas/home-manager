@@ -5,7 +5,7 @@
 { config, ... }:
 
 let
-  isYPC3 = config.networking.hostName == "YPC3-NIXOS";
+  isYPC3 = config.networking.hostName == "ypc3";
   myIp = if isYPC3 then "10.0.39.1" else "10.0.39.2";
   myAddress = "${myIp}/30";
 in

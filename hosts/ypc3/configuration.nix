@@ -40,7 +40,7 @@
   services.displayManager.defaultSession = "niri";
 
   networking = {
-    hostName = "YPC3-NIXOS";
+    hostName = "ypc3";
     firewall.enable = false;
   };
 
