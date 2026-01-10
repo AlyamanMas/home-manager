@@ -131,6 +131,7 @@ in
       sshfs
       socat
       pandoc
+      appimage-run
     ]
     ++ vimDeps;
 
