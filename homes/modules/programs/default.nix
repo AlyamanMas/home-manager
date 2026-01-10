@@ -128,6 +128,7 @@ in
       socat
       pandoc
       appimage-run
+      inputs.helium.packages.${system}.default
     ]
     ++ vimDeps;
 
