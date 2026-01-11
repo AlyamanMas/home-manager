@@ -20,7 +20,7 @@ in
     shellAliases = {
       u = "systemctl --user";
       s = "sudo systemctl";
-      ndv = "nix develop --command fish";
+      ndv = "nix develop --command nu";
       nrf = ''
         nix repl --expr $'builtins.getFlake "($env.PWD)"'
       '';
