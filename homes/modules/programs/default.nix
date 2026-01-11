@@ -2,7 +2,7 @@
   pkgs,
   inputs,
   ...
-}@attrs:
+}:
 let
   vimDeps = with pkgs; [
     neovim-unwrapped
