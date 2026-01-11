@@ -1,5 +1,7 @@
 {
   inputs,
+  config,
+  lib,
   ...
 }:
 
@@ -11,12 +13,16 @@
   services.flatpak = {
     enable = true;
     packages = [
-      "org.signal.Signal"
       "com.bitwarden.desktop"
-      "eu.betterbird.Betterbird"
       "com.obsproject.Studio"
       "app.zen_browser.zen"
       "us.zoom.Zoom"
+      "com.github.tchx84.Flatseal"
+    ]
+    ++ lib.optionals (config.device.host == "ypc3") [
+      "io.github.dimtpap.coppwr" # basically pipewire graph patchpanel
+      "org.signal.Signal"
+      "eu.betterbird.Betterbird"
     ];
   };
 }
