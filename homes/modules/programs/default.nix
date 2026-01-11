@@ -128,6 +128,7 @@ in
       pandoc
       appimage-run
       inputs.helium.packages.${system}.default
+      android-tools
     ]
     ++ vimDeps;
 
