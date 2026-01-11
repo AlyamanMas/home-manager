@@ -3,7 +3,7 @@
   ...
 }:
 let
-  palette = (import ../../../common/themes/catppuccin.nix).currentPalette;
+  palette = (import ../../common/themes/catppuccin.nix).currentPalette;
   segmentBg = palette.surface0;
   segmentSeparator = palette.surface2;
   segmentFg = palette.text;

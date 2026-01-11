@@ -30,12 +30,6 @@ let
 in
 {
 
-  imports = [
-    ./nushell.nix
-    ./foot.nix
-    ./git.nix
-  ];
-
   home.packages =
     with pkgs;
     [

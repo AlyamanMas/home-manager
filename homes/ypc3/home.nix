@@ -13,6 +13,9 @@
     ../modules/device.nix
     ../modules/flatpak.nix
     ../modules/fish.nix
+    ../modules/nushell.nix
+    ../modules/foot
+    ../modules/git.nix
   ];
 
   device.host = "ypc3";

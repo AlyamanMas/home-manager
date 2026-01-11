@@ -13,6 +13,9 @@
     ../modules/niri
     ../modules/device.nix
     ../modules/fish.nix
+    ../modules/nushell.nix
+    ../modules/foot
+    ../modules/git.nix
   ];
 
   device.host = "ypc2";
