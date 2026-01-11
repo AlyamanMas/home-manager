@@ -141,14 +141,6 @@ in
       settings.auto_update = true;
     };
 
-    firefox = {
-      enable = true;
-    };
-
-    chromium = {
-      enable = true;
-    };
-
     mpv = {
       enable = true;
     };
@@ -171,15 +163,6 @@ in
         "--cmd cd"
       ];
     };
-  };
-
-  # services.syncthing = {
-  #   enable = true;
-  # };
-
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [ distroav ];
   };
 
   programs.direnv = {
