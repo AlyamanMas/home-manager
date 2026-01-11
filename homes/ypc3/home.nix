@@ -12,6 +12,7 @@
     ../modules/niri
     ../modules/device.nix
     ../modules/flatpak.nix
+    ../modules/fish.nix
   ];
 
   device.host = "ypc3";

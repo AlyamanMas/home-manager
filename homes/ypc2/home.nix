@@ -12,6 +12,7 @@
     ../modules/mako.nix
     ../modules/niri
     ../modules/device.nix
+    ../modules/fish.nix
   ];
 
   device.host = "ypc2";

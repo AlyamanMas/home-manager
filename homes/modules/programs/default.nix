@@ -145,9 +145,6 @@ in
       enable = true;
     };
 
-    # TODO: fix this into normal nix module
-    fish = import ./fish.nix attrs;
-
     starship = {
       enable = true;
       enableFishIntegration = true;
