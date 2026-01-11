@@ -3,7 +3,12 @@
   time.timeZone = "Africa/Cairo";
   time.hardwareClockInLocalTime = true;
 
+  i18n.defaultLocale = "en_CA.UTF-8";
+  # Optionally (BEWARE: requires a different format with the added /UTF-8)
+  i18n.extraLocales = [ "en_CA.UTF-8/UTF-8" ];
+
   i18n.extraLocaleSettings = {
+    LC_ALL = "en_CA.UTF-8";
     LC_ADDRESS = "en_CA.UTF-8";
     LC_IDENTIFICATION = "en_CA.UTF-8";
     LC_MEASUREMENT = "en_CA.UTF-8";
