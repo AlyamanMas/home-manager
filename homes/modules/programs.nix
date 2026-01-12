@@ -67,7 +67,6 @@ in
       git-crypt
       devenv
       typst
-      inputs.rose-pine-hyprcursor.packages.${system}.default
       nodejs_22
       (vscodium.fhsWithPackages (
         ps: with ps; [

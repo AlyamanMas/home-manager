@@ -27,12 +27,6 @@
     # }}}
 
     # legacy {{{
-    # TODO: remove; we are using breeze now
-    rose-pine-hyprcursor = {
-      url = "github:ndom91/rose-pine-hyprcursor";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.hyprlang.follows = "hyprland/hyprlang";
-    };
     # required for nix-on-droid until new versions are supported
     # TODO: remove anything related to nix-on-droid, since it seems like we are not going to use it
     nixpkgs-legacy.url = "github:NixOS/nixpkgs/nixos-24.05";
