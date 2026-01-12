@@ -1,4 +1,7 @@
-_:
+{
+  pkgs,
+  ...
+}:
 
 let
   wallpaperPath = ../../res/wallpapers/cat_pacman.png;
@@ -18,4 +21,6 @@ in
       ipc = off
     '';
   };
+
+  home.packages = [ pkgs.grimblast ];
 }

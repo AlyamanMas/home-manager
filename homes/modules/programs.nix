@@ -1,3 +1,4 @@
+# TODO: move relevant programs to modules
 {
   pkgs,
   inputs,
@@ -5,126 +6,103 @@
 }:
 let
   system = pkgs.stdenv.hostPlatform.system;
-  vimDeps = with pkgs; [
-    neovim-unwrapped
-    stylua
-    gcc
-    lua-language-server
-    nixd
-    basedpyright
-    nil
-    vscode-langservers-extracted
-    tailwindcss-language-server
-    svelte-language-server
-    typescript-language-server
-    emmet-language-server
-    tinymist
-    markdown-oxide
-    bash-language-server
-    shellcheck
-    shfmt
-  ];
+  editorDepsFunc =
+    ps: with ps; [
+      stylua
+      gcc
+      lua-language-server
+      nixd
+      basedpyright
+      nil
+      vscode-langservers-extracted
+      tailwindcss-language-server
+      svelte-language-server
+      typescript-language-server
+      emmet-language-server
+      tinymist
+      markdown-oxide
+      bash-language-server
+      shellcheck
+      shfmt
+    ];
+  vimDeps = editorDepsFunc pkgs;
+  nvimWithDeps = vimDeps ++ [ pkgs.neovim-unwrapped ];
+  vscodium = pkgs.vscodium.fhsWithPackages editorDepsFunc;
+  zed = pkgs.zed-editor.fhsWithPackages editorDepsFunc;
   open-last-screenshot = pkgs.writeScriptBin "open-last-screenshot.nu" /* nu */ ''
     #!/usr/bin/env nu
     ls $"($env.HOME)/Pictures/Screenshots/" | sort-by modified -r | get 0.name | xdg-open $in
   '';
+  devTools = with pkgs; [
+    # nix {{{
+    nixfmt-rfc-style
+    nix-prefetch-scripts
+    devenv
+    #}}}
+    # python {{{
+    uv
+    ruff
+    python3
+    # }}}
+    # git {{{
+    git-crypt
+    lazygit
+    #}}}
+    typst
+    nodejs_22
+  ];
+  cliTools = with pkgs; [
+    # networking {{{
+    wget
+    autossh
+    nftables
+    dig
+    nettools
+    sshfs
+    socat
+    # }}}
+    # filesystem {{{
+    ripgrep
+    fd
+    fzf
+    # }}}
+    # wayland/display {{{
+    wl-clipboard
+    brightnessctl
+    # }}}
+    # media {{{
+    yt-dlp
+    ffmpeg
+    imagemagick
+    # }}}
+    # system {{{
+    btop
+    playerctl
+    libnotify
+    usbutils
+    pciutils
+    appimage-run
+    android-tools
+    scrcpy
+    # }}}
+    # documents {{{
+    poppler-utils
+    pandoc
+    # }}}
+  ];
+  graphicalApps = with pkgs; [
+    qbittorrent # TODO: move to flatpak
+    zathura # TODO: move to flatpak when released
+    networkmanagerapplet
+    open-last-screenshot
+    wev
+    inputs.helium.packages.${system}.default # TODO: move to flatpak when released
+    vscodium
+    zed
+  ];
 in
 {
-  home.packages =
-    with pkgs;
-    [
-      wget
-      keepassxc
-      nix-prefetch-scripts
-      # dconf-editor
-      # gnome-tweaks
-      nixfmt-rfc-style
-      ripgrep
-      libreoffice-qt
-      wl-clipboard
-      papers
-      gnome-music
-      zotero_7
-      # jetbrains.pycharm-professional
-      yt-dlp
-      ffmpeg
-      gnome-solanum
-      # kitty
-      wofi
-      fd
-      btop
-      pavucontrol
-      grimblast
-      gimp
-      qalculate-gtk
-      eza
-      inkscape
-      calibre
-      qbittorrent
-      autossh
-      ghostty
-      colmena
-      git-crypt
-      devenv
-      typst
-      nodejs_22
-      (vscodium.fhsWithPackages (
-        ps: with ps; [
-          typstyle
-          tinymist
-        ]
-      ))
-      zathura
-      zellij
-      postman
-      rofi-unwrapped
-      openai-whisper
-      (zed-editor.fhsWithPackages (
-        ps: with ps; [
-          typstyle
-          tinymist
-          nil
-          ruff
-          python3
-          pyright
-          uv
-          go
-          gopls
-          package-version-server
-        ]
-      ))
-      brightnessctl
-      iptables
-      kdePackages.okular
-      lazygit
-      obsidian
-      uv
-      ruff
-      python3
-      playerctl
-      android-studio
-      jdk17_headless
-      networkmanagerapplet
-      open-last-screenshot
-      fzf
-      dig
-      libnotify
-      poppler-utils
-      imagemagick
-      dconf-editor
-      usbutils
-      pciutils
-      wev
-      nettools
-      sshfs
-      socat
-      pandoc
-      appimage-run
-      inputs.helium.packages.${system}.default
-      android-tools
-      scrcpy
-    ]
-    ++ vimDeps;
+  home.packages = devTools ++ cliTools ++ graphicalApps ++ nvimWithDeps;
 
   programs = {
     home-manager.enable = true;
@@ -160,3 +138,4 @@ in
     enableNushellIntegration = true;
   };
 }
+# vim: foldmethod=marker

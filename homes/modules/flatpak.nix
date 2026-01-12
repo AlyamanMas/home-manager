@@ -18,11 +18,25 @@
       "app.zen_browser.zen"
       "us.zoom.Zoom"
       "com.github.tchx84.Flatseal"
+      "org.keepassxc.KeePassXC"
+      "org.gnome.Music"
+      "org.gnome.Papers"
+      "org.gnome.Solanum"
+      "org.pulseaudio.pavucontrol"
+      "io.github.Qalculate"
     ]
     ++ lib.optionals (config.device.host == "ypc3") [
       "io.github.dimtpap.coppwr" # basically pipewire graph patchpanel
       "org.signal.Signal"
       "eu.betterbird.Betterbird"
+      "org.libreoffice.LibreOffice"
+      "org.zotero.Zotero"
+      "org.gimp.GIMP"
+      "org.inkscape.Inkscape"
+      "com.getpostman.Postman"
+      "org.kde.okular"
+      "md.obsidian.Obsidian"
+      "ca.desrt.dconf-editor"
     ];
   };
 }
