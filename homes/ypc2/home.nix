@@ -6,7 +6,7 @@
 {
   imports = [
     ../modules/env.nix
-    ../modules/programs
+    ../modules/programs.nix
     ../modules/hypr
     ../modules/waybar.nix
     ../modules/mako.nix
