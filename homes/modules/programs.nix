@@ -131,11 +131,11 @@ in
         "--cmd cd"
       ];
     };
-  };
 
-  programs.direnv = {
-    enable = true;
-    enableNushellIntegration = true;
+    direnv = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
   };
 }
 # vim: foldmethod=marker
