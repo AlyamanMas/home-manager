@@ -4,6 +4,7 @@
   ...
 }:
 let
+  system = pkgs.stdenv.hostPlatform.system;
   vimDeps = with pkgs; [
     neovim-unwrapped
     stylua
@@ -29,7 +30,6 @@ let
   '';
 in
 {
-
   home.packages =
     with pkgs;
     [
@@ -67,7 +67,7 @@ in
       git-crypt
       devenv
       typst
-      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+      inputs.rose-pine-hyprcursor.packages.${system}.default
       nodejs_22
       (vscodium.fhsWithPackages (
         ps: with ps; [
