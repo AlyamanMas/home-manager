@@ -4,7 +4,7 @@
 }:
 
 let
-  username = config.users.main-user;
+  username = config.users.mainUser;
 in
 {
   nixpkgs.config.allowUnfree = true;

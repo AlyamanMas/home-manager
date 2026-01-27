@@ -5,7 +5,7 @@
 }:
 
 let
-  username = config.users.main-user;
+  username = config.users.mainUser;
 in
 {
   networking.networkmanager.enable = lib.mkDefault true;
