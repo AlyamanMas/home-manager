@@ -35,6 +35,7 @@
     ../modules/logind.nix
     ../modules/man.nix
     ../modules/tailscale.nix
+    ../modules/lidarr.nix
   ];
 
   services.displayManager.defaultSession = "niri";
