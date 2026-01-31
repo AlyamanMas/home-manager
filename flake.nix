@@ -77,8 +77,8 @@
             };
           };
 
-          "YVPSH" = nixpkgs.lib.nixosSystem {
-            modules = [ ./hosts/YVPSH/configuration.nix ];
+          "yvpsh" = nixpkgs.lib.nixosSystem {
+            modules = [ ./hosts/yvpsh/configuration.nix ];
             specialArgs = {
               pkgsUnstable = pkgs;
             };

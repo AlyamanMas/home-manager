@@ -39,7 +39,7 @@
   services.openssh.settings.GatewayPorts = "yes";
 
   networking = {
-    hostName = "YVPSH";
+    hostName = "yvpsh";
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];
