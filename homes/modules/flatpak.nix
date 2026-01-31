@@ -37,6 +37,7 @@
       "org.kde.okular"
       "md.obsidian.Obsidian"
       "ca.desrt.dconf-editor"
+      "org.onlyoffice.desktopeditors"
     ];
   };
 }
