@@ -25,25 +25,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # }}}
-
-    # legacy {{{
-    # required for nix-on-droid until new versions are supported
-    # TODO: remove anything related to nix-on-droid, since it seems like we are not going to use it
-    nixpkgs-legacy.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nix-on-droid = {
-      url = "github:nix-community/nix-on-droid/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-legacy";
-    };
-    #}}}
   };
 
   outputs =
     {
       nixpkgs,
       nixpkgs-stable,
-      nixpkgs-legacy,
       home-manager,
-      nix-on-droid,
       ...
     }@inputs:
     let
@@ -109,22 +97,7 @@
 
             extraSpecialArgs.inputs = inputs;
           };
-
-          "nix-on-droid" = home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs {
-              system = "aarch64-linux";
-              config.allowUnfree = true;
-            };
-            modules = [
-              ./homes/yph3/home.nix
-            ];
-          };
         };
-
-      nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-        pkgs = import nixpkgs-legacy { system = "aarch64-linux"; };
-        modules = [ ./nix-on-droid/yph3/configuration.nix ];
-      };
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
