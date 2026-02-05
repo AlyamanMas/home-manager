@@ -24,6 +24,7 @@
       "org.gnome.Solanum"
       "org.pulseaudio.pavucontrol"
       "io.github.Qalculate"
+      "com.github.wwmm.easyeffects"
     ]
     ++ lib.optionals (config.device.host == "ypc3") [
       "io.github.dimtpap.coppwr" # basically pipewire graph patchpanel
