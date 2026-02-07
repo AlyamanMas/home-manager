@@ -34,7 +34,7 @@
     # ../modules/avahi.nix
     ../modules/logind.nix
     ../modules/man.nix
-    ../modules/tailscale.nix
+    # ../modules/tailscale.nix
     ../modules/lidarr.nix
   ];
 
