@@ -27,6 +27,7 @@ in
         Map a subdomain into either a local port number, a path, or a unix socket.
         Note that unix socket values must start with unix: (e.g. "unix:/run/forgejo/forgejo.sock"), and paths must start with a "/".
       '';
+      default = { };
       example = ''
         {
           ow = 1115;
@@ -41,6 +42,7 @@ in
   # - look into whether acme is needed or not. it doesn't seem needed?
   config = mkIf cfg.enable {
     services.nginx = {
+      # logError = "stderr debug";
       enable = true;
       recommendedProxySettings = true;
       recommendedTlsSettings = true;
@@ -80,7 +82,6 @@ in
           )
         )
         |> foldl' (acc: attrs: acc // attrs) { };
-
     }; # end services.nginx
     security.acme = {
       acceptTerms = true;
