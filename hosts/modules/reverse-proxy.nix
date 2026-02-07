@@ -35,6 +35,11 @@ in
         }
       '';
     };
+    enableSSL = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Enabling this forces HTTPS and also enables ACME. For use with something like cloudflared, disable.";
+    };
   };
 
   # TODO: make this config in a way that allows it to work on all of my hosts. currently, need to handle:
@@ -53,8 +58,8 @@ in
           mappingAddrToNginxVirtHost = mappingAddr: {
             # sslCertificate = "/etc/ssl/certs/cf.crt";
             # sslCertificateKey = "/etc/ssl/private/cf.key";
-            forceSSL = true;
-            enableACME = true;
+            forceSSL = cfg.enableSSL;
+            enableACME = cfg.enableSSL;
             locations."/" = {
               root = optionalDrvAttr (typeOf mappingAddr == "string" && (hasPrefix "/" mappingAddr)) mappingAddr;
               proxyPass =
