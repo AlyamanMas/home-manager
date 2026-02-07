@@ -35,7 +35,7 @@
     ../modules/logind.nix
     ../modules/man.nix
     # ../modules/tailscale.nix
-    ../modules/lidarr.nix
+    # ../modules/lidarr.nix
     ../modules/vaultwarden.nix
     ../modules/cloudflared.nix
     ../modules/reverse-proxy.nix
