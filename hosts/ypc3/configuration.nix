@@ -36,7 +36,15 @@
     ../modules/man.nix
     # ../modules/tailscale.nix
     ../modules/lidarr.nix
+    ../modules/vaultwarden.nix
+    ../modules/cloudflared.nix
+    ../modules/reverse-proxy.nix
+
+    ../../secrets
   ];
+
+  # seems needed when cloudflared is used instead of a public ip address
+  custom.reverseProxy.enableSSL = false;
 
   services.displayManager.defaultSession = "niri";
 
