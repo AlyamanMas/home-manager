@@ -8,7 +8,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./reverse-proxy.nix
     ./rev-proxy-entries.nix
 
     ../modules/main-user.nix
@@ -25,6 +24,7 @@
     ../modules/forgejo.nix
     ../modules/wg-server.nix
     ../modules/matrix.nix
+    ../modules/reverse-proxy.nix
 
     ../../secrets
   ];
