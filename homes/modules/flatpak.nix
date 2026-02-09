@@ -40,5 +40,17 @@
       "ca.desrt.dconf-editor"
       "org.onlyoffice.desktopeditors"
     ];
+
+    overrides = {
+      global = {
+        Context.filesystems = [
+          # NOTE: flatpak does not use host fontconfig for some stupid reason.
+          # instead, we have to copy the host fontconfig from /etc/fonts into
+          # xdg-config/fontconfig, and then mount it in the flatpak container
+          # like this. see the fonts hosts module.
+          "xdg-config/fontconfig"
+        ];
+      };
+    };
   };
 }
