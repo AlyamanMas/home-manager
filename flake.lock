@@ -133,6 +133,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-alyamanmas": {
+      "locked": {
+        "lastModified": 1770489958,
+        "narHash": "sha256-joB1fQfPmjb7m6TAWBs8w51qHZpOiP8AL4ofwC4nxC4=",
+        "owner": "AlyamanMas",
+        "repo": "nixpkgs",
+        "rev": "66f621bd07af83d7a3e3cd4d9e644a556ccd9b03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AlyamanMas",
+        "ref": "init-nunito-sans",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1764522689,
@@ -179,6 +195,7 @@
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-alyamanmas": "nixpkgs-alyamanmas",
         "nixpkgs-stable": "nixpkgs-stable"
       }
     },
