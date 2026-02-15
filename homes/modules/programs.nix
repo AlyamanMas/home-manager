@@ -35,7 +35,7 @@ let
   '';
   devTools = with pkgs; [
     # nix {{{
-    nixfmt-rfc-style
+    nixfmt
     nix-prefetch-scripts
     devenv
     #}}}
