@@ -84,12 +84,6 @@
 
   powerManagement.enable = true;
 
-  specialisation = {
-    newerKernel.configuration = {
-      boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_17;
-    };
-  };
-
   # This value determines the NixOS release from which the
   # default settings for stateful data, like file locations and
   # database versions on your system were taken. It‘s perfectly
