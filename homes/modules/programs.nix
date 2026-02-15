@@ -65,6 +65,7 @@ let
     ripgrep
     fd
     fzf
+    borgbackup
     # }}}
     # wayland/display {{{
     wl-clipboard
