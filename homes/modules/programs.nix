@@ -91,6 +91,10 @@ let
     poppler-utils
     pandoc
     # }}}
+    # games {{{
+    lsfg-vk
+    lsfg-vk-ui
+    # }}}
   ];
   graphicalApps = with pkgs; [
     qbittorrent # TODO: move to flatpak
