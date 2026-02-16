@@ -85,6 +85,7 @@ let
     appimage-run
     android-tools
     scrcpy
+    claude-code
     # }}}
     # documents {{{
     poppler-utils
