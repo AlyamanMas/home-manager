@@ -16,6 +16,7 @@
     ../modules/nushell.nix
     ../modules/foot
     ../modules/git.nix
+    ../modules/mpd.nix
   ];
 
   device.host = "ypc3";

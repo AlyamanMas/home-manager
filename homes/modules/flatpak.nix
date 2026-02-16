@@ -19,12 +19,13 @@
       "us.zoom.Zoom"
       "com.github.tchx84.Flatseal"
       "org.keepassxc.KeePassXC"
-      "org.gnome.Music"
+      "org.gnome.Music" # looks like it has been replaced by amberol? perhaps remove
       "org.gnome.Papers"
       "org.gnome.Solanum"
       "org.pulseaudio.pavucontrol"
       "io.github.Qalculate"
       "com.github.wwmm.easyeffects"
+      "io.bassi.Amberol"
     ]
     ++ lib.optionals (config.device.host == "ypc3") [
       "io.github.dimtpap.coppwr" # basically pipewire graph patchpanel
@@ -39,6 +40,7 @@
       "md.obsidian.Obsidian"
       "ca.desrt.dconf-editor"
       "org.onlyoffice.desktopeditors"
+      "io.github.htkhiem.Euphonica" # mpd client in libadwaita
     ];
 
     overrides = {
