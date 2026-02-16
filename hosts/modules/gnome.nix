@@ -43,4 +43,13 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-indicator
   ];
+
+  # for some reason, gnome now forces type to "ibus" if core-os-services is
+  # enabled, which is true if gnome is enabled. therefore, we manually disable
+  # ibus by setting type to null.
+  i18n.inputMethod = {
+    enabled = null;
+    type = null;
+    enable = false;
+  };
 }
