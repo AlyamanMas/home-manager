@@ -39,6 +39,7 @@
     ../modules/vaultwarden.nix
     ../modules/cloudflared.nix
     ../modules/reverse-proxy.nix
+    ../modules/immich.nix
 
     ../../secrets
   ];
