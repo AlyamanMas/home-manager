@@ -91,6 +91,16 @@ in
             {
               background = segmentBg;
               foreground = segmentFg;
+              properties = {
+                style = "full";
+              };
+              style = "plain";
+              template = "<${segmentSeparator}> </>󱄅 {{ .Type }} ";
+              type = "nix-shell";
+            }
+            {
+              background = segmentBg;
+              foreground = segmentFg;
               style = "plain";
               template = "<${segmentSeparator}> </>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}";
               properties = {
