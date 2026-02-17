@@ -37,6 +37,7 @@ let
     # nix {{{
     nixfmt
     nix-prefetch-scripts
+    nix-prefetch-github
     devenv
     #}}}
     # python {{{
@@ -86,6 +87,7 @@ let
     android-tools
     scrcpy
     claude-code
+    file
     # }}}
     # documents {{{
     poppler-utils
