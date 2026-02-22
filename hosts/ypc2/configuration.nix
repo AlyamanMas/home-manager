@@ -33,6 +33,7 @@
     ../modules/avahi.nix
     ../modules/logind.nix
     ../modules/man.nix
+    ../modules/thumbnailers.nix
   ];
 
   services.displayManager.defaultSession = "niri";

@@ -40,6 +40,7 @@
     ../modules/cloudflared.nix
     ../modules/reverse-proxy.nix
     ../modules/immich.nix
+    ../modules/thumbnailers.nix
 
     ../../secrets
   ];
