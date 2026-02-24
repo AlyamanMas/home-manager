@@ -55,6 +55,7 @@ let
   cliTools = with pkgs; [
     # networking {{{
     wget
+    aria2
     autossh
     nftables
     dig
