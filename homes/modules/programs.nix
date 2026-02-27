@@ -124,6 +124,9 @@ in
 
     mpv = {
       enable = true;
+      config = {
+        hwdec = "auto";
+      };
     };
 
     starship = {
