@@ -18,6 +18,7 @@
     ../modules/git.nix
     ../modules/mpd.nix
     ../modules/kdeconnect.nix
+    ../modules/rclone.nix
   ];
 
   device.host = "ypc3";
