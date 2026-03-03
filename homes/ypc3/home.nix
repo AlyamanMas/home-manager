@@ -17,6 +17,7 @@
     ../modules/foot
     ../modules/git.nix
     ../modules/mpd.nix
+    ../modules/kdeconnect.nix
   ];
 
   device.host = "ypc3";
