@@ -15,10 +15,6 @@ in
       default = true; # If we are importing this module, then we must want to enable it; otherwise, there is no point in importing it
       description = "Whether to enable custom reverse proxy logic; basically map subdomain to localhost port or unix socket.";
     };
-    provider = mkOption {
-      type = types.enum [ "nginx" ];
-      default = "nginx";
-    };
     mappings = mkOption {
       type =
         with types;
