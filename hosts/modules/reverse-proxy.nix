@@ -36,6 +36,11 @@ in
       default = true;
       description = "Enabling this forces HTTPS and also enables ACME. For use with something like cloudflared, disable.";
     };
+    addMappingsToLocalhost = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Enabling this will make the reverse proxy listen on mapping.localhost and redirect it to the relevant entry as defined in `custom.reverseProxy.mappings`.";
+    };
   };
 
   # TODO: make this config in a way that allows it to work on all of my hosts. currently, need to handle:
@@ -51,11 +56,7 @@ in
       virtualHosts =
         let
           subdomainToFullDomain = domain: subdomain: subdomain + "." + domain;
-          mappingAddrToNginxVirtHost = mappingAddr: {
-            # sslCertificate = "/etc/ssl/certs/cf.crt";
-            # sslCertificateKey = "/etc/ssl/private/cf.key";
-            forceSSL = cfg.enableSSL;
-            enableACME = cfg.enableSSL;
+          mappingAddrToNginxVirtHostGeneric = mappingAddr: {
             locations."/" = {
               root = optionalDrvAttr (typeOf mappingAddr == "string" && (hasPrefix "/" mappingAddr)) mappingAddr;
               proxyPass =
@@ -69,20 +70,44 @@ in
                 typeOf mappingAddr == "int" || (typeOf mappingAddr == "string" && (hasPrefix "unix:/" mappingAddr));
             };
           };
+          mappingAddrToNginxVirtHost =
+            mappingAddr:
+            mappingAddrToNginxVirtHostGeneric mappingAddr
+            // {
+              # sslCertificate = "/etc/ssl/certs/cf.crt";
+              # sslCertificateKey = "/etc/ssl/private/cf.key";
+              forceSSL = cfg.enableSSL;
+              enableACME = cfg.enableSSL;
+            };
+          secretsDomainsHosts =
+            config.secrets.domains
+            |> map (
+              domain:
+              cfg.mappings
+              |> mapAttrs' (
+                subdomain: addr: {
+                  name = subdomainToFullDomain domain subdomain;
+                  value = mappingAddrToNginxVirtHost addr;
+                }
+              )
+            )
+            |> foldl' (acc: attrs: acc // attrs) { };
+          localhostDomainHosts =
+            if cfg.addMappingsToLocalhost then
+              (
+                cfg.mappings
+                |> mapAttrs' (
+                  subdomain: addr: {
+                    name = subdomainToFullDomain "localhost" subdomain;
+                    value = mappingAddrToNginxVirtHostGeneric addr;
+                  }
+                )
+              )
+            else
+              { };
+          virtualHosts = secretsDomainsHosts // localhostDomainHosts;
         in
-        # TODO: be able to configure this module level?
-        config.secrets.domains
-        |> map (
-          domain:
-          cfg.mappings
-          |> mapAttrs' (
-            subdomain: addr: {
-              name = subdomainToFullDomain domain subdomain;
-              value = mappingAddrToNginxVirtHost addr;
-            }
-          )
-        )
-        |> foldl' (acc: attrs: acc // attrs) { };
+        virtualHosts;
     }; # end services.nginx
     security.acme = {
       acceptTerms = true;
