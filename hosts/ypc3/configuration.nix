@@ -43,6 +43,7 @@
     ../modules/thumbnailers.nix
     ../modules/virtualization.nix
     ../modules/syncthing.nix
+    ../modules/route-rev-proxy-mappings-to-localhost.nix
 
     ../../secrets
   ];
