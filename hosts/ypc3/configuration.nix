@@ -42,6 +42,7 @@
     ../modules/immich.nix
     ../modules/thumbnailers.nix
     ../modules/virtualization.nix
+    ../modules/syncthing.nix
 
     ../../secrets
   ];
