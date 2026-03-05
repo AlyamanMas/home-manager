@@ -62,6 +62,7 @@ let
     nettools
     sshfs
     socat
+    mkcert
     # }}}
     # filesystem {{{
     ripgrep
