@@ -30,6 +30,10 @@ in
   users.users.${config.users.mainUser}.extraGroups = [
     cfg.group
   ];
+  # add so syncthing can read files added by users to the datadir
+  users.users.syncthing.extraGroups = [
+    "users"
+  ];
   # add so nginx can access the unix socket of the gui
   users.users.nginx.extraGroups = [ cfg.group ];
 
