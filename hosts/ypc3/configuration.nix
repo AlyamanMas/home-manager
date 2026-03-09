@@ -49,6 +49,7 @@
   ];
 
   # seems needed when cloudflared is used instead of a public ip address
+  custom.reverseProxy.enable = true;
   custom.reverseProxy.enableSSL = false;
 
   services.displayManager.defaultSession = "niri";

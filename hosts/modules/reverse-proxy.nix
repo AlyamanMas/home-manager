@@ -12,7 +12,7 @@ in
   options.custom.reverseProxy = {
     enable = mkOption {
       type = types.bool;
-      default = true; # If we are importing this module, then we must want to enable it; otherwise, there is no point in importing it
+      default = false;
       description = "Whether to enable custom reverse proxy logic; basically map subdomain to localhost port or unix socket.";
     };
     mappings = mkOption {
