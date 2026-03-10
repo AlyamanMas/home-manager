@@ -70,6 +70,7 @@ let
     fzf
     borgbackup
     bat
+    lsof
     # }}}
     # wayland/display {{{
     wl-clipboard
