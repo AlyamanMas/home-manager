@@ -8,6 +8,7 @@
     git = {
       enable = true;
       package = pkgs.gitFull;
+      lfs.enable = true;
       settings = {
         user.email = "alyaman.maasarani@gmail.com";
         user.name = "Alyaman Massarani";
