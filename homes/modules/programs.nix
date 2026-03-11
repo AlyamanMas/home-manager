@@ -111,6 +111,8 @@ let
     inputs.helium.packages.${system}.default # TODO: move to flatpak when released
     vscodium
     zed
+    # TODO: maybe move to flatpak app
+    krita
   ];
 in
 {
