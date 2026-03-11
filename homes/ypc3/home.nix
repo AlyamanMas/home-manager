@@ -8,7 +8,7 @@
     ../modules/env.nix
     ../modules/programs.nix
     ../modules/hypr
-    ../modules/mako.nix
+    # ../modules/mako.nix
     ../modules/niri
     ../modules/device.nix
     ../modules/flatpak.nix
