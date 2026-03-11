@@ -18,7 +18,7 @@ in
   # automatically creates a runtime directory at `/run/syncthing` so that `guiAddress` can create its socket in it
   systemd.services.syncthing.serviceConfig = {
     RuntimeDirectory = "syncthing";
-    RuntimeDirectoryMode = "0750";
+    RuntimeDirectoryMode = "0770";
     # UMask 0007 ensures new files (including socket) get g+w. this is needed so nginx can communicate with syncthing.
     # 0777 - 0007 = 0770 for directories, 0666 - 0007 = 0660 for files
     UMask = "0007";
