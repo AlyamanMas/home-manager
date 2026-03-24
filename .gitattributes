@@ -3,3 +3,4 @@ hosts/modules/wp-docker.nix filter=git-crypt diff=git-crypt
 hosts/modules/wg-server.nix filter=git-crypt diff=git-crypt
 hosts/YVPSH/secrets.nix filter=git-crypt diff=git-crypt
 hosts/modules/matrix.nix filter=git-crypt diff=git-crypt
+homes/modules/git2.nix filter=git-crypt diff=git-crypt
