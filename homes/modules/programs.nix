@@ -75,6 +75,7 @@ let
     borgbackup
     bat
     lsof
+    ncdu
     # }}}
     # wayland/display {{{
     wl-clipboard
