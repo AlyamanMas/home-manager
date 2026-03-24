@@ -7,7 +7,7 @@
   imports = [
     ./hardware-configuration.nix
     ./hardware-accelerated-decoding.nix
-    ./local-domains.nix
+    # ./local-domains.nix
     # ./autossh-tunneling.nix
 
     ../modules/efi-systemd-boot.nix
@@ -15,7 +15,7 @@
     ../modules/gnome.nix
     ../modules/cachix
     # ../modules/webui.nix
-    ../modules/hyprland.nix
+    # ../modules/hyprland.nix
     ../modules/fonts.nix
     ../modules/nix.nix
     ../modules/sound.nix
