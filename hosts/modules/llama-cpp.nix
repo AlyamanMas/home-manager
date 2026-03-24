@@ -9,5 +9,9 @@
     host = "0.0.0.0";
     model = "/opt/models/qwen3.5-9b.gguf";
     package = pkgsUnstable.llama-cpp;
+    extraFlags = [
+      "-c"
+      "262144"
+    ];
   };
 }
