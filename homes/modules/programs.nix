@@ -33,25 +33,29 @@ let
     #!/usr/bin/env nu
     ls $"($env.HOME)/Pictures/Screenshots/" | sort-by modified -r | get 0.name | xdg-open $in
   '';
-  devTools = with pkgs; [
-    # nix {{{
-    nixfmt
-    nix-prefetch-scripts
-    nix-prefetch-github
-    devenv
-    #}}}
-    # python {{{
-    uv
-    ruff
-    python3
-    # }}}
-    # git {{{
-    git-crypt
-    lazygit
-    #}}}
-    typst
-    nodejs_22
-  ];
+  devTools =
+    with pkgs;
+    [
+      # nix {{{
+      nixfmt
+      nix-prefetch-scripts
+      nix-prefetch-github
+      devenv
+      #}}}
+      # python {{{
+      uv
+      ruff
+      python3
+      # }}}
+      # git {{{
+      git-crypt
+      lazygit
+      #}}}
+      typst
+      nodejs_22
+      opencode
+    ]
+    ++ nvimWithDeps;
   cliTools = with pkgs; [
     # networking {{{
     wget
@@ -116,7 +120,7 @@ let
   ];
 in
 {
-  home.packages = devTools ++ cliTools ++ graphicalApps ++ nvimWithDeps;
+  home.packages = devTools ++ cliTools ++ graphicalApps;
 
   programs = {
     home-manager.enable = true;
