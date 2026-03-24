@@ -12,7 +12,7 @@
     extraFlags = [
       "-c"
       "262144"
-      "-temp"
+      "--temp"
       "0.6"
       "--top-p"
       "0.95"
