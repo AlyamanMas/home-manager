@@ -27,7 +27,7 @@
     ../modules/main-user.nix
     # ../modules/jupyter-docker.nix
     ../modules/xbox.nix
-    # ../modules/ollama.nix
+    ../modules/ollama.nix
     # ../modules/waydroid.nix
     ../modules/niri.nix
     # ../modules/thunderbolt-static-ip.nix
@@ -39,7 +39,7 @@
     ../modules/vaultwarden.nix
     ../modules/cloudflared.nix
     ../modules/reverse-proxy.nix
-    ../modules/immich.nix
+    # ../modules/immich.nix
     ../modules/thumbnailers.nix
     ../modules/virtualization.nix
     ../modules/syncthing.nix
@@ -47,6 +47,8 @@
 
     ../../secrets
   ];
+
+  services.ollama.package = pkgsUnstable.ollama;
 
   # seems needed when cloudflared is used instead of a public ip address
   custom.reverseProxy.enable = true;
