@@ -68,7 +68,7 @@ in
           source = ./config/outputs-ypc3.kdl;
           force = true;
         }
-      else if config.host.device == "ypc2" then
+      else if config.device.host == "ypc2" then
         {
           source = ./config/outputs-ypc2.kdl;
           force = true;
