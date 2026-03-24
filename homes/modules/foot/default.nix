@@ -18,7 +18,7 @@
         blink = "yes";
       };
 
-      colors = import ./catppuccin-mocha.nix;
+      colors-dark = import ./catppuccin-mocha.nix;
 
       csd = {
         preferred = "none";
