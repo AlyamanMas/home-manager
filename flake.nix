@@ -43,64 +43,59 @@
         inherit system;
         config.allowUnfree = true;
       };
+      pkgsCuda = import nixpkgs {
+        inherit system;
+        config = {
+          cudaSupport = true;
+          allowUnfree = true;
+        };
+      };
     in
     {
-      nixosConfigurations =
-        let
-          ypc2System = nixpkgs-stable.lib.nixosSystem {
-            modules = [ ./hosts/ypc2/configuration.nix ];
-            specialArgs = {
-              pkgsUnstable = pkgs;
-              inherit inputs;
-            };
-          };
-        in
-        {
-          # TODO: remove this when ypc2 switches its hostname to ypc2
-          "YPC2-NIXOS2" = ypc2System;
-          "ypc2" = ypc2System;
-
-          "ypc3" = nixpkgs-stable.lib.nixosSystem {
-            modules = [ ./hosts/ypc3/configuration.nix ];
-            specialArgs = {
-              pkgsUnstable = pkgs;
-              inherit inputs;
-            };
-          };
-
-          "yvpsh" = nixpkgs.lib.nixosSystem {
-            modules = [ ./hosts/yvpsh/configuration.nix ];
-            specialArgs = {
-              pkgsUnstable = pkgs;
-            };
+      nixosConfigurations = {
+        "ypc2" = nixpkgs-stable.lib.nixosSystem {
+          modules = [ ./hosts/ypc2/configuration.nix ];
+          specialArgs = {
+            pkgsUnstable = pkgsCuda;
+            inherit inputs;
           };
         };
 
-      homeConfigurations =
-        let
-          ypc2Home = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [
-              ./homes/ypc2/home.nix
-            ];
-
-            extraSpecialArgs.inputs = inputs;
-          };
-        in
-        {
-          # TODO: remove this when ypc2 switches its hostname to ypc2
-          "alyaman@YPC2-NIXOS2" = ypc2Home;
-          "alyaman@ypc2" = ypc2Home;
-
-          "alyaman@ypc3" = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [
-              ./homes/ypc3/home.nix
-            ];
-
-            extraSpecialArgs.inputs = inputs;
+        "ypc3" = nixpkgs-stable.lib.nixosSystem {
+          modules = [ ./hosts/ypc3/configuration.nix ];
+          specialArgs = {
+            pkgsUnstable = pkgs;
+            inherit inputs;
           };
         };
+
+        "yvpsh" = nixpkgs.lib.nixosSystem {
+          modules = [ ./hosts/yvpsh/configuration.nix ];
+          specialArgs = {
+            pkgsUnstable = pkgs;
+          };
+        };
+      };
+
+      homeConfigurations = {
+        "alyaman@ypc2" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgsCuda;
+          modules = [
+            ./homes/ypc2/home.nix
+          ];
+
+          extraSpecialArgs.inputs = inputs;
+        };
+
+        "alyaman@ypc3" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./homes/ypc3/home.nix
+          ];
+
+          extraSpecialArgs.inputs = inputs;
+        };
+      };
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
     };
