@@ -37,6 +37,11 @@
     ../modules/thumbnailers.nix
   ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = true;
+  };
+
   services.displayManager.defaultSession = "niri";
 
   networking = {
