@@ -26,7 +26,8 @@
     ../modules/main-user.nix
     # ../modules/jupyter-docker.nix
     ../modules/xbox.nix
-    ../modules/ollama.nix
+    # ../modules/ollama.nix
+    ../modules/llama-cpp.nix
     # ../modules/waydroid.nix
     ../modules/niri.nix
     # ../modules/thunderbolt-static-ip.nix
