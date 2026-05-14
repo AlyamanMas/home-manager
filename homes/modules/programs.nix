@@ -56,6 +56,7 @@ let
       typst
       nodejs_22
       opencode
+      tree-sitter
     ]
     ++ nvimWithDeps;
   cliTools = with pkgs; [
