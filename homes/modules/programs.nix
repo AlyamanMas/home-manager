@@ -25,6 +25,7 @@ let
       bash-language-server
       shellcheck
       shfmt
+      prettier
     ];
   vimDeps = editorDepsFunc pkgs;
   nvimWithDeps = vimDeps ++ [ pkgs.neovim-unwrapped ];
