@@ -2,6 +2,7 @@
 {
   pkgs,
   inputs,
+  pkgsNightly,
   ...
 }:
 let
@@ -40,7 +41,7 @@ let
       nixfmt
       nix-prefetch-scripts
       nix-prefetch-github
-      devenv
+      pkgsNightly.devenv
       #}}}
       # python {{{
       uv

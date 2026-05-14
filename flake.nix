@@ -10,6 +10,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-nightly.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     # }}}
 
     # extra {{{
@@ -34,6 +35,7 @@
     {
       nixpkgs,
       nixpkgs-stable,
+      nixpkgs-nightly,
       home-manager,
       ...
     }@inputs:
@@ -49,6 +51,10 @@
           cudaSupport = true;
           allowUnfree = true;
         };
+      };
+      pkgsNightly = import nixpkgs-nightly {
+        inherit system;
+        config.allowUnfree = true;
       };
     in
     {
@@ -94,6 +100,7 @@
           ];
 
           extraSpecialArgs.inputs = inputs;
+          extraSpecialArgs.pkgsNightly = pkgsNightly;
         };
       };
 
