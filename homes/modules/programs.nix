@@ -100,6 +100,7 @@ let
     scrcpy
     claude-code
     file
+    bubblewrap # for codex sandboxing
     # }}}
     # documents {{{
     poppler-utils
