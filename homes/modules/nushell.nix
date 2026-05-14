@@ -29,6 +29,7 @@ in
       zed = "zeditor";
       zedn = "zeditor -wn";
       lg = "lazygit";
+      sep = "secretspec";
     };
     extraConfig = /* nu */ ''
       $env.config.history.file_format = "sqlite"
