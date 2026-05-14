@@ -85,7 +85,7 @@
 
       homeConfigurations = {
         "alyaman@ypc2" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgsCuda;
+          pkgs = pkgsCuda;
           modules = [
             ./homes/ypc2/home.nix
           ];
