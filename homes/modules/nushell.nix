@@ -30,6 +30,8 @@ in
       zedn = "zeditor -wn";
       lg = "lazygit";
       sep = "secretspec";
+      # codex with a security model closer to claude-code by default
+      clodex = "codex -a untrusted --search -s danger-full-access";
     };
     extraConfig = /* nu */ ''
       $env.config.history.file_format = "sqlite"
