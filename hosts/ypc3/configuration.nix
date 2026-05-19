@@ -44,6 +44,7 @@
     ../modules/virtualization.nix
     ../modules/syncthing.nix
     ../modules/route-rev-proxy-mappings-to-localhost.nix
+    ../modules/no-bluetooth-specialisation.nix
 
     ../../secrets
   ];
