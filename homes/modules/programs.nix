@@ -110,6 +110,9 @@ let
     lsfg-vk
     lsfg-vk-ui
     # }}}
+    # misc {{{
+    gum
+    # }}}
   ];
   graphicalApps = with pkgs; [
     qbittorrent # TODO: move to flatpak
