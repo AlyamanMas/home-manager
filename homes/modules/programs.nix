@@ -125,6 +125,7 @@ let
     zed
     # TODO: maybe move to flatpak app
     krita
+    dbeaver-bin
   ];
 in
 {
