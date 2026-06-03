@@ -4,16 +4,6 @@
   # https://nix-community.github.io/nixvim/plugins/gitsigns/index.html
   plugins.gitsigns = {
     enable = true;
-    settings = {
-      signs = {
-        add.text = "+";
-        change.text = "~";
-        changedelete.text = "~";
-        delete.text = "_";
-        topdelete.text = "‾";
-        untracked.text = "┆";
-      };
-    };
   };
 
   keymaps = [
