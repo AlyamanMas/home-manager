@@ -4,7 +4,7 @@
   inputs,
   pkgsNightly,
   ...
-}:
+}@all:
 let
   system = pkgs.stdenv.hostPlatform.system;
   editorDepsFunc =
@@ -26,9 +26,11 @@ let
       shellcheck
       shfmt
       prettier
+      markdownlint-cli
     ];
   vimDeps = editorDepsFunc pkgs;
-  nvimWithDeps = vimDeps ++ [ pkgs.neovim-unwrapped ];
+  # nvimWithDeps = vimDeps ++ [ pkgs.neovim-unwrapped ];
+  nvimWithDeps = vimDeps ++ [ (import ./nixvim all) ];
   vscodium = pkgs.vscodium.fhsWithPackages editorDepsFunc;
   zed = pkgs.zed-editor.fhsWithPackages editorDepsFunc;
   open-last-screenshot = pkgs.writeScriptBin "open-last-screenshot.nu" /* nu */ ''
@@ -53,6 +55,9 @@ let
       git-crypt
       lazygit
       #}}}
+      # rust {{{
+      cargo
+      # }}}
       typst
       nodejs_22
       opencode
@@ -70,6 +75,7 @@ let
     sshfs
     socat
     mkcert
+    inputs.netis-client-tracker.packages.${system}.default
     # }}}
     # filesystem {{{
     ripgrep
@@ -101,6 +107,10 @@ let
     claude-code
     file
     bubblewrap # for codex sandboxing
+    nh
+    postgresql
+    tmux
+    tmuxinator
     # }}}
     # documents {{{
     poppler-utils

@@ -28,6 +28,8 @@
       url = "github:vikingnope/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    netis-client-tracker.url = "git+https://codeberg.org/alyamanmas/netis-wf2409e-clients-packet-tracker.git";
+    nixvim.url = "github:nix-community/nixvim/nixos-26.05";
     # }}}
   };
 
