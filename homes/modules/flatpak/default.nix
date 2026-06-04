@@ -8,6 +8,7 @@
 {
   imports = [
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+    ./keepassxc-native-messaging-fix.nix
   ];
 
   services.flatpak = {
@@ -43,6 +44,8 @@
       "io.github.htkhiem.Euphonica" # mpd client in libadwaita
     ];
 
+    # NOTE: apparently, next versions of flatpak-nix will switch `overrides` to `overrides.settings`,
+    # but trying to use it right now with 0.7.0 throws an error.
     overrides = {
       global = {
         Context.filesystems = [
@@ -50,9 +53,9 @@
           # instead, we have to copy the host fontconfig from /etc/fonts into
           # xdg-config/fontconfig, and then mount it in the flatpak container
           # like this. see the fonts hosts module.
-          "xdg-config/fontconfig"
+          "xdg-config/fontconfig:ro"
         ];
       };
     };
-  };
+  }; # end services.flatpak
 }

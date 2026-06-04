@@ -11,7 +11,7 @@
     # ../modules/mako.nix
     ../modules/niri
     ../modules/device.nix
-    ../modules/flatpak.nix
+    ../modules/flatpak
     ../modules/fish.nix
     ../modules/nushell.nix
     ../modules/foot
