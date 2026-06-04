@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # TODO: bump to 0.7.0 or above when it becomes stable
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     helium = {
       url = "github:vikingnope/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
