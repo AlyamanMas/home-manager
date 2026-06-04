@@ -13,23 +13,14 @@ let
   needKeepassxcRustProxy =
     lib.lists.any (flatpakPackage: flatpakPackage.appId == "org.keepassxc.KeePassXC") flatpakPkgs
     && lib.lists.any (flatpakPackage: flatpakPackage.appId == "app.zen_browser.zen") flatpakPkgs;
-  keepassxcProxyPkg = inputs.keepassxc-proxy-rust.defaultPackage.${system};
+  keepassxcProxyPkg = inputs.keepassxc-proxy-rust.packages.${system}.static;
 in
 {
   services.flatpak = {
     overrides = {
       "app.zen_browser.zen".Context = {
         filesystems = [
-          "${inputs.keepassxc-proxy-rust.defaultPackage.${system}}:ro"
-          # proxy's runtime dependencies; confirmed to be required.
-          # can be obtained with `nix-store --query -R <nix-store path for package>`
-          # make sure to update these if updating keepassxc-proxy-rust
-          "/nix/store/bf6wgamqnl3c91iamlb1branrfcwwy7x-libunistring-1.4.2:ro"
-          "/nix/store/6qa00czc79b3nb6ld0mdyacfp2p1k3jx-libidn2-2.3.8:ro"
-          "/nix/store/g54b6ghpnn98hfdz4yqw87w10c3hx8bv-xgcc-15.2.0-libgcc:ro"
-          "/nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61:ro"
-          "/nix/store/xyikkpwkyxx6syba3kfrr0h67ig5hwmn-gcc-15.2.0-libgcc:ro"
-          "/nix/store/chqq8mpmpyfi9kgsngya71akv5xicn03-gcc-15.2.0-lib:ro"
+          "${keepassxcProxyPkg}:ro"
           # the keepassxc socket; new format (first), and old format (latter)
           "xdg-run/app/org.keepassxc.KeePassXC/org.keepassxc.KeePassXC.BrowserServer"
           "xdg-run/kpxc_server"

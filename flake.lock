@@ -106,11 +106,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1780584172,
-        "narHash": "sha256-Lj3/T0R/OfdKekzjQIVMDc5wilB/LsUWHWJQdk//awA=",
+        "lastModified": 1780595690,
+        "narHash": "sha256-Kv+F53f1IPCGxk+C0l4iVqGFQLsS/CWThGhVHopgcHc=",
         "owner": "AlyamanMas",
         "repo": "keepassxc-proxy-rust-nix",
-        "rev": "808e8019004a723aafe6cc26583b900c021d2fee",
+        "rev": "6acab45e25c8a9a0b0107cc7e0b20e5626ce33d8",
         "type": "github"
       },
       "original": {

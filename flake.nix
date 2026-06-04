@@ -30,8 +30,6 @@
     };
     netis-client-tracker.url = "git+https://codeberg.org/alyamanmas/netis-wf2409e-clients-packet-tracker.git";
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
-    # if updating, make sure to also update runtime dependencies in flatpak.nix home module
-    # NOTE: DO NOT bind this input's nixpkgs to system nixpkgs, since that would mean updating the package's dependencies, which would require manual relisting of said packages in the flatpak module
     keepassxc-proxy-rust.url = "github:AlyamanMas/keepassxc-proxy-rust-nix";
     # }}}
   };
