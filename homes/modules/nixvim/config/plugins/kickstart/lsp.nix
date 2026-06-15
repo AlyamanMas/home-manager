@@ -121,7 +121,11 @@
           # };
         };
       };
-    };
+
+      tailwindcss = {
+        enable = true;
+      };
+    }; # end servers
 
     keymaps = {
       # Diagnostic keymaps
