@@ -42,6 +42,7 @@
       "ca.desrt.dconf-editor"
       "org.onlyoffice.desktopeditors"
       "io.github.htkhiem.Euphonica" # mpd client in libadwaita
+      "org.gnome.SoundRecorder"
     ];
 
     # NOTE: apparently, next versions of flatpak-nix will switch `overrides` to `overrides.settings`,
