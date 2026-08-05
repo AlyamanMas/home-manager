@@ -94,6 +94,7 @@ let
     yt-dlp
     ffmpeg
     imagemagick
+    audiosource
     # }}}
     # system {{{
     btop
