@@ -60,7 +60,7 @@ let
       # }}}
       typst
       nodejs_22
-      opencode
+      pkgsNightly.opencode
       tree-sitter
     ]
     ++ nvimWithDeps;
