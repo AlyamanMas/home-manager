@@ -57,6 +57,24 @@ in
         let
           subdomainToFullDomain = domain: subdomain: subdomain + "." + domain;
           mappingAddrToNginxVirtHostGeneric = mappingAddr: {
+            listen = [
+              {
+                addr = "0.0.0.0";
+                port = 80;
+              }
+              {
+                addr = "[::]";
+                port = 80;
+              }
+              {
+                addr = "127.0.0.1";
+                port = 80;
+              } # <- fixes the priority issue (domains listening only on 127.0.0.1 overtaking domains listening on 0.0.0.0 even when their addresses do not match)
+              {
+                addr = "[::1]";
+                port = 80;
+              }
+            ];
             locations."/" = {
               root = optionalDrvAttr (typeOf mappingAddr == "string" && (hasPrefix "/" mappingAddr)) mappingAddr;
               proxyPass =
@@ -76,6 +94,30 @@ in
             // {
               # sslCertificate = "/etc/ssl/certs/cf.crt";
               # sslCertificateKey = "/etc/ssl/private/cf.key";
+              listen =
+                (mappingAddrToNginxVirtHostGeneric mappingAddr).listen
+                ++ optionals cfg.enableSSL [
+                  {
+                    addr = "0.0.0.0";
+                    port = 443;
+                    ssl = true;
+                  }
+                  {
+                    addr = "[::]";
+                    port = 443;
+                    ssl = true;
+                  }
+                  {
+                    addr = "127.0.0.1";
+                    port = 443;
+                    ssl = true;
+                  }
+                  {
+                    addr = "[::1]";
+                    port = 443;
+                    ssl = true;
+                  }
+                ];
               forceSSL = cfg.enableSSL;
               enableACME = cfg.enableSSL;
             };
