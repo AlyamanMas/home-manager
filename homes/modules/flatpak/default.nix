@@ -44,6 +44,7 @@
       "io.github.htkhiem.Euphonica" # mpd client in libadwaita
       "org.prismlauncher.PrismLauncher"
       "org.gnome.SoundRecorder"
+      "org.kde.kdenlive"
     ];
 
     # NOTE: apparently, next versions of flatpak-nix will switch `overrides` to `overrides.settings`,
