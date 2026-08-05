@@ -42,6 +42,7 @@
       "ca.desrt.dconf-editor"
       "org.onlyoffice.desktopeditors"
       "io.github.htkhiem.Euphonica" # mpd client in libadwaita
+      "org.prismlauncher.PrismLauncher"
       "org.gnome.SoundRecorder"
     ];
 
