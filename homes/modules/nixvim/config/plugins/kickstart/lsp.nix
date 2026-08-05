@@ -120,6 +120,10 @@
           #   ];
           # };
         };
+      }; # end lua_ls
+
+      postgres_lsp = {
+        enable = true;
       };
 
       tailwindcss = {
