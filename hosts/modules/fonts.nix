@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgsUnstable,
   inputs,
   ...
 }:
@@ -24,9 +25,10 @@
       noto-fonts
       vazir-fonts
       adwaita-fonts
-      # TODO: replace with nixpkgs packages when nunito is merged into nixpkgs
-      inputs.nixpkgs-alyamanmas.legacyPackages.x86_64-linux.nunito
-      inputs.nixpkgs-alyamanmas.legacyPackages.x86_64-linux.nunito-sans
+      amiri
+      # TODO: replace with normal packages when updating nixpkgs-stable to version that includes these
+      pkgsUnstable.nunito
+      pkgsUnstable.nunito-sans
     ];
 
     # NOTE: in flatpak, fontconfig options are not taken into account, and
