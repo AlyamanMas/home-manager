@@ -136,6 +136,7 @@ let
     # TODO: maybe move to flatpak app
     krita
     dbeaver-bin
+    pkgsNightly.osu-lazer-bin
   ];
 in
 {
