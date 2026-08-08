@@ -38,6 +38,6 @@ in
   users.users.nginx.extraGroups = [ cfg.group ];
 
   custom.reverseProxy.mappings = {
-    syncthing = "unix:${cfg.guiAddress}";
+    syncthing = "${cfg.guiAddress}";
   };
 }

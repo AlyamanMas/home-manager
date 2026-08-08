@@ -2,7 +2,7 @@
   inputs = {
     # basics {{{
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-alyamanmas = {
       url = "github:AlyamanMas/nixpkgs/init-nunito-sans";
     };
