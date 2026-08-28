@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ./hardware-accelerated-decoding.nix
+    ./battery-limit.nix
     # ./local-domains.nix
     # ./autossh-tunneling.nix
 
