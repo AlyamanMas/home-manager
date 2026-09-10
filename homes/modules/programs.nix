@@ -44,7 +44,7 @@ let
       nixfmt
       nix-prefetch-scripts
       nix-prefetch-github
-      pkgsNightly.devenv
+      devenv
       #}}}
       # python {{{
       uv
@@ -60,7 +60,7 @@ let
       # }}}
       typst
       nodejs_22
-      pkgsNightly.opencode
+      opencode
       tree-sitter
     ]
     ++ nvimWithDeps;
