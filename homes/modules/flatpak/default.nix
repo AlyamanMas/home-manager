@@ -17,7 +17,6 @@
       "com.bitwarden.desktop"
       "com.obsproject.Studio"
       "app.zen_browser.zen"
-      "us.zoom.Zoom"
       "com.github.tchx84.Flatseal"
       "org.keepassxc.KeePassXC"
       "org.gnome.Music" # looks like it has been replaced by amberol? perhaps remove
@@ -45,6 +44,7 @@
       "org.prismlauncher.PrismLauncher"
       "org.gnome.SoundRecorder"
       "org.kde.kdenlive"
+      "us.zoom.Zoom"
     ];
 
     # NOTE: apparently, next versions of flatpak-nix will switch `overrides` to `overrides.settings`,
