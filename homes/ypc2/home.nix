@@ -8,8 +8,8 @@
     ../modules/env.nix
     ../modules/programs.nix
     ../modules/hypr
-    ../modules/waybar.nix
-    ../modules/mako.nix
+    # ../modules/waybar.nix
+    # ../modules/mako.nix
     ../modules/niri
     ../modules/device.nix
     ../modules/fish.nix
