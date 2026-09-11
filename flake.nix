@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-nightly.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     # }}}
 
     # extra {{{
@@ -40,6 +44,7 @@
       nixpkgs-stable,
       nixpkgs-nightly,
       home-manager,
+      nixos-hardware,
       ...
     }@inputs:
     let
@@ -63,7 +68,12 @@
     {
       nixosConfigurations = {
         "ypc2" = nixpkgs-stable.lib.nixosSystem {
-          modules = [ ./hosts/ypc2/configuration.nix ];
+          modules = [
+            ./hosts/ypc2/configuration.nix
+            nixos-hardware.nixosModules.common-gpu-nvidia
+            nixos-hardware.nixosModules.common-cpu-intel # looks like this enables CPU microcode updates
+            nixos-hardware.nixosModules.common-pc-ssd # enables fstrim which is supposed to make SSD life longer
+          ];
           specialArgs = {
             pkgsUnstable = pkgsCuda;
             inherit inputs;
