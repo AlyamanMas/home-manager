@@ -94,6 +94,7 @@
           ];
 
           extraSpecialArgs.inputs = inputs;
+          extraSpecialArgs.pkgsNightly = pkgsNightly;
         };
 
         "alyaman@ypc3" = home-manager.lib.homeManagerConfiguration {
