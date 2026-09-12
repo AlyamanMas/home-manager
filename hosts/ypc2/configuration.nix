@@ -34,6 +34,7 @@
     ../modules/logind.nix
     ../modules/man.nix
     ../modules/thumbnailers.nix
+    ../modules/steam.nix
   ];
 
   nixpkgs.config = {

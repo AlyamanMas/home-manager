@@ -47,11 +47,10 @@
     ../modules/route-rev-proxy-mappings-to-localhost.nix
     # ../modules/llama-cpp.nix
     ../modules/no-bluetooth-specialisation.nix
+    ../modules/steam.nix
 
     ../../secrets
   ];
-
-  services.ollama.package = pkgsUnstable.ollama;
 
   # seems needed when cloudflared is used instead of a public ip address
   custom.reverseProxy.enable = true;
@@ -77,13 +76,6 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-  };
-
-  programs.steam = {
-    enable = true;
-    extraCompatPackages = with pkgsUnstable; [
-      proton-ge-bin
-    ];
   };
 
   services = {
