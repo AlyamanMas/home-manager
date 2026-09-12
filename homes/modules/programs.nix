@@ -138,6 +138,7 @@ let
     krita
     dbeaver-bin
     pkgsNightly.osu-lazer-bin
+    deskflow
   ];
 in
 {
