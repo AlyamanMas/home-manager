@@ -1,6 +1,6 @@
 {
   # Set your time zone.
-  time.timeZone = "Asia/Damascus";
+  time.timeZone = "Europe/Madrid";
   time.hardwareClockInLocalTime = true;
 
   i18n.defaultLocale = "en_CA.UTF-8";
