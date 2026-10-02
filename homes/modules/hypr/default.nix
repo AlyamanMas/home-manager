@@ -12,14 +12,16 @@ in
     source = ./.;
   };
 
-  xdg.configFile."hypr/hyprpaper.conf" = {
-    text = ''
-      preload = ${wallpaperPath}
-
-      wallpaper = , ${wallpaperPath}
-
-      ipc = off
-    '';
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      wallpaper = [
+        {
+          monitor = "";
+          path = "${wallpaperPath}";
+        }
+      ];
+    };
   };
 
   home.packages = [ pkgs.grimblast ];
