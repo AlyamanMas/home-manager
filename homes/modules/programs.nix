@@ -116,6 +116,7 @@ let
     # documents {{{
     poppler-utils
     pandoc
+    texliveFull
     # }}}
     # games {{{
     lsfg-vk
