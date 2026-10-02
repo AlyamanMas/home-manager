@@ -24,6 +24,10 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.extraModprobeConfig = ''
+    options snd-intel-dspcfg dsp_driver=1
+    options snd-hda-intel model=auto
+  '';
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/310b4e3e-7f7d-4168-9a4f-b23c33888232";
