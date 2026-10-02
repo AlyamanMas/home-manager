@@ -18,6 +18,7 @@
     ./plugins/kickstart/treesitter.nix
     ./plugins/kickstart/which-key.nix
     ./plugins/custom/rainbow-delimiters.nix
+    ./plugins/custom/reverse-evil.nix
   ];
 
   colorschemes.catppuccin = {

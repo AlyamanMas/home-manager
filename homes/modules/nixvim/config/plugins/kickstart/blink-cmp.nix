@@ -45,6 +45,30 @@
         # See :h blink-cmp-config-keymap for defining your own keymap
         preset = "default";
 
+        # Menu open: navigate/hide. Menu closed: fall through to the
+        # global Emacs mappings (Down / Up / End).
+        "<C-n>" = [
+          "select_next"
+          "fallback"
+        ];
+        "<C-p>" = [
+          "select_prev"
+          "fallback"
+        ];
+        "<C-e>" = [
+          "hide"
+          "fallback"
+        ];
+
+        # The default preset uses C-k for signature help, which would shadow
+        # kill-line. Free it up and move signature help to C-s.
+        "<C-k>" = [ "fallback" ];
+        "<C-s>" = [
+          "show_signature"
+          "hide_signature"
+          "fallback"
+        ];
+
         # For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         #    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       };
