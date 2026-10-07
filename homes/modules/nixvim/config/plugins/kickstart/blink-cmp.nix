@@ -63,7 +63,7 @@
         # The default preset uses C-k for signature help, which would shadow
         # kill-line. Free it up and move signature help to C-s.
         "<C-k>" = [ "fallback" ];
-        "<C-s>" = [
+        "<C-M-s>" = [
           "show_signature"
           "hide_signature"
           "fallback"
