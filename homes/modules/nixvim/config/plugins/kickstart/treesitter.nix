@@ -36,6 +36,7 @@
       # llvm
       markdown
       markdown_inline
+      typst
       regex
       xml
       yaml
