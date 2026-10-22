@@ -1,7 +1,5 @@
 {
   pkgs,
-  pkgsUnstable,
-  inputs,
   ...
 }:
 
@@ -26,9 +24,8 @@
       vazir-fonts
       adwaita-fonts
       amiri
-      # TODO: replace with normal packages when updating nixpkgs-stable to version that includes these
-      pkgsUnstable.nunito
-      pkgsUnstable.nunito-sans
+      nunito
+      nunito-sans
     ];
 
     # NOTE: in flatpak, fontconfig options are not taken into account, and
