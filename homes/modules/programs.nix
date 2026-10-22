@@ -129,6 +129,7 @@ let
   graphicalApps = with pkgs; [
     qbittorrent # TODO: move to flatpak
     zathura # TODO: move to flatpak when released
+    sioyek
     networkmanagerapplet
     open-last-screenshot
     wev
