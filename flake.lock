@@ -101,15 +101,15 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1792570323,
-        "narHash": "sha256-mw7VzWO9S5T4+OgiTyw5GwRySOoPyiMEnANxnXQOfuI=",
-        "owner": "vikingnope",
+        "lastModified": 1793895218,
+        "narHash": "sha256-Ca0He88cg3qSX7MVTcwbgw74RuwmcA+ZwzVjqX72JAs=",
+        "owner": "schembriaiden",
         "repo": "helium-browser-nix-flake",
-        "rev": "a05e2c1e9596d7c3630dd56b53d21a36b8270a26",
+        "rev": "ef91010a4fcc551b5cb24f52608dc8d45c527d9d",
         "type": "github"
       },
       "original": {
-        "owner": "vikingnope",
+        "owner": "schembriaiden",
         "repo": "helium-browser-nix-flake",
         "type": "github"
       }
@@ -241,11 +241,11 @@
     },
     "nixpkgs-darwin": {
       "locked": {
-        "lastModified": 1792208400,
-        "narHash": "sha256-c+NgsnPFEfvGOLxJEQkxkpOESw7mPjnh/H9qDVEWFkQ=",
+        "lastModified": 1793671242,
+        "narHash": "sha256-FXXhGUZDRvPAdKFx/eF4E/WG3BnzvkCW2V/Qzs4KBoA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "42966a9c76f2cdb95b108c9fac939a27b0b8f2c5",
+        "rev": "4ad2eda5f89410d94c57449a70d08935d9bbb4f6",
         "type": "github"
       },
       "original": {

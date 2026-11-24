@@ -29,7 +29,7 @@
     # TODO: bump to 0.7.0 or above when it becomes stable
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     helium = {
-      url = "github:vikingnope/helium-browser-nix-flake";
+      url = "github:schembriaiden/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     netis-client-tracker.url = "git+https://codeberg.org/alyamanmas/netis-wf2409e-clients-packet-tracker.git";
