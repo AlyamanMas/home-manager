@@ -151,7 +151,6 @@ in
 
     tealdeer = {
       enable = true;
-      settings.auto_update = true;
     };
 
     mpv = {
